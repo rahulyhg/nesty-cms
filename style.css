@@ -252,17 +252,16 @@ div.login button {
 	font-size: 16px; }
 
 .bottom_bar {
-	padding: 0 0 3px;
+	padding: 0;
 	width: 100%;
-	background: rgba(255,255,255,1);
-	box-shadow: 0 -10px 20px -15px rgba(30,30,30,0.2);
+	box-shadow: 0 -10px 20px -15px rgba(30,30,30,0.35);
 	z-index: 100000;
 	text-align: center;
 	position: fixed;
 	bottom: 0;
 	left: 0; }
 
-.bottom_bar button, .bottom_bar .button { font-size: 24px; rgba(255,255,255,0.95); }
+.bottom_bar button, .bottom_bar .button { font-size: 24px; color: rgba(255,255,255,0.95); }
 
 .float_right {
 	float: right; }
