@@ -65,12 +65,13 @@ if (!(empty($children)) || !(empty($parents))):
 
 	if (!(empty($parents))):
 		$plural_temp = null; if (count($parents) > 1): $plural_temp = "s"; endif;
-		echo "<i>Parent".$plural_temp."</i>";
+		echo "<i>Parent".$plural_temp."</i><ul>";
 		foreach ($parents as $parent_id):
 			if ($parent_id == $page_temp): continue; endif;
-			echo "<span><a href='/$parent_id/'>".$pages_array[$parent_id]['header']."</a></span>";
+			echo "<li><a href='/$parent_id/'>".$pages_array[$parent_id]['header']."</a></li>";
 			if (!(empty($siblings_temp[$parent_id]))): $siblings = array_merge($siblings, $siblings_temp[$parent_id]); endif;
 			endforeach;
+		echo "</ul>";
 		$genealogy_map = array_merge($genealogy_map, $parents);
 		endif;
 
@@ -79,21 +80,23 @@ if (!(empty($children)) || !(empty($parents))):
 
 	if (!(empty($siblings))):
 		$plural_temp = null; if (count($siblings) > 1): $plural_temp = "s"; endif;
-		echo "<i>Sibling".$plural_temp."</i>";
+		echo "<i>Sibling".$plural_temp."</i><ul>";
 		foreach ($siblings as $sibling_id):
 			if ($sibling_id == $page_temp): continue; endif;
-			echo "<span><a href='/$sibling_id/'>".$pages_array[$sibling_id]['header']."</a></span>";
+			echo "<li><a href='/$sibling_id/'>".$pages_array[$sibling_id]['header']."</a></li>";
 			endforeach;
+		echo "</ul>";
 		$genealogy_map = array_merge($genealogy_map, $siblings);
 		endif;
 
 	if (!(empty($children))):
 		$plural_temp = null; if (count($children) > 1): $plural_temp = "s"; endif;
-		echo "<i>Subpage".$plural_temp."</i>";
+		echo "<i>Subpage".$plural_temp."</i><ul>";
 		foreach ($children as $child_id):
 			if ($child_id == $page_temp): continue; endif;
-			echo "<span><a href='/$child_id/'>".$pages_array[$child_id]['header']."</a></span>";
+			echo "<li><a href='/$child_id/'>".$pages_array[$child_id]['header']."</a></li>";
 			endforeach;
+		echo "</ul>";
 		$genealogy_map = array_merge($genealogy_map, $children);
 		endif;
 
