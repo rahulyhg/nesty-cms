@@ -13,7 +13,11 @@ article a:hover {
 	color: <? echo $color ?>; }
 
 header {
+	margin: 50px 0;
 	padding: 50px 20px; }
+
+.image_large header {
+	margin-top: 0; }
 
 iframe {
 	display: block;
