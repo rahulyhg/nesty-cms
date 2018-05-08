@@ -191,13 +191,13 @@ button:hover, .button:hover {
 .genealogy_map + .genealogy_map::before {
 	content: ' ';
 	position: absolute;
-	top: 0;
+	top: 5px;
 	left: 0;
-	width: 2px;
-	height: 30px;
-	background: rgba(50,50,50,0.5); }
+	width: 1px;
+	height: 20px;
+	background: rgba(50,50,50,0.3); }
 
-@media only screen and (max-width: 1000px)  {
+@media only screen and (max-width: 1030px)  {
 	.genealogy_map { width: auto; display: block; }
 	.genealogy_map + .genealogy_map::before { content: none; }
 	}
