@@ -52,7 +52,7 @@ $children = array_intersect(array_keys($pages_array), $children);
 if (!(empty($children)) || !(empty($parents))):
 
 	if (!(empty($parents))):
-		echo "<div class='genealogy_map'>";
+		echo "<div class='genealogy_map' amp-fx='parallax' data-parallax-factor='1.3'>";
 		$plural_temp = null; if (count($parents) > 1): $plural_temp = "s"; endif;
 		echo "<i>parent".$plural_temp."</i>";
 		foreach ($parents as $parent_id):
@@ -65,7 +65,7 @@ if (!(empty($children)) || !(empty($parents))):
 	$siblings = array_diff($siblings, [$page_temp]);
 
 	if (!(empty($siblings))):
-		echo "<div class='genealogy_map'>";
+		echo "<div class='genealogy_map' amp-fx='parallax' data-parallax-factor='1.3'>";
 		$plural_temp = null; if (count($siblings) > 1): $plural_temp = "s"; endif;
 		echo "<i>sibling".$plural_temp."</i>";
 		foreach ($siblings as $sibling_id):
@@ -76,7 +76,7 @@ if (!(empty($children)) || !(empty($parents))):
 		endif;
 
 	if (!(empty($children))):
-		echo "<div class='genealogy_map'>";
+		echo "<div class='genealogy_map' amp-fx='parallax' data-parallax-factor='1.3'>";
 		$plural_temp = null; if (count($children) > 1): $plural_temp = "s"; endif;
 		echo "<i>subpage".$plural_temp."</i>";
 		foreach ($children as $child_id):
@@ -99,7 +99,8 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 
 	echo "<article><div vocab='http://schema.org/' typeof='Article'>";
 
-	echo "<header><h1 property='name'>".$page_confirmed[$page_temp]['header']."</h1></header>";
+	echo "<headerclass='background_1' amp-fx='parallax' data-parallax-factor='1.3'>";
+	echo "<h1 property='name' amp-fx='parallax' data-parallax-factor='1.05'>".$page_confirmed[$page_temp]['header']."</h1></header>";
 
 //	echo "<span property='headline'><h6>".$page_confirmed[$page_temp]['headline']."</h6></span>";
 	echo "<span property='articleBody'>";
