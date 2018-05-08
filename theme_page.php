@@ -99,7 +99,7 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 
 	echo "<article><div vocab='http://schema.org/' typeof='Article'>";
 
-	echo "<header class='background_1' amp-fx='parallax' data-parallax-factor='1.3'>";
+	echo "<header class='background_1' amp-fx='parallax' data-parallax-factor='1.2'>";
 	echo "<h1 property='name' amp-fx='parallax' data-parallax-factor='1.05'>".$page_confirmed[$page_temp]['header']."</h1></header>";
 
 //	echo "<span property='headline'><h6>".$page_confirmed[$page_temp]['headline']."</h6></span>";
