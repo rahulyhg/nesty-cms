@@ -115,6 +115,7 @@ if (!(empty($genealogy_map))):
 		echo "<span><a href='/$entry_id/'>".$pages_array[$entry_id]['header']."</a></span>";
 		$count_temp++; if ($count_temp >= 4): break; endif;
 		endforeach;
+	echo "<span on='tap:popover.toggle' role='button'>view hierarchy</span>";
 	echo "</div>";
 	endif;
 
