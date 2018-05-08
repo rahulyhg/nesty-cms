@@ -5,6 +5,10 @@ body {
 	background: rgba(255, 255, 255, 1);
 	text-align: left; }
 
+h1 {
+	text-align: left;
+	color: <? echo $color ?>; }
+
 footer {
 	clear: both;
 	display: block;
@@ -170,12 +174,14 @@ button:hover, .button:hover {
 	content: ')'; }
 
 .genealogy_map {
+	width: 30%;
 	max-width: 800px;
-	display: block;
-	text-align: center;
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
 	font-size: 12px;
-	padding: 10px 50px;
-	margin: 0 auto; }
+	padding: 10px 20px;
+	margin: 0; }
 
 .genealogy_map, .genealogy_map a {
 	color: rgba(0,0,0,.7); }
