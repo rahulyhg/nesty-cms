@@ -111,7 +111,7 @@ echo "</amp-sidebar>";
 
 if (!(empty($genealogy_map))):
 	shuffle($genealogy_map);
-	echo "<div class='genealogy_map' amp-fx='parallax' data-parallax-factor='1.3'>";
+	echo "<div class='genealogy_map'>";
 	echo "<i>Related Pages</i>";
 	$count_temp = 0;
 	foreach ($genealogy_map as $entry_id):
@@ -127,7 +127,7 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 
 	echo "<article><div vocab='http://schema.org/' typeof='Article'>";
 
-	echo "<header amp-fx='parallax' data-parallax-factor='1.2'>";
+	echo "<header amp-fx='parallax' data-parallax-factor='1.3'>";
 	echo "<h1 property='name'>".$page_confirmed[$page_temp]['header']."</h1></header>";
 
 //	echo "<span property='headline'><h6>".$page_confirmed[$page_temp]['headline']."</h6></span>";
