@@ -12,6 +12,9 @@ article a {
 article a:hover {
 	color: <? echo $color ?>; }
 
+header {
+	padding: 50px 20px; }
+
 iframe {
 	display: block;
 	margin: 10px auto; }
@@ -47,6 +50,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, table {
 	padding: 10px; }
 
 h1 {
+	color: rgba(255,255,255,0.95);
 	font-size: 40px;
 	line-height: 50px;
 	font-weight: 700;
