@@ -26,7 +26,7 @@ header h1 {
 	}
 
 @media only screen and (max-width: 800px)  {
-	header h1 { text-align: left; font-size: 38px; line-height: 42px; margin: 90px 30px 100px 20px; padding: 0; }
+	header h1 { width: auto; text-align: left; font-size: 38px; line-height: 42px; margin: 90px 30px 100px 20px; padding: 0; }
 	}
 
 footer {
