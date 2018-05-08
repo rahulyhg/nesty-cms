@@ -133,11 +133,11 @@ function amp_header($title=null, $canonical=null) {
 	if (array_intersect([$slug_temp, $page_temp], ["new", "edit", "account"])): return; endif;
 	
 	// here is the search header
-//	$search_value = null;
-//	if (array_intersect([$slug_temp, $page_temp], ["search"])): $search_value = htmlspecialchars($_SESSION['term'], ENT_QUOTES); endif;
-//	echo "<form id='search-header' method='get' action='/search/' target='_top'>";
-//	echo "<input type='search' name='term' placeholder='search ".htmlspecialchars($publisher, ENT_QUOTES)."' value='".$search_value."' maxlength='45' autocomplete='off' required>";	
-//	echo "</form>";
+	$search_value = null;
+	if (array_intersect([$slug_temp, $page_temp], ["search"])): $search_value = htmlspecialchars($_SESSION['term'], ENT_QUOTES); endif;
+	echo "<form id='search-header' method='get' action='/search/' target='_top'>";
+	echo "<input type='search' name='term' placeholder='search' value='".$search_value."' maxlength='45' autocomplete='off' required>";	
+	echo "</form>";
 
 	}
 
