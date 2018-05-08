@@ -378,4 +378,5 @@ amp-lightbox figcaption {
 
 @media only screen and (max-width: 500px)  {
 	blockquote cite { width: 100%; }
-	th, td { display: block; } }
+	th, td { display: block; border-left: 0;}
+	th + th, td + td, th + td, td + th { border-top: 2px solid rgba(200,200,200,0.16); }
