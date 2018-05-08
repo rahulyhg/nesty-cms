@@ -346,7 +346,6 @@ div.paginator span.bold a {
 	-webkit-border-radius: 0px; }
 
 #search-header input::-webkit-input-placeholder {
-	letter-spacing: 1px;
 	color: rgba(255,255,255,0.8); }
 
 @media print {
