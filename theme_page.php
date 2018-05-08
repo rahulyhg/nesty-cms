@@ -84,7 +84,7 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 		$siblings = array_diff($siblings, [$page_temp]);
 
 		if (!(empty($siblings))):
-			echo "<div class='genealogy_map' amp-fx='parallax' data-parallax-factor='1.2'>";
+			echo "<div class='genealogy_map' amp-fx='parallax' data-parallax-factor='1.25'>";
 			$plural_temp = null; if (count($siblings) > 1): $plural_temp = "s"; endif;
 			echo "<i>sibling".$plural_temp."</i>";
 			foreach ($siblings as $sibling_id):
