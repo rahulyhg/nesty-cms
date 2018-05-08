@@ -201,7 +201,7 @@ button:hover, .button:hover {
 	height: 20px;
 	background: rgba(50,50,50,0.2); }
 
-@media only screen and (max-width: 1030px)  {
+@media only screen and (max-width: 1050px)  {
 	.genealogy_map { width: auto; display: block; }
 	.genealogy_map + .genealogy_map::before { content: none; }
 	}
