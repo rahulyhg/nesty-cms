@@ -17,9 +17,6 @@ header {
 	margin: 50px 0;
 	padding: 50px 20px; }
 
-.image_large header {
-	margin-top: 0; }
-
 iframe {
 	display: block;
 	margin: 10px auto; }
@@ -280,7 +277,7 @@ div.image_large {
 	position: relative;
 	display: table;
 	clear: both;
-	margin: 50px auto;
+	margin: 50px auto 60px;
 	text-align: left; }
 
 div.image_large amp-img {
