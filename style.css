@@ -297,10 +297,10 @@ amp-sidebar ul > li {
 	padding: 3px 0 5px 20px; }
 
 amp-sidebar ul > li:last-child {
-	padding-bottom: 5px; }
+	padding-bottom: 9px; }
 
 amp-sidebar ul > li::before {
-	top: 10px; }
+	top: 11px; }
 
 article .material-icons {
 	font-size: 120%;
