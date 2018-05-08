@@ -174,8 +174,8 @@ button:hover, .button:hover {
 	content: ')'; }
 
 .genealogy_map {
-	width: 30%;
-	max-width: 800px;
+	width: auto;
+	max-width: 30%;
 	display: inline-block;
 	vertical-align: top;
 	text-align: left;
