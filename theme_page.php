@@ -130,8 +130,6 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 	echo "<header amp-fx='parallax' data-parallax-factor='1.2'>";
 	echo "<h1 property='name'>".$page_confirmed[$page_temp]['header']."</h1></header>";
 
-	echo "<br>";
-
 //	echo "<span property='headline'><h6>".$page_confirmed[$page_temp]['headline']."</h6></span>";
 	echo "<span property='articleBody'>";
 	if (!(empty($page_confirmed[$page_temp]['body']))):
