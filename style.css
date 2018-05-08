@@ -180,19 +180,15 @@ button:hover, .button:hover {
 	vertical-align: top;
 	text-align: center;
 	padding: 0;
-	margin: 0 0 20px 20px;
+	margin: 0 20px 20px;
 	font-size: 14px;
 	line-height: 20px; }
 
 .genealogy_map, .genealogy_map a {
 	color: rgba(0,0,0,.7); }
 
-.genealogy_map + .genealogy_map {
-	margin-left: 50px; }
-
 @media only screen and (max-width: 1000px)  {
 	.genealogy_map { width: auto; display: block; }
-	.genealogy_map + .genealogy_map { margin-left: 20px; }
 	}
 
 .genealogy_map i {
