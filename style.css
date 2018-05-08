@@ -272,6 +272,7 @@ div.login button {
 
 
 amp-sidebar {
+	z-index: 88888888888;
 	position: fixed;
 	width: 300px;
 	padding: 10px;
