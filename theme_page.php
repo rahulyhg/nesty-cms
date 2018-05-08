@@ -112,14 +112,14 @@ echo "</amp-sidebar>";
 if (!(empty($genealogy_map))):
 	shuffle($genealogy_map);
 	echo "<div class='genealogy_map' amp-fx='parallax' data-parallax-factor='1.3'>";
-	echo "<i>Relatives</i>";
+	echo "<i>Related Pages</i>";
 	$count_temp = 0;
 	foreach ($genealogy_map as $entry_id):
 		if ($entry_id == $page_temp): continue; endif;
 		echo "<span><a href='/$entry_id/'>".$pages_array[$entry_id]['header']."</a></span>";
 		$count_temp++; if ($count_temp >= 4): break; endif;
 		endforeach;
-	echo "<span on='tap:popover.toggle' role='button'>view hierarchy</span>";
+	echo "<br><span on='tap:popover.toggle' role='button'>view hierarchy</span>";
 	echo "</div>";
 	endif;
 
