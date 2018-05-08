@@ -109,7 +109,7 @@ if (!(empty($page_confirmed['popover']))):
 
 echo "</amp-sidebar>";
 
-echo "<span on='tap:popover.toggle' role='button' class='material-icons menu_button'>menu</span>";
+echo "<span on='tap:popover.toggle' role='button' class='material-icons menu_button background_2'>menu</span>";
 
 
 if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
