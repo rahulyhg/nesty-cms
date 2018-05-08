@@ -156,18 +156,10 @@ function admin_bar($login=null, $entry_confirmed=null) {
 	global $slug_temp;
 	global $command_temp;
 	
-	// toggle rollover menu
-	$menu_temp = "no";
-	if ( !(empty($entry_confirmed['page_id'])) && ( empty($entry_confirmed['password']) || !(empty($_SESSION[$entry_confirmed['page_id']])) ) ):
-		$menu_temp = "yes"; endif;
-
 	echo "<div class='bottom_bar'>";
 
 	echo "<span class='button float_left'></span>";
 	
-	if ($menu_temp == "yes"):
-		echo "<button on='tap:popover.toggle' role='button' class='material-icons button float_left'>menu</button>";
-		endif;
 	if (empty($page_temp) || in_array($page_temp, ["sitemap", "schedule"])):
 		
 		$chosen_temp = null; if (empty($page_temp)): $chosen_temp = "chosen"; endif;
@@ -194,9 +186,11 @@ function admin_bar($login=null, $entry_confirmed=null) {
 
 	echo "<span class='button float_right'></span>";
 	
-	echo "<a href='/' class='material-icons button float_right'>home</a>";
+	if (!(empty($page_temp))): echo "<a href='/' class='material-icons button float_right'>home</a>"; endif;
+
 	if (!(empty($login)) && ($page_temp == "account")): echo "<a href='/logout/' class='material-icons button float_right'>cancel</a>";
 	else: echo "<a href='/account/' class='material-icons button float_right'>account_circle</a>"; endif;
+
 	if (!(empty($login)) && ($page_temp !== "account")):
 		echo "<a href='/new/' class='material-icons button float_right'>note_add</a>";
 		echo "<a href='/add/' class='material-icons button float_right'>playlist_add</a>";
