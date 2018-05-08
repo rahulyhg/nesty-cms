@@ -105,6 +105,7 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 			endif;
 		endif;
 
+	echo "<br>";
 
 //	echo "<span property='headline'><h6>".$page_confirmed[$page_temp]['headline']."</h6></span>";
 	echo "<span property='articleBody'>";
