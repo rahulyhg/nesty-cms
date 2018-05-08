@@ -188,6 +188,9 @@ button:hover, .button:hover {
 	font-weight: 700;
 	font-size: 14px; }
 
+.genealogy_map + h1 {
+	margin-top: 50px; }
+
 div.login {
 	margin: 100px auto 20px;
 	padding: 0;
