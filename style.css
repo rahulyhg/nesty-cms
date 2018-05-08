@@ -179,16 +179,21 @@ button:hover, .button:hover {
 	display: inline-block;
 	vertical-align: top;
 	text-align: left;
-	font-size: 12px;
 	padding: 10px 20px;
 	margin: 0; }
 
 .genealogy_map, .genealogy_map a {
 	color: rgba(0,0,0,.7); }
 
+.genealogy_map i {
+	display: block;
+	padding: 0;
+	margin: 8px 13px;
+	font-size: 14px; }	
+
 .genealogy_map span {
 	font-family: 'Courier';
-	display: inline-block;
+	display: block;
 	padding: 0;
 	margin: 8px 13px;
 	font-weight: 700;
