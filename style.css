@@ -180,13 +180,15 @@ button:hover, .button:hover {
 	vertical-align: top;
 	text-align: left;
 	padding: 0;
-	margin: 0 0 20px; }
+	margin: 0 0 20px 20px;
+	font-size: 14px;
+	line-height: 20px; }
 
 .genealogy_map, .genealogy_map a {
 	color: rgba(0,0,0,.7); }
 
 .genealogy_map + .genealogy_map {
-	margin-left: -50px; }
+	margin-left: 50px; }
 
 @media only screen and (max-width: 1000px)  {
 	.genealogy_map { width: auto; display: block; }
@@ -196,16 +198,14 @@ button:hover, .button:hover {
 .genealogy_map i {
 	display: block;
 	padding: 0;
-	margin: 8px 13px;
-	font-size: 14px; }	
+	margin: 8px 13px; }	
 
 .genealogy_map span {
 	font-family: 'Courier';
 	display: block;
 	padding: 0;
 	margin: 8px 13px;
-	font-weight: 700;
-	font-size: 14px; }
+	font-weight: 700; }
 
 div.login {
 	margin: 100px auto 20px;
