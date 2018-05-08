@@ -280,19 +280,24 @@ div.login button {
 amp-sidebar {
 	position: fixed;
 	width: 300px;
-	padding: 0 10px;
+	padding: 10px;
 	background: rgba(255,255,255,1);
 	box-shadow: 0 0 25px -1px rgba(100,100,100,0.3);
 	}
 
 amp-sidebar > ul, amp-sidebar > ol {
 	margin: 10px 0;
-	font-family: Courier;
-	font-weight: 700; }
+	font-family: Courier; }
 
 amp-sidebar, amp-sidebar li {
-	font-size: 13px;
+	font-size: 14px;
 	line-height: 18px; }
+
+amp-sidebar li {
+	padding-top: 3px; }
+
+amp-sidebar li::before {
+	top: 12px; }
 
 article .material-icons {
 	font-size: 120%;
