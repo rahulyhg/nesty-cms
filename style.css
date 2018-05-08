@@ -293,10 +293,10 @@ amp-sidebar, amp-sidebar li {
 	font-size: 14px;
 	line-height: 18px; }
 
-amp-sidebar li {
-	padding-top: 3px; }
+amp-sidebar ul > li {
+	padding: 3px 0 5px 20px; }
 
-amp-sidebar li::before {
+amp-sidebar ul > li::before {
 	top: 8px; }
 
 article .material-icons {
