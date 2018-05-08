@@ -6,6 +6,7 @@ body {
 	text-align: left; }
 
 header h1 {
+	width: auto;
 	text-align: left;
 	margin: 90px 30px 120px 20px;
 	font-size: 60px;
@@ -14,8 +15,8 @@ header h1 {
 	color: <? echo $color ?>; }
 
 @media only screen and (max-width: 1050px)  {
-	font-size: 50px;
-	line-height: 54px;
+	font-size: 40px;
+	line-height: 44px;
 	}
 
 footer {
