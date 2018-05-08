@@ -335,13 +335,14 @@ div.paginator span.bold a {
 	padding: 15px;
 	border: 0;
 	border-radius: 0;
-	box-shadow: 0 20px 23px -15px rgba(0,0,0,0.2);
+	box-shadow: 0 15px 25px -15px rgba(0,0,0,0.2);
 	background: linear-gradient(60deg, <? echo $color ?>, rgba(<? echo hexdec(substr($color,-6,2)) ?>, <? echo hexdec(substr($color,-4,2)) ?>, <? echo hexdec(substr($color,-2)) ?>, 0.5));
 	color: rgba(255,255,255,0.9);
 	text-align: center;
 	height: 50px;
 	font-size: 20px;
 	font-weight: 300;
+	letter-spacing: 1px;
 	-webkit-appearance: none;
 	-webkit-border-radius: 0px; }
 
