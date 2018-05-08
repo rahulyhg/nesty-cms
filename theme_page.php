@@ -73,7 +73,7 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 		if (!(empty($parents))):
 			echo "<div class='genealogy_map' amp-fx='parallax' data-parallax-factor='1.13'>";
 			$plural_temp = null; if (count($parents) > 1): $plural_temp = "s"; endif;
-			echo "<i>parent".$plural_temp."</i>";
+			echo "<i>Parent".$plural_temp."</i>";
 			foreach ($parents as $parent_id):
 				echo "<span><a href='/$parent_id/'>".$pages_array[$parent_id]['header']."</a></span>";
 				if (!(empty($siblings_temp[$parent_id]))): $siblings = array_merge($siblings, $siblings_temp[$parent_id]); endif;
@@ -86,7 +86,7 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 		if (!(empty($siblings))):
 			echo "<div class='genealogy_map' amp-fx='parallax' data-parallax-factor='1.1'>";
 			$plural_temp = null; if (count($siblings) > 1): $plural_temp = "s"; endif;
-			echo "<i>sibling".$plural_temp."</i>";
+			echo "<i>Sibling".$plural_temp."</i>";
 			foreach ($siblings as $sibling_id):
 				if ($sibling_id == $page_temp): continue; endif;
 				echo "<span><a href='/$sibling_id/'>".$pages_array[$sibling_id]['header']."</a></span>";
@@ -97,7 +97,7 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 		if (!(empty($children))):
 			echo "<div class='genealogy_map' amp-fx='parallax' data-parallax-factor='1.1'>";
 			$plural_temp = null; if (count($children) > 1): $plural_temp = "s"; endif;
-			echo "<i>subpage".$plural_temp."</i>";
+			echo "<i>Subpage".$plural_temp."</i>";
 			foreach ($children as $child_id):
 				echo "<span><a href='/$child_id/'>".$pages_array[$child_id]['header']."</a></span>";
 				endforeach;
