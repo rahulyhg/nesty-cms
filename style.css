@@ -296,8 +296,11 @@ amp-sidebar, amp-sidebar li {
 amp-sidebar ul > li {
 	padding: 3px 0 5px 20px; }
 
+amp-sidebar ul > li:last-child {
+	padding-bottom: 5px; }
+
 amp-sidebar ul > li::before {
-	top: 8px; }
+	top: 10px; }
 
 article .material-icons {
 	font-size: 120%;
