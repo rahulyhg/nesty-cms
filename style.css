@@ -213,6 +213,7 @@ button:hover, .button:hover {
 	}
 
 .genealogy_map i {
+	font-style: normal;
 	display: block;
 	padding: 0;
 	margin: 8px 13px; }	
