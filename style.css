@@ -212,9 +212,10 @@ button:hover, .button:hover {
 	font-style: normal;
 	display: block;
 	padding: 0;
-	margin: 9px 13px; }
+	margin: 9px 20px; }
 
 .genealogy_map span {
+	display: inline-block;
 	font-weight: 700; }
 
 div.login {
