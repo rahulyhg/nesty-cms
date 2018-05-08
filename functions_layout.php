@@ -51,18 +51,7 @@ function html_header($title=null, $canonical=null) {
 	echo "</head><body>";
 	
 	global $page_confirmed;
-	global $_SESSION;
-	
-	// if there is no need for a search header
-	if (array_intersect([$slug_temp, $page_temp], ["new", "edit", "delete", "account", "two-factor", "settings", "security", "supervisor"])): return; endif;
-	if (!(in_array("edit", [$slug_temp, $command_temp])) && !(empty($page_confirmed['password'])) && empty($_SESSION[$page_confirmed['page_id']])): return; endif;
-	
-	// here is the search header
-	$search_value = null;
-	if (array_intersect([$slug_temp, $page_temp], ["search"])): $search_value = htmlspecialchars($_SESSION['term'], ENT_QUOTES); endif;
-	echo "<form id='search-header' method='get' action='/search/' target='_top'>";
-	echo "<input type='search' name='term' placeholder='search ".htmlspecialchars($publisher, ENT_QUOTES)."' value='".$search_value."' maxlength='45' autocomplete='off' required>";	
-	echo "</form>"; }
+	global $_SESSION; }
 
 
 function amp_header($title=null, $canonical=null) {
@@ -144,11 +133,13 @@ function amp_header($title=null, $canonical=null) {
 	if (array_intersect([$slug_temp, $page_temp], ["new", "edit", "account"])): return; endif;
 	
 	// here is the search header
-	$search_value = null;
-	if (array_intersect([$slug_temp, $page_temp], ["search"])): $search_value = htmlspecialchars($_SESSION['term'], ENT_QUOTES); endif;
-	echo "<form id='search-header' method='get' action='/search/' target='_top'>";
-	echo "<input type='search' name='term' placeholder='search ".htmlspecialchars($publisher, ENT_QUOTES)."' value='".$search_value."' maxlength='45' autocomplete='off' required>";	
-	echo "</form>"; }
+//	$search_value = null;
+//	if (array_intersect([$slug_temp, $page_temp], ["search"])): $search_value = htmlspecialchars($_SESSION['term'], ENT_QUOTES); endif;
+//	echo "<form id='search-header' method='get' action='/search/' target='_top'>";
+//	echo "<input type='search' name='term' placeholder='search ".htmlspecialchars($publisher, ENT_QUOTES)."' value='".$search_value."' maxlength='45' autocomplete='off' required>";	
+//	echo "</form>";
+
+	}
 
 function admin_bar($login=null, $entry_confirmed=null) {
 	global $publisher;
