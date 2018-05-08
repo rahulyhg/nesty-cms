@@ -55,7 +55,68 @@ if (!(empty($citations))):
 		endforeach;
 	endif;
 
+$genealogy_map = [];
+$parents = array_intersect(array_keys($pages_array), $parents);
+$children = array_intersect(array_keys($pages_array), $children);
 
+echo "<amp-sidebar id='popover' layout='nodisplay' side='right'>";
+
+if (!(empty($children)) || !(empty($parents))):
+
+	if (!(empty($parents))):
+		$plural_temp = null; if (count($parents) > 1): $plural_temp = "s"; endif;
+		echo "<i>Parent".$plural_temp."</i>";
+		foreach ($parents as $parent_id):
+			if ($parent_id == $page_temp): continue; endif;
+			echo "<span><a href='/$parent_id/'>".$pages_array[$parent_id]['header']."</a></span>";
+			if (!(empty($siblings_temp[$parent_id]))): $siblings = array_merge($siblings, $siblings_temp[$parent_id]); endif;
+			endforeach;
+		$genealogy_map = array_merge($genealogy_map, $parents);
+		endif;
+
+	$siblings = array_intersect(array_keys($pages_array), $siblings);
+	$siblings = array_diff($siblings, [$page_temp]);
+
+	if (!(empty($siblings))):
+		$plural_temp = null; if (count($siblings) > 1): $plural_temp = "s"; endif;
+		echo "<i>Sibling".$plural_temp."</i>";
+		foreach ($siblings as $sibling_id):
+			if ($sibling_id == $page_temp): continue; endif;
+			echo "<span><a href='/$sibling_id/'>".$pages_array[$sibling_id]['header']."</a></span>";
+			endforeach;
+		$genealogy_map = array_merge($genealogy_map, $siblings);
+		endif;
+
+	if (!(empty($children))):
+		$plural_temp = null; if (count($children) > 1): $plural_temp = "s"; endif;
+		echo "<i>Subpage".$plural_temp."</i>";
+		foreach ($children as $child_id):
+			if ($child_id == $page_temp): continue; endif;
+			echo "<span><a href='/$child_id/'>".$pages_array[$child_id]['header']."</a></span>";
+			endforeach;
+		$genealogy_map = array_merge($genealogy_map, $children);
+		endif;
+
+	endif;
+
+if (!(empty($page_confirmed['popover']))):
+	echo $page_confirmed['popover'];
+	endif;
+
+echo "</amp-sidebar>";
+
+if (!(empty($genealogy_map))):
+	$genealogy_map = shuffle($genealogy_map);
+	echo "<div class='genealogy_map' amp-fx='parallax' data-parallax-factor='1.3'>";
+	echo "<i>Relatives</i>";
+	$count_temp = 0;
+	foreach ($children as $entry_id):
+		if ($entry_id == $page_temp): continue; endif;
+		echo "<span><a href='/$entry_id/'>".$pages_array[$entry_id]['header']."</a></span>";
+		$count_temp++; if ($count_temp > 4): break; endif;
+		endforeach;
+	echo "</div>";
+	endif;
 
 if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 
@@ -63,50 +124,6 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 
 	echo "<header amp-fx='parallax' data-parallax-factor='1.25'>";
 	echo "<h1 property='name'>".$page_confirmed[$page_temp]['header']."</h1></header>";
-
-
-	$parents = array_intersect(array_keys($pages_array), $parents);
-	$children = array_intersect(array_keys($pages_array), $children);
-
-	if (!(empty($children)) || !(empty($parents))):
-
-		if (!(empty($parents))):
-			echo "<div class='genealogy_map' amp-fx='parallax' data-parallax-factor='1.13'>";
-			$plural_temp = null; if (count($parents) > 1): $plural_temp = "s"; endif;
-			echo "<i>Parent".$plural_temp."</i>";
-			foreach ($parents as $parent_id):
-				echo "<span><a href='/$parent_id/'>".$pages_array[$parent_id]['header']."</a></span>";
-				if (!(empty($siblings_temp[$parent_id]))): $siblings = array_merge($siblings, $siblings_temp[$parent_id]); endif;
-				endforeach;
-			echo "</div>";
-			endif;
-		$siblings = array_intersect(array_keys($pages_array), $siblings);
-		$siblings = array_diff($siblings, [$page_temp]);
-
-		if (!(empty($siblings))):
-			echo "<div class='genealogy_map' amp-fx='parallax' data-parallax-factor='1.1'>";
-			$plural_temp = null; if (count($siblings) > 1): $plural_temp = "s"; endif;
-			echo "<i>Sibling".$plural_temp."</i>";
-			foreach ($siblings as $sibling_id):
-				if ($sibling_id == $page_temp): continue; endif;
-				echo "<span><a href='/$sibling_id/'>".$pages_array[$sibling_id]['header']."</a></span>";
-				endforeach;
-			echo "</div>";
-			endif;
-
-		if (!(empty($children))):
-			echo "<div class='genealogy_map' amp-fx='parallax' data-parallax-factor='1.1'>";
-			$plural_temp = null; if (count($children) > 1): $plural_temp = "s"; endif;
-			echo "<i>Subpage".$plural_temp."</i>";
-			foreach ($children as $child_id):
-				echo "<span><a href='/$child_id/'>".$pages_array[$child_id]['header']."</a></span>";
-				endforeach;
-			echo "</div>";
-			endif;
-
-		echo "<br>";
-
-		endif;
 
 	echo "<br>";
 
