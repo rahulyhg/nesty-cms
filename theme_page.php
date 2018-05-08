@@ -109,19 +109,8 @@ if (!(empty($page_confirmed['popover']))):
 
 echo "</amp-sidebar>";
 
-if (!(empty($genealogy_map))):
-	shuffle($genealogy_map);
-	echo "<div class='genealogy_map' amp-fx='parallax' data-parallax-factor='1.5'>";
-	echo "<i>Related Pages</i>";
-	$count_temp = 0;
-	foreach ($genealogy_map as $entry_id):
-		if ($entry_id == $page_temp): continue; endif;
-		echo "<span><a href='/$entry_id/'>".$pages_array[$entry_id]['header']."</a></span>";
-		$count_temp++; if ($count_temp >= 4): break; endif;
-		endforeach;
-	echo "<br><br><span on='tap:popover.toggle' role='button'><i>View Hierarchy</i></span>";
-	echo "</div>";
-	endif;
+echo "<button on='tap:popover.toggle' role='button' class='material-icons menu_bottom'>menu</button>";
+
 
 if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 
@@ -161,6 +150,19 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 
 	echo "</div></article>";
 
+	endif;
+
+if (!(empty($genealogy_map))):
+	shuffle($genealogy_map);
+	echo "<div class='genealogy_map' amp-fx='parallax' data-parallax-factor='1.5'>";
+	echo "<i>Related Pages</i>";
+	$count_temp = 0;
+	foreach ($genealogy_map as $entry_id):
+		if ($entry_id == $page_temp): continue; endif;
+		echo "<span><a href='/$entry_id/'>".$pages_array[$entry_id]['header']."</a></span>";
+		$count_temp++; if ($count_temp >= 4): break; endif;
+		endforeach;
+	echo "</div>";
 	endif;
 
 footer(); ?>
