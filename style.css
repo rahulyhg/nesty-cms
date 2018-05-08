@@ -286,10 +286,13 @@ amp-sidebar {
 	}
 
 amp-sidebar > ul, amp-sidebar > ol {
-	margin: 0; }
+	margin: 10px 0;
+	font-family: Courier;
+	font-weight: 700; }
 
-amp-sidebar, amp-sidebar a {
-	color: <? echo $color ?>; }
+amp-sidebar, amp-sidebar li {
+	font-size: 13px;
+	line-height: 18px; }
 
 article .material-icons {
 	font-size: 120%;
