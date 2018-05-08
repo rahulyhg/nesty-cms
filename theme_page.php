@@ -65,7 +65,7 @@ if (!(empty($children)) || !(empty($parents))):
 
 	if (!(empty($parents))):
 		$plural_temp = null; if (count($parents) > 1): $plural_temp = "s"; endif;
-		echo "<i>Parent".$plural_temp."</i><ul>";
+		echo "Parent".$plural_temp."<ul>";
 		foreach ($parents as $parent_id):
 			if ($parent_id == $page_temp): continue; endif;
 			echo "<li><a href='/$parent_id/'>".$pages_array[$parent_id]['header']."</a></li>";
@@ -80,7 +80,7 @@ if (!(empty($children)) || !(empty($parents))):
 
 	if (!(empty($siblings))):
 		$plural_temp = null; if (count($siblings) > 1): $plural_temp = "s"; endif;
-		echo "<i>Sibling".$plural_temp."</i><ul>";
+		echo "Sibling".$plural_temp."<ul>";
 		foreach ($siblings as $sibling_id):
 			if ($sibling_id == $page_temp): continue; endif;
 			echo "<li><a href='/$sibling_id/'>".$pages_array[$sibling_id]['header']."</a></li>";
@@ -91,7 +91,7 @@ if (!(empty($children)) || !(empty($parents))):
 
 	if (!(empty($children))):
 		$plural_temp = null; if (count($children) > 1): $plural_temp = "s"; endif;
-		echo "<i>Subpage".$plural_temp."</i><ul>";
+		echo "Subpage".$plural_temp."<ul>";
 		foreach ($children as $child_id):
 			if ($child_id == $page_temp): continue; endif;
 			echo "<li><a href='/$child_id/'>".$pages_array[$child_id]['header']."</a></li>";
