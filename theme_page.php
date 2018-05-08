@@ -103,6 +103,7 @@ if (!(empty($children)) || !(empty($parents))):
 	endif;
 
 if (!(empty($page_confirmed['popover']))):
+	echo "<i>Index</i>";
 	echo $page_confirmed['popover'];
 	endif;
 
