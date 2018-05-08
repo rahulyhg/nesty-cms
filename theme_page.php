@@ -111,12 +111,13 @@ echo "</amp-sidebar>";
 
 echo "<span on='tap:popover.toggle' role='button' class='material-icons menu_button background_2'>menu</span>";
 
+echo "<span class='button' data-parallax-factor='1.3'>".$publisher."</span>";
 
 if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 
 	echo "<article><div vocab='http://schema.org/' typeof='Article'>";
 
-	echo "<header amp-fx='parallax' data-parallax-factor='1.3'>";
+	echo "<header amp-fx='parallax' data-parallax-factor='1.2'>";
 	echo "<h1 property='name'>".$page_confirmed[$page_temp]['header']."</h1></header>";
 
 //	echo "<span property='headline'><h6>".$page_confirmed[$page_temp]['headline']."</h6></span>";
@@ -140,7 +141,7 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 	echo "</span>";
 
 	echo "<footer>";
-	echo "<div>written by <span property='author'>Levi Clancy</span></div>";
+	echo "<div>by <span property='author'>Levi Clancy</span></div>";
 	echo "<div>for <span property='publisher'>$publisher</span></div><br>";
 	echo "<div>published <time datetime='".$page_confirmed[$page_temp]['created_time']."' property='datePublished'>".date("l jS F, o", strtotime($page_confirmed[$page_temp]['created_time']))."</time></div>";
 	if ($page_confirmed[$page_temp]['created_time'] !== $page_confirmed[$page_temp]['updated_time']):
