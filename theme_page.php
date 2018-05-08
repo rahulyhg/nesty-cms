@@ -127,7 +127,7 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 
 	echo "<article><div vocab='http://schema.org/' typeof='Article'>";
 
-	echo "<header amp-fx='parallax' data-parallax-factor='1.25'>";
+	echo "<header amp-fx='parallax' data-parallax-factor='1.2'>";
 	echo "<h1 property='name'>".$page_confirmed[$page_temp]['header']."</h1></header>";
 
 	echo "<br>";
