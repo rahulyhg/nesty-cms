@@ -182,13 +182,24 @@ button:hover, .button:hover {
 	padding: 0;
 	margin: 0 20px 20px;
 	font-size: 14px;
-	line-height: 20px; }
+	line-height: 20px;
+	position: relative; }
 
 .genealogy_map, .genealogy_map a {
 	color: rgba(0,0,0,.7); }
 
+.genealogy_map + .genealogy_map::before {
+	content: ' ';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2px;
+	height: 30px;
+	background: rgba(50,50,50,0.5); }
+
 @media only screen and (max-width: 1000px)  {
 	.genealogy_map { width: auto; display: block; }
+	.genealogy_map + .genealogy_map::before { content: none; }
 	}
 
 .genealogy_map i {
