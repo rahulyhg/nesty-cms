@@ -156,7 +156,7 @@ function admin_bar($login=null, $entry_confirmed=null) {
 	global $slug_temp;
 	global $command_temp;
 	
-	echo "<div class='bottom_bar'>";
+	echo "<div class='bottom_bar background_2'>";
 
 	echo "<span class='button float_left'></span>";
 	
