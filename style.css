@@ -262,7 +262,7 @@ div.login button {
 	bottom: 0;
 	left: 0; }
 
-.bottom_bar button, .bottom_bar .button { font-size: 24px; }
+.bottom_bar button, .bottom_bar .button { font-size: 24px; rgba(255,255,255,0.95); }
 
 .float_right {
 	float: right; }
@@ -302,7 +302,7 @@ article .material-icons {
 	vertical-align: middle; }
 
 span.menu_button {
-	z-index: 88888888888;
+	z-index: 8888888;
 	position: fixed;
 	width: 60px;
 	height: 50px;
@@ -310,7 +310,7 @@ span.menu_button {
 	line-height: 40px;
 	border-radius: 4px 4px 0 0;
 	box-shadow: 0 -3px 20px -5px rgba(40,40,40,0.35);
-	color: #fff;
+	color: rgba(255,255,255,0.95);
 	padding: 10px 0 0 0;
 	text-align: center;
 	margin: 0 auto;
