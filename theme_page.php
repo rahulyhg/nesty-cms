@@ -106,7 +106,7 @@ if (!(empty($page_confirmed['popover']))):
 echo "</amp-sidebar>";
 
 if (!(empty($genealogy_map))):
-	$genealogy_map = shuffle($genealogy_map);
+	shuffle($genealogy_map);
 	echo "<div class='genealogy_map' amp-fx='parallax' data-parallax-factor='1.3'>";
 	echo "<i>Relatives</i>";
 	$count_temp = 0;
