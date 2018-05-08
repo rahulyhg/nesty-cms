@@ -113,7 +113,7 @@ if (!(empty($genealogy_map))):
 	foreach ($genealogy_map as $entry_id):
 		if ($entry_id == $page_temp): continue; endif;
 		echo "<span><a href='/$entry_id/'>".$pages_array[$entry_id]['header']."</a></span>";
-		$count_temp++; if ($count_temp > 4): break; endif;
+		$count_temp++; if ($count_temp >= 4): break; endif;
 		endforeach;
 	echo "</div>";
 	endif;
