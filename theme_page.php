@@ -111,7 +111,7 @@ echo "</amp-sidebar>";
 
 if (!(empty($genealogy_map))):
 	shuffle($genealogy_map);
-	echo "<div class='genealogy_map'>";
+	echo "<div class='genealogy_map' amp-fx='parallax' data-parallax-factor='1.5'>";
 	echo "<i>Related Pages</i>";
 	$count_temp = 0;
 	foreach ($genealogy_map as $entry_id):
