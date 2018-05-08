@@ -192,7 +192,7 @@ button:hover, .button:hover {
 	margin: 0 20px 20px;
 	font-family: 'Courier';
 	font-size: 14px;
-	line-height: 20px;
+	line-height: 19px;
 	position: relative; }
 
 .genealogy_map, .genealogy_map a {
@@ -212,16 +212,13 @@ button:hover, .button:hover {
 	.genealogy_map + .genealogy_map::before { content: none; }
 	}
 
-.genealogy_map i {
+.genealogy_map i, .genealogy_map span {
 	font-style: normal;
 	display: block;
 	padding: 0;
-	margin: 8px 13px; }	
+	margin: 9px 13px; }
 
 .genealogy_map span {
-	display: block;
-	padding: 0;
-	margin: 8px 13px;
 	font-weight: 700; }
 
 div.login {
