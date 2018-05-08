@@ -212,13 +212,7 @@ function admin_bar($login=null, $entry_confirmed=null) {
 		echo "<a href='/".$entry_confirmed['page_id']."/*/' class='material-icons button float_right'>lock</a>";
 		endif;
 
-	echo "</div>";
-	if ($menu_temp == "yes"):
-		echo "<amp-sidebar id='popover' layout='nodisplay' side='right'>";
-		echo "<span class='sidebar-big float-top'><a href='#'># top</a></span>";
-		if (!(empty($entry_confirmed['popover']))): echo $entry_confirmed['popover']; endif;
-		echo "</amp-sidebar>"; endif;
-		$search_temp = "yes"; }
+	echo "</div>"; }
 
 
 function footer() {
