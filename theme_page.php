@@ -61,7 +61,7 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 
 	echo "<article><div vocab='http://schema.org/' typeof='Article'>";
 
-	echo "<header amp-fx='parallax' data-parallax-factor='1.2'>";
+	echo "<header amp-fx='parallax' data-parallax-factor='1.3'>";
 	echo "<h1 property='name' amp-fx='parallax' data-parallax-factor='1.05'>".$page_confirmed[$page_temp]['header']."</h1></header>";
 
 
@@ -84,7 +84,7 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 		$siblings = array_diff($siblings, [$page_temp]);
 
 		if (!(empty($siblings))):
-			echo "<div class='genealogy_map' amp-fx='parallax' data-parallax-factor='1.3'>";
+			echo "<div class='genealogy_map' amp-fx='parallax' data-parallax-factor='1.2'>";
 			$plural_temp = null; if (count($siblings) > 1): $plural_temp = "s"; endif;
 			echo "<i>sibling".$plural_temp."</i>";
 			foreach ($siblings as $sibling_id):
@@ -95,7 +95,7 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 			endif;
 
 		if (!(empty($children))):
-			echo "<div class='genealogy_map' amp-fx='parallax' data-parallax-factor='1.3'>";
+			echo "<div class='genealogy_map' amp-fx='parallax' data-parallax-factor='1.2'>";
 			$plural_temp = null; if (count($children) > 1): $plural_temp = "s"; endif;
 			echo "<i>subpage".$plural_temp."</i>";
 			foreach ($children as $child_id):
