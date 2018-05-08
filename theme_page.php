@@ -110,7 +110,7 @@ if (!(empty($genealogy_map))):
 	echo "<div class='genealogy_map' amp-fx='parallax' data-parallax-factor='1.3'>";
 	echo "<i>Relatives</i>";
 	$count_temp = 0;
-	foreach ($children as $entry_id):
+	foreach ($genealogy_map as $entry_id):
 		if ($entry_id == $page_temp): continue; endif;
 		echo "<span><a href='/$entry_id/'>".$pages_array[$entry_id]['header']."</a></span>";
 		$count_temp++; if ($count_temp > 4): break; endif;
