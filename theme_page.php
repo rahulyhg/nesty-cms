@@ -73,7 +73,7 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 if (!(empty($children)) || !(empty($parents))):
 
 	if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
-		echo "<details amp-fx='parallax' data-parallax-factor='1.3'>";
+		echo "<details amp-fx='parallax' data-parallax-factor='1.3' class='nesting'>";
 		echo "<summary>view nesting</summary>";
 		endif;
 
