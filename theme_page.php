@@ -55,14 +55,41 @@ if (!(empty($citations))):
 		endforeach;
 	endif;
 
-$genealogy_map = [];
-$parents = array_intersect(array_keys($pages_array), $parents);
-$children = array_intersect(array_keys($pages_array), $children);
 
-echo "<amp-sidebar id='genealogy' layout='nodisplay' side='right'>";
+echo "<article><div vocab='http://schema.org/' typeof='Article'>";
 
-$parent_count = $sibling_count = $child_count =  0;
+echo "<header amp-fx='parallax' data-parallax-factor='1.2'>";
+echo "<h1 property='name'>".$page_confirmed[$page_temp]['header']."</h1></header>";
+
+
+if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
+
+	echo "<details>";
+	echo "<summary>by <span property='author'>Levi Clancy</span> for <span property='publisher'>$publisher</span></summary>";
+	echo "<div>published <time datetime='".$page_confirmed[$page_temp]['created_time']."' property='datePublished'>".date("l jS F, o", strtotime($page_confirmed[$page_temp]['created_time']))."</time></div>";
+	if ($page_confirmed[$page_temp]['created_time'] !== $page_confirmed[$page_temp]['updated_time']):
+		echo "<div>updated <time datetime='".$page_confirmed[$page_temp]['updated_time']."' property='dateModified'>".date("jS F, o", strtotime($page_confirmed[$page_temp]['updated_time']))."</time></div>";
+		endif;
+	echo "</details>";
+
+	if (!(empty($page_confirmed['popover']))):
+		echo "<details>";
+		echo "<summary>view contents</summary>";
+		echo $page_confirmed['popover'];
+		echo "</details>";
+		endif;
+
+	endif;
+
 if (!(empty($children)) || !(empty($parents))):
+
+	if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
+		echo "<details>";
+		echo "<summary>view nesting</summary>";
+		endif;
+
+	$parents = array_intersect(array_keys($pages_array), $parents);
+	$children = array_intersect(array_keys($pages_array), $children);
 
 	if (!(empty($parents))):
 		$plural_temp = null; if (count($parents) > 1): $plural_temp = "s"; endif;
@@ -71,10 +98,8 @@ if (!(empty($children)) || !(empty($parents))):
 			if ($parent_id == $page_temp): continue; endif;
 			echo "<li><a href='/$parent_id/'>".$pages_array[$parent_id]['header']."</a></li>";
 			if (!(empty($siblings_temp[$parent_id]))): $siblings = array_merge($siblings, $siblings_temp[$parent_id]); endif;
-			$parent_count++;
 			endforeach;
 		echo "</ul>";
-		$parent_count = number_format($parent_count)." sibling".$plural_temp;
 		$genealogy_map = array_merge($genealogy_map, $parents);
 		endif;
 
@@ -87,10 +112,8 @@ if (!(empty($children)) || !(empty($parents))):
 		foreach ($siblings as $sibling_id):
 			if ($sibling_id == $page_temp): continue; endif;
 			echo "<li><a href='/$sibling_id/'>".$pages_array[$sibling_id]['header']."</a></li>";
-			$sibling_count++;
 			endforeach;
 		echo "</ul>";
-		$sibling_count = number_format($sibling_count)." sibling".$plural_temp;
 		$genealogy_map = array_merge($genealogy_map, $siblings);
 		endif;
 
@@ -100,57 +123,20 @@ if (!(empty($children)) || !(empty($parents))):
 		foreach ($children as $child_id):
 			if ($child_id == $page_temp): continue; endif;
 			echo "<li><a href='/$child_id/'>".$pages_array[$child_id]['header']."</a></li>";
-			$child_count++;
 			endforeach;
 		echo "</ul>";
-		$child_count = number_format($child_count)." subpage".$plural_temp;
 		$genealogy_map = array_merge($genealogy_map, $children);
 		endif;
 
-	endif;
+	if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
+		echo "</details>";
+		endif;
 
-echo "</amp-sidebar>";
-
-if (!(empty($page_confirmed['popover']))):
-	echo "<amp-sidebar id='popover' layout='nodisplay' side='right'>";
-	echo "<i>Index</i>";
-	echo $page_confirmed['popover'];
-	echo "</amp-sidebar>";
 	endif;
 
 
 if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 
-	echo "<article><div vocab='http://schema.org/' typeof='Article'>";
-
-	echo "<header amp-fx='parallax' data-parallax-factor='1.2'>";
-	echo "<h1 property='name'>".$page_confirmed[$page_temp]['header']."</h1></header>";
-
-	echo "<details>";
-	echo "<summary>by <span property='author'>Levi Clancy</span> for <span property='publisher'>$publisher</span></summary>";
-	echo "<div>published <time datetime='".$page_confirmed[$page_temp]['created_time']."' property='datePublished'>".date("l jS F, o", strtotime($page_confirmed[$page_temp]['created_time']))."</time></div>";
-	if ($page_confirmed[$page_temp]['created_time'] !== $page_confirmed[$page_temp]['updated_time']):
-		echo "<div>updated <time datetime='".$page_confirmed[$page_temp]['updated_time']."' property='dateModified'>".date("jS F, o", strtotime($page_confirmed[$page_temp]['updated_time']))."</time></div>";
-		endif;
-	echo "</details>";
-
-	echo "<nav>";
-
-	if (!(empty($page_confirmed['popover']))):
-		echo "<button on='tap:popover.toggle' role='button'>view contents</button>";
-		endif;
-
-	$genealogy_temp = [];
-	if (!(empty($parent_count))): $genealogy_temp[] = $parent_count; endif;
-	if (!(empty($sibling_count))): $genealogy_temp[] = $sibling_count; endif;
-	if (!(empty($child_count))): $genealogy_temp[] = $child_count; endif;
-	if (!(empty($genealogy_temp))):
-		echo "<button on='tap:genealogy.toggle' role='button'>view ".implode(", ", $genealogy_temp)."</button>";
-		endif;
-
-	echo "</nav>";
-
-//	echo "<span property='headline'><h6>".$page_confirmed[$page_temp]['headline']."</h6></span>";
 	echo "<span property='articleBody'>";
 	if (!(empty($page_confirmed[$page_temp]['body']))):
 		echo $page_confirmed[$page_temp]['body'];
@@ -170,9 +156,9 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 		endif;
 	echo "</span>";
 
-	echo "</div></article>";
-
 	endif;
+
+echo "</div></article>";
 
 if (!(empty($genealogy_map))):
 	shuffle($genealogy_map);
