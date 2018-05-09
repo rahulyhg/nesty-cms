@@ -61,31 +61,36 @@ echo "<article><div vocab='http://schema.org/' typeof='Article'>";
 echo "<header amp-fx='parallax' data-parallax-factor='1.2'>";
 echo "<h1 property='name'>".$page_confirmed[$page_temp]['header']."</h1></header>";
 
+if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
+	echo "<p>by <span property='author'>Levi Clancy</span> for <span property='publisher'>$publisher</span>";
+	echo "<br>published <time datetime='".$page_confirmed[$page_temp]['created_time']."' property='datePublished'>".date("l jS F, o", strtotime($page_confirmed[$page_temp]['created_time']))."</time></p>";
+	if ($page_confirmed[$page_temp]['created_time'] !== $page_confirmed[$page_temp]['updated_time']):
+		echo "<br>updated <time datetime='".$page_confirmed[$page_temp]['updated_time']."' property='dateModified'>".date("jS F, o", strtotime($page_confirmed[$page_temp]['updated_time']))."</time>";
+		endif;
+	echo "</p>";
+	endif;
+
 if (!(empty($children)) || !(empty($parents))):
 
 	if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
-		echo "<p>by <span property='author'>Levi Clancy</span> for <span property='publisher'>$publisher</span>";
-		echo "<br>published <time datetime='".$page_confirmed[$page_temp]['created_time']."' property='datePublished'>".date("l jS F, o", strtotime($page_confirmed[$page_temp]['created_time']))."</time></p>";
-		if ($page_confirmed[$page_temp]['created_time'] !== $page_confirmed[$page_temp]['updated_time']):
-			echo "<br>updated <time datetime='".$page_confirmed[$page_temp]['updated_time']."' property='dateModified'>".date("jS F, o", strtotime($page_confirmed[$page_temp]['updated_time']))."</time>";
-			endif;
-		echo "</p>";
-		echo "<details>";
+		echo "<details amp-fx='parallax' data-parallax-factor='1.3'>";
 		echo "<summary>view nesting</summary>";
 		endif;
 
 	$parents = array_intersect(array_keys($pages_array), $parents);
 	$children = array_intersect(array_keys($pages_array), $children);
 
+	echo "<ul>";
+
 	if (!(empty($parents))):
 		$plural_temp = null; if (count($parents) > 1): $plural_temp = "s"; endif;
-		echo "Parent".$plural_temp."<ul>";
+		echo "<li>Parent".$plural_temp."<ul>";
 		foreach ($parents as $parent_id):
 			if ($parent_id == $page_temp): continue; endif;
 			echo "<li><a href='/$parent_id/'>".$pages_array[$parent_id]['header']."</a></li>";
 			if (!(empty($siblings_temp[$parent_id]))): $siblings = array_merge($siblings, $siblings_temp[$parent_id]); endif;
 			endforeach;
-		echo "</ul>";
+		echo "</ul></li>";
 		$genealogy_map = array_merge($genealogy_map, $parents);
 		endif;
 
@@ -94,25 +99,27 @@ if (!(empty($children)) || !(empty($parents))):
 
 	if (!(empty($siblings))):
 		$plural_temp = null; if (count($siblings) > 1): $plural_temp = "s"; endif;
-		echo "Sibling".$plural_temp."<ul>";
+		echo "<li>Sibling".$plural_temp."<ul>";
 		foreach ($siblings as $sibling_id):
 			if ($sibling_id == $page_temp): continue; endif;
 			echo "<li><a href='/$sibling_id/'>".$pages_array[$sibling_id]['header']."</a></li>";
 			endforeach;
-		echo "</ul>";
+		echo "</ul></li>";
 		$genealogy_map = array_merge($genealogy_map, $siblings);
 		endif;
 
 	if (!(empty($children))):
 		$plural_temp = null; if (count($children) > 1): $plural_temp = "s"; endif;
-		echo "Subpage".$plural_temp."<ul>";
+		echo "<li>Subpage".$plural_temp."<ul>";
 		foreach ($children as $child_id):
 			if ($child_id == $page_temp): continue; endif;
 			echo "<li><a href='/$child_id/'>".$pages_array[$child_id]['header']."</a></li>";
 			endforeach;
-		echo "</ul>";
+		echo "</ul></li>";
 		$genealogy_map = array_merge($genealogy_map, $children);
 		endif;
+
+	echo "</ul>";
 
 	if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 		echo "</details>";
