@@ -148,7 +148,7 @@ if (!(empty($cookie_code)) && !(empty($login))):
 	$update_cookie->execute($values_temp);
 	$result = execute_checkup($update_cookie->errorInfo(), "creating login cookie");
 	if ($result == "failure"): $login = null;
-	else: setcookie("cookie", $new_cookie, time()+86400, '/'); endif; endif;
+	else: setcookie("cookie", $new_cookie, time()+86400, '/'); endif;
 	endif;
 
 if (in_array($page_temp, ["account", "two-factor", "settings", "security", "supervisor", "new", "add"]) && empty($login)):
