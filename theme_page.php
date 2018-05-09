@@ -63,7 +63,8 @@ echo "<h1 property='name' amp-fx='parallax' data-parallax-factor='1.2'>";
 echo $page_confirmed[$page_temp]['header']."</h1></header>";
 
 if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
-	echo "<p amp-fx='parallax' data-parallax-factor='1.4'>by <span property='author'>Levi Clancy</span> for <span property='publisher'>$publisher</span>";
+	echo "<p amp-fx='parallax' data-parallax-factor='1.4' class='nesting-or-popover'>";
+	echo "by <span property='author'>Levi Clancy</span> for <span property='publisher'>$publisher</span>";
 	echo "<br>published <time datetime='".$page_confirmed[$page_temp]['created_time']."' property='datePublished'>".date("l jS F, o", strtotime($page_confirmed[$page_temp]['created_time']))."</time>";
 	if ($page_confirmed[$page_temp]['created_time'] !== $page_confirmed[$page_temp]['updated_time']):
 		echo "<br>updated <time datetime='".$page_confirmed[$page_temp]['updated_time']."' property='dateModified'>".date("jS F, o", strtotime($page_confirmed[$page_temp]['updated_time']))."</time>";
