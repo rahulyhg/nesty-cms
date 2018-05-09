@@ -56,6 +56,8 @@ if (!(empty($_POST['checkpoint_email']))):
 		setcookie("cookie", null, time()-1000, '/');
 		permanent_redirect("https://".$domain."/account/"); endif;
 
+	echo "ok"; exit;
+
 	$_POST['checkpoint_email'] = strtolower($_POST['checkpoint_email']);
 
 	$magic_code = random_code(10);
@@ -63,7 +65,7 @@ if (!(empty($_POST['checkpoint_email']))):
 	setcookie("cookie", null, time()-8000, '/');
 
 	$values_temp = [
-		"user_id"=>$login['user_id'],
+		"email"=>$_POST['checkpoint_email'],
 		"magic_code"=>$magic_code,
 		"magic_time"=>time() ];
 	$sql_temp = sql_setup($values_temp, "$database.users");
