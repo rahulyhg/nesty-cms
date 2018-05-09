@@ -22,8 +22,8 @@ foreach ($result as $row):
 
 	endforeach;
 
+
 amp_header($page_confirmed[$page_temp]['header'], $domain.$proper_uri);
-admin_bar($login,$page_confirmed[$page_temp]);
 
 
 $parents = $siblings_temp = $siblings = $children = $gallery = $citations = [];
@@ -59,8 +59,9 @@ $genealogy_map = [];
 $parents = array_intersect(array_keys($pages_array), $parents);
 $children = array_intersect(array_keys($pages_array), $children);
 
-echo "<amp-sidebar id='popover' layout='nodisplay' side='right'>";
+echo "<amp-sidebar id='genealogy' layout='nodisplay' side='right'>";
 
+$parent_count = $sibling_count = $child_count =  0;
 if (!(empty($children)) || !(empty($parents))):
 
 	if (!(empty($parents))):
@@ -70,8 +71,10 @@ if (!(empty($children)) || !(empty($parents))):
 			if ($parent_id == $page_temp): continue; endif;
 			echo "<li><a href='/$parent_id/'>".$pages_array[$parent_id]['header']."</a></li>";
 			if (!(empty($siblings_temp[$parent_id]))): $siblings = array_merge($siblings, $siblings_temp[$parent_id]); endif;
+			$parent_count++;
 			endforeach;
 		echo "</ul>";
+		$parent_count = number_format($parent_count)." sibling".$plural_temp;
 		$genealogy_map = array_merge($genealogy_map, $parents);
 		endif;
 
@@ -84,8 +87,10 @@ if (!(empty($children)) || !(empty($parents))):
 		foreach ($siblings as $sibling_id):
 			if ($sibling_id == $page_temp): continue; endif;
 			echo "<li><a href='/$sibling_id/'>".$pages_array[$sibling_id]['header']."</a></li>";
+			$sibling_count++;
 			endforeach;
 		echo "</ul>";
+		$sibling_count = number_format($sibling_count)." sibling".$plural_temp;
 		$genealogy_map = array_merge($genealogy_map, $siblings);
 		endif;
 
@@ -95,23 +100,24 @@ if (!(empty($children)) || !(empty($parents))):
 		foreach ($children as $child_id):
 			if ($child_id == $page_temp): continue; endif;
 			echo "<li><a href='/$child_id/'>".$pages_array[$child_id]['header']."</a></li>";
+			$child_count++;
 			endforeach;
 		echo "</ul>";
+		$child_count = number_format($child_count)." subpage".$plural_temp;
 		$genealogy_map = array_merge($genealogy_map, $children);
 		endif;
 
 	endif;
 
-if (!(empty($page_confirmed['popover']))):
-	echo "<i>Index</i>";
-	echo $page_confirmed['popover'];
-	endif;
-
 echo "</amp-sidebar>";
 
-echo "<span on='tap:popover.toggle' role='button' class='material-icons menu_button background_2'>menu</span>";
+if (!(empty($page_confirmed['popover']))):
+	echo "<amp-sidebar id='popover' layout='nodisplay' side='right'>";
+	echo "<i>Index</i>";
+	echo $page_confirmed['popover'];
+	echo "</amp-sidebar>";
+	endif;
 
-echo "<span class='button' data-parallax-factor='1.3'>".$publisher."</span>";
 
 if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 
@@ -119,6 +125,18 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 
 	echo "<header amp-fx='parallax' data-parallax-factor='1.2'>";
 	echo "<h1 property='name'>".$page_confirmed[$page_temp]['header']."</h1></header>";
+
+	if (!(empty($page_confirmed['popover']))):
+		echo "<button on='tap:popover.toggle' role='button' class='material-icons background_2'>view contents</button>";
+		endif;
+
+	$genealogy_temp = [];
+	if (!(empty($parent_count))): $genealogy_temp[] = $parent_count; endif;
+	if (!(empty($sibling_count))): $genealogy_temp[] = $sibling_count; endif;
+	if (!(empty($child_count))): $genealogy_temp[] = $child_count; endif;
+	if (!(empty($genealogy_temp))):
+		echo "<button on='tap:popover.toggle' role='button' class='material-icons background_2'>view ".implode(", ", $genealogy_temp)."</button>";
+		endif;
 
 //	echo "<span property='headline'><h6>".$page_confirmed[$page_temp]['headline']."</h6></span>";
 	echo "<span property='articleBody'>";
