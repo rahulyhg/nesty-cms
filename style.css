@@ -207,7 +207,8 @@ div.login button {
 .float_left {
 	float: left; }
 
-.nesting-or-popover, .nesting-or-popover summary {
+.nesting-or-popover, .nesting-or-popover summary,
+.nesting-or-popover ul, .nesting-or-popover ol {
 	font-size: 18px;
 	line-height: 22px; }
 
