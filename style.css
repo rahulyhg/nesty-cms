@@ -19,27 +19,6 @@ header h1 {
 	header h1 { font-size: 38px; line-height: 42px; }
 	}
 
-footer {
-	clear: both;
-	display: block;
-	width: 100%;
-	text-align: center;
-	margin: 100px 0; }
-
-footer div {
-	color: rgba(0,0,0,0.5);
-	font-family: Courier;
-	font-style: italic;
-	font-weight: 400;
-	font-size: 17px;
-	display: inline-block;
-	margin: 0 15px; }
-
-footer div span, footer div time {
-	color: rgba(0,0,0,1);
-	padding-left: 10px;
-	font-style: normal; }
-
 .footer_spacer {
 	height: 100px;
 	display: block; }
@@ -228,12 +207,19 @@ div.login button {
 .float_left {
 	float: left; }
 
+.nesting-or-popover {
+	font-family: Calibri;
+	}
+
 .nesting-or-popover li {
-	font-size: 16px;
-	line-height: 19px; }
+	font-size: 17px;
+	line-height: 20px; }
+
+.nesting-or-popover li::before {
+	width: 10px; }
 
 .nesting-or-popover ul > li {
-	padding: 3px 0 5px 20px; }
+	padding: 3px 0 5px 15px; }
 
 .nesting-or-popover ul > li:last-child {
 	padding-bottom: 13px; }
