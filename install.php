@@ -18,7 +18,19 @@ $result = execute_checkup($run_statement->errorInfo(), "creating database", "ful
 $connection_pdo = new PDO("mysql:host=$server;dbname=$database;charset=utf8mb4", $username, $password);
 
 // create users table
-$sql_temp = "CREATE TABLE IF NOT EXISTS $database.users (`user_id` VARCHAR(100), `status` VARCHAR(100), `email` VARCHAR(100), `name` VARCHAR(100), `hash` VARCHAR(400), `authenticator` VARCHAR(100), `cookie` VARCHAR(100),  timestamp TIMESTAMP, PRIMARY KEY (`user_id`)) DEFAULT CHARSET=utf8mb4;";
+$table_temp = [
+	"`user_id` VARCHAR(100)",
+	"`status` VARCHAR(100)",
+	"`email` VARCHAR(100)",
+	"`name` VARCHAR(100)",
+	"`magic_code` VARCHAR(50)",
+	"`cookie_code` VARCHAR(400)",
+
+	"`hash` VARCHAR(400)",
+	"`authenticator` VARCHAR(100)",
+	"`cookie` VARCHAR(100)" ];
+
+$sql_temp = "CREATE TABLE IF NOT EXISTS $database.users (".implode(", ", $table_temp).",  timestamp TIMESTAMP, PRIMARY KEY (`user_id`)) DEFAULT CHARSET=utf8mb4;";
 $run_statement = $connection_pdo->prepare($sql_temp);
 $run_statement->execute();
 $result = execute_checkup($run_statement->errorInfo(), "creating users table", "full");
