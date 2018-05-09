@@ -24,7 +24,9 @@ $table_temp = [
 	"`email` VARCHAR(100)",
 	"`name` VARCHAR(100)",
 	"`magic_code` VARCHAR(50)",
+	"`magic_time` VARCHAR(50)",
 	"`cookie_code` VARCHAR(400)",
+	"`cookie_time` VARCHAR(50)",
 
 	"`hash` VARCHAR(400)",
 	"`authenticator` VARCHAR(100)",
