@@ -207,18 +207,16 @@ div.login button {
 .float_left {
 	float: left; }
 
-.nesting-or-popover {
-	font-family: Calibri; }
+.nesting-or-popover, .nesting-or-popover summary {
+	font-family: Calibri;
+	font-size: 18px;
+	line-height: 22px; }
 
 .nesting-or-popover ul ul,
 .nesting-or-popover ol ol,
 .nesting-or-popover ul ol,
 .nesting-or-popover ol ul {
 	margin: 5px 0 0 0; }
-
-.nesting-or-popover, .nesting-or-popover summary {
-	font-size: 17px;
-	line-height: 20px; }
 
 .nesting-or-popover li::before {
 	width: 10px; }
