@@ -137,7 +137,7 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 	echo "<nav>";
 
 	if (!(empty($page_confirmed['popover']))):
-		echo "<button on='tap:popover.toggle' role='button' class='material-icons background_2'>view contents</button>";
+		echo "<button on='tap:popover.toggle' role='button'>view contents</button>";
 		endif;
 
 	$genealogy_temp = [];
@@ -145,7 +145,7 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 	if (!(empty($sibling_count))): $genealogy_temp[] = $sibling_count; endif;
 	if (!(empty($child_count))): $genealogy_temp[] = $child_count; endif;
 	if (!(empty($genealogy_temp))):
-		echo "<button on='tap:popover.toggle' role='button' class='material-icons background_2'>view ".implode(", ", $genealogy_temp)."</button>";
+		echo "<button on='tap:genealogy.toggle' role='button'>view ".implode(", ", $genealogy_temp)."</button>";
 		endif;
 
 	echo "</nav>";
