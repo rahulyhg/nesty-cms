@@ -216,7 +216,7 @@ div.login button {
 .nesting-or-popover ol ul {
 	margin: 5px 0 0 0; }
 
-.nesting-or-popover li {
+.nesting-or-popover {
 	font-size: 17px;
 	line-height: 20px; }
 
