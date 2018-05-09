@@ -73,12 +73,12 @@ if (!(empty($_POST['checkpoint_email']))):
 	$result = execute_checkup($update_magic->errorInfo(), "creating login magic");
 	if ($result == "failure"): permanent_redirect("https://".$domain."/account/"); endif;
 
-	mail(
-		$_POST['checkpoint_email'],
-		"Log Into ".$publisher,
-		"Your login link is valid for ten minute: \n\n https://".$domain."/open/".$magic_code,
-		"From: no-reply@".$domain."\r\nReply-To: no-reply@".$domain."\r\nX-Mailer: PHP/".phpversion()
-		);
+	$message_temp = "Your login link is valid for ten minutes: \n\n https://".$domain."/open/".$magic_code;
+
+	$header_temp = "From: no-reply@".$domain."\r\n";
+	$header_temp .= "Reply-To: no-reply@".$domain."\r\n";
+
+	mail($_POST['checkpoint_email'], "Log Into ".$publisher, $message_temp, $header_temp);
 
 	echo "ok3"; exit;
 
