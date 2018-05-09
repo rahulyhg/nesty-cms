@@ -126,6 +126,16 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 	echo "<header amp-fx='parallax' data-parallax-factor='1.2'>";
 	echo "<h1 property='name'>".$page_confirmed[$page_temp]['header']."</h1></header>";
 
+	echo "<details>";
+	echo "<summary>by <span property='author'>Levi Clancy</span> for <span property='publisher'>$publisher</span></summary>";
+	echo "<div>published <time datetime='".$page_confirmed[$page_temp]['created_time']."' property='datePublished'>".date("l jS F, o", strtotime($page_confirmed[$page_temp]['created_time']))."</time></div>";
+	if ($page_confirmed[$page_temp]['created_time'] !== $page_confirmed[$page_temp]['updated_time']):
+		echo "<div>updated <time datetime='".$page_confirmed[$page_temp]['updated_time']."' property='dateModified'>".date("jS F, o", strtotime($page_confirmed[$page_temp]['updated_time']))."</time></div>";
+		endif;
+	echo "</details>";
+
+	echo "<nav>";
+
 	if (!(empty($page_confirmed['popover']))):
 		echo "<button on='tap:popover.toggle' role='button' class='material-icons background_2'>view contents</button>";
 		endif;
@@ -137,6 +147,8 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 	if (!(empty($genealogy_temp))):
 		echo "<button on='tap:popover.toggle' role='button' class='material-icons background_2'>view ".implode(", ", $genealogy_temp)."</button>";
 		endif;
+
+	echo "</nav>";
 
 //	echo "<span property='headline'><h6>".$page_confirmed[$page_temp]['headline']."</h6></span>";
 	echo "<span property='articleBody'>";
@@ -157,15 +169,6 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 			endforeach;
 		endif;
 	echo "</span>";
-
-	echo "<footer>";
-	echo "<div>by <span property='author'>Levi Clancy</span></div>";
-	echo "<div>for <span property='publisher'>$publisher</span></div><br>";
-	echo "<div>published <time datetime='".$page_confirmed[$page_temp]['created_time']."' property='datePublished'>".date("l jS F, o", strtotime($page_confirmed[$page_temp]['created_time']))."</time></div>";
-	if ($page_confirmed[$page_temp]['created_time'] !== $page_confirmed[$page_temp]['updated_time']):
-		echo "<br><div>updated <time datetime='".$page_confirmed[$page_temp]['updated_time']."' property='dateModified'>".date("jS F, o", strtotime($page_confirmed[$page_temp]['updated_time']))."</time></div>";
-		endif;
-	echo "</footer>";
 
 	echo "</div></article>";
 
