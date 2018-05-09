@@ -130,7 +130,11 @@ function amp_header($title=null, $canonical=null) {
 		endif;
 
 	// if there is no need for a search header
-	if (array_intersect([$slug_temp, $page_temp], ["new", "edit", "account"])): return; endif;
+//	if (array_intersect([$slug_temp, $page_temp], ["new", "edit", "account"])): return; endif;
+	
+//	echo "<div class='navigation' data-parallax-factor='1.3'>";
+		
+	return;	
 	
 	// here is the search header
 	$search_value = null;
