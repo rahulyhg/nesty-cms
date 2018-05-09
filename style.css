@@ -170,29 +170,6 @@ button:hover, .button:hover {
 #schedule sup::after {
 	content: ')'; }
 
-.genealogy_map {
-	width: auto;
-	max-width: none;
-	display: block;
-	text-align: center;
-	margin: 20px;
-	font-family: 'Courier';
-	font-size: 14px;
-	line-height: 19px; }
-
-.genealogy_map, .genealogy_map a {
-	color: rgba(0,0,0,.7); }
-
-.genealogy_map i, .genealogy_map span {
-	font-style: normal;
-	display: block;
-	padding: 0;
-	margin: 9px 20px; }
-
-.genealogy_map span {
-	display: inline-block;
-	font-weight: 700; }
-
 div.login {
 	margin: 100px auto 20px;
 	padding: 0;
@@ -251,12 +228,9 @@ div.login button {
 .float_left {
 	float: left; }
 
-.nesting-or-popover > ul, .nesting-or-popover > ol {
-	margin: 10px 0; }
-
 .nesting-or-popover li {
-	font-size: 14px;
-	line-height: 18px; }
+	font-size: 16px;
+	line-height: 19px; }
 
 .nesting-or-popover ul > li {
 	padding: 3px 0 5px 20px; }
