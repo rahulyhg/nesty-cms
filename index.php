@@ -110,7 +110,7 @@ foreach ($connection_pdo->query("SELECT * FROM $database.users") as $row):
 	if (empty($_COOKIE['cookie'])): continue; endif;
 
 	// new login
-	if ( empty($_COOKIE['cookie']) &&  ($page_temp == "open) && ($row['magic_code'] == $magic_code) ):
+	if ( empty($_COOKIE['cookie']) && ($page_temp == "open") && ($row['magic_code'] == $magic_code) ):
 	
 		if ($row['magic_time'] < time("-5 minutes")):		
 			permanent_redirect("https://".$domain."/account/");
