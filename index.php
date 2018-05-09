@@ -64,7 +64,7 @@ if (!(empty($_POST['checkpoint_email']))):
 
 	$values_temp = [
 		"user_id"=>$login['user_id'],
-		"magic_code"=>$magic_code
+		"magic_code"=>$magic_code,
 		"magic_time"=>time() ];
 	$sql_temp = sql_setup($values_temp, "$database.users");
 	$update_magic = $connection_pdo->prepare($sql_temp);
