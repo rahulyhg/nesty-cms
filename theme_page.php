@@ -61,29 +61,14 @@ echo "<article><div vocab='http://schema.org/' typeof='Article'>";
 echo "<header amp-fx='parallax' data-parallax-factor='1.2'>";
 echo "<h1 property='name'>".$page_confirmed[$page_temp]['header']."</h1></header>";
 
-
-if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
-
-	echo "<details>";
-	echo "<summary>by <span property='author'>Levi Clancy</span> for <span property='publisher'>$publisher</span></summary>";
-	echo "<div>published <time datetime='".$page_confirmed[$page_temp]['created_time']."' property='datePublished'>".date("l jS F, o", strtotime($page_confirmed[$page_temp]['created_time']))."</time></div>";
-	if ($page_confirmed[$page_temp]['created_time'] !== $page_confirmed[$page_temp]['updated_time']):
-		echo "<div>updated <time datetime='".$page_confirmed[$page_temp]['updated_time']."' property='dateModified'>".date("jS F, o", strtotime($page_confirmed[$page_temp]['updated_time']))."</time></div>";
-		endif;
-	echo "</details>";
-
-	if (!(empty($page_confirmed['popover']))):
-		echo "<details>";
-		echo "<summary>view contents</summary>";
-		echo $page_confirmed['popover'];
-		echo "</details>";
-		endif;
-
-	endif;
-
 if (!(empty($children)) || !(empty($parents))):
 
 	if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
+		echo "<p>by <span property='author'>Levi Clancy</span> for <span property='publisher'>$publisher</span></p>";
+		echo "<p>published <time datetime='".$page_confirmed[$page_temp]['created_time']."' property='datePublished'>".date("l jS F, o", strtotime($page_confirmed[$page_temp]['created_time']))."</time></p>";
+		if ($page_confirmed[$page_temp]['created_time'] !== $page_confirmed[$page_temp]['updated_time']):
+			echo "<p>updated <time datetime='".$page_confirmed[$page_temp]['updated_time']."' property='dateModified'>".date("jS F, o", strtotime($page_confirmed[$page_temp]['updated_time']))."</time></p>";
+			endif;
 		echo "<details>";
 		echo "<summary>view nesting</summary>";
 		endif;
@@ -136,6 +121,13 @@ if (!(empty($children)) || !(empty($parents))):
 
 
 if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
+
+	if (!(empty($page_confirmed['popover']))):
+		echo "<details>";
+		echo "<summary>view contents</summary>";
+		echo $page_confirmed['popover'];
+		echo "</details>";
+		endif;
 
 	echo "<span property='articleBody'>";
 	if (!(empty($page_confirmed[$page_temp]['body']))):
