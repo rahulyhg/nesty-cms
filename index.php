@@ -69,7 +69,7 @@ if (!(empty($_POST['checkpoint_email']))):
 	$sql_temp = sql_setup($values_temp, "$database.users");
 	$update_magic = $connection_pdo->prepare($sql_temp);
 	$update_magic->execute($values_temp);
-	$result = execute_checkup($update_cookie->errorInfo(), "creating login magic");
+	$result = execute_checkup($update_magic->errorInfo(), "creating login magic");
 	if ($result == "failure"): permanent_redirect("https://".$domain."/account/"); endif;
 
 	mail(
