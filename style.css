@@ -211,7 +211,7 @@ div.login button {
 	font-family: Calibri; }
 
 .nesting-or-popover ul, .nesting-or-popover ol {
-	margin: 30px; }
+	margin: 5px 0 0 0; }
 
 .nesting-or-popover li {
 	font-size: 17px;
