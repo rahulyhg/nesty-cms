@@ -77,7 +77,7 @@ if (!(empty($_POST['checkpoint_email']))):
 		$_POST['checkpoint_email'],
 		"Log Into ".$publisher,
 		"Your login link is valid for ten minute: \n\n https://".$domain."/open/".$magic_code,
-		"From: no-reply@".$domain
+		"From: no-reply@".$domain."\r\nReply-To: no-reply@".$domain."\r\nX-Mailer: PHP/".phpversion()
 		);
 
 	echo "ok3"; exit;
