@@ -227,7 +227,7 @@ div.login button {
 	padding: 3px 0 5px 15px; }
 
 .nesting-or-popover ul > li:last-child {
-	padding-bottom: 13px; }
+	padding-bottom: 8px; }
 
 .nesting-or-popover ul > li::before {
 	top: 11px; }
