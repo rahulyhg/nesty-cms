@@ -64,11 +64,12 @@ echo "<h1 property='name'>".$page_confirmed[$page_temp]['header']."</h1></header
 if (!(empty($children)) || !(empty($parents))):
 
 	if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
-		echo "<p>by <span property='author'>Levi Clancy</span> for <span property='publisher'>$publisher</span></p>";
-		echo "<p>published <time datetime='".$page_confirmed[$page_temp]['created_time']."' property='datePublished'>".date("l jS F, o", strtotime($page_confirmed[$page_temp]['created_time']))."</time></p>";
+		echo "<p>by <span property='author'>Levi Clancy</span> for <span property='publisher'>$publisher</span>";
+		echo "<br>published <time datetime='".$page_confirmed[$page_temp]['created_time']."' property='datePublished'>".date("l jS F, o", strtotime($page_confirmed[$page_temp]['created_time']))."</time></p>";
 		if ($page_confirmed[$page_temp]['created_time'] !== $page_confirmed[$page_temp]['updated_time']):
-			echo "<p>updated <time datetime='".$page_confirmed[$page_temp]['updated_time']."' property='dateModified'>".date("jS F, o", strtotime($page_confirmed[$page_temp]['updated_time']))."</time></p>";
+			echo "<br>updated <time datetime='".$page_confirmed[$page_temp]['updated_time']."' property='dateModified'>".date("jS F, o", strtotime($page_confirmed[$page_temp]['updated_time']))."</time>";
 			endif;
+		echo "</p>";
 		echo "<details>";
 		echo "<summary>view nesting</summary>";
 		endif;
