@@ -118,7 +118,7 @@ foreach ($connection_pdo->query("SELECT * FROM $database.users") as $row):
 	
 		$login = $users_list[$row['user_id']];
 		$login['cookie_time'] = "logged in";
-		$login['authenticator'] = $row['authenticator'];
+//		$login['authenticator'] = $row['authenticator'];
 		$cookie_code = sha1($row['user_id'].time());
 		endif;
 
@@ -126,17 +126,17 @@ foreach ($connection_pdo->query("SELECT * FROM $database.users") as $row):
 	if ($row['cookie_code'] == $_COOKIE['cookie']):
 		$login = $users_list[$row['user_id']];
 		$login['cookie_time'] = $row['cookie_time'];
-		$login['authenticator'] = $row['authenticator'];
+//		$login['authenticator'] = $row['authenticator'];
 		endif;
 	endforeach;
 
-if (!(empty($login_hash)) && ($google_authenticator_toggle == "on")):
-	if (empty($_POST['checkpoint_authenticator']) || ($_POST['checkpoint_authenticator'] !== code_generator($login['authenticator']))):
-		$login_hash = $login = null;
-		setcookie("cookie", null, time()-8000, '/');
-		permanent_redirect("https://".$domain."/account/2/");
-		endif;
-	endif;
+// if (!(empty($login_hash)) && ($google_authenticator_toggle == "on")):
+//	if (empty($_POST['checkpoint_authenticator']) || ($_POST['checkpoint_authenticator'] !== code_generator($login['authenticator']))):
+//		$login_hash = $login = null;
+//		setcookie("cookie", null, time()-8000, '/');
+//		permanent_redirect("https://".$domain."/account/2/");
+//		endif;
+//	endif;
 
 if (!(empty($cookie_code)) && !(empty($login))):
 	$values_temp = [
