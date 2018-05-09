@@ -141,7 +141,7 @@ if (!(empty($login_hash)) && ($google_authenticator_toggle == "on")):
 if (!(empty($cookie_code)) && !(empty($login))):
 	$values_temp = [
 		"user_id"=>$login['user_id'],
-		"cookie_code"=>$cookie_code
+		"cookie_code"=>$cookie_code,
 		"cookie_time"=>time() ];
 	$sql_temp = sql_setup($values_temp, "$database.users");
 	$update_cookie = $connection_pdo->prepare($sql_temp);
