@@ -59,12 +59,6 @@ footer div span, footer div time {
 ::-webkit-input-placeholder {
 	color: rgba(100,100,100,0.7); }
 
-.popover {
-	z-index: 100000;
-	position: fixed;
-	left: 10px;
-	bottom: 10px; }
-
 select {
 	overflow-y: auto;
 	overflow-x: none;
@@ -257,31 +251,20 @@ div.login button {
 .float_left {
 	float: left; }
 
-
-amp-sidebar {
-	z-index: 99999999999;
-	position: fixed;
-	width: 300px;
-	padding: 10px;
-	background: rgba(255,255,255,1);
-	box-shadow: 0 0 25px -1px rgba(100,100,100,0.3);
-	}
-
-amp-sidebar > ul, amp-sidebar > ol {
+.nesting-or-popover > ul, .nesting-or-popover > ol {
 	margin: 10px 0; }
 
-amp-sidebar, amp-sidebar li {
-	font-family: Courier;
+.nesting-or-popover li {
 	font-size: 14px;
 	line-height: 18px; }
 
-amp-sidebar ul > li {
+.nesting-or-popover ul > li {
 	padding: 3px 0 5px 20px; }
 
-amp-sidebar ul > li:last-child {
+.nesting-or-popover ul > li:last-child {
 	padding-bottom: 13px; }
 
-amp-sidebar ul > li::before {
+.nesting-or-popover ul > li::before {
 	top: 11px; }
 
 article .material-icons {
