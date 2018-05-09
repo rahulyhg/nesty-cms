@@ -73,7 +73,7 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 if (!(empty($children)) || !(empty($parents))):
 
 	if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
-		echo "<details amp-fx='parallax' data-parallax-factor='1.3' class='nesting'>";
+		echo "<details amp-fx='parallax' data-parallax-factor='1.3' class='nesting-or-popover'>";
 		echo "<summary>view nesting</summary>";
 		endif;
 
@@ -131,7 +131,7 @@ if (!(empty($children)) || !(empty($parents))):
 if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 
 	if (!(empty($page_confirmed['popover']))):
-		echo "<details>";
+		echo "<details class='nesting-or-popover'>";
 		echo "<summary>view contents</summary>";
 		echo $page_confirmed['popover'];
 		echo "</details>";
