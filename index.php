@@ -56,8 +56,6 @@ if (!(empty($_POST['checkpoint_email']))):
 		setcookie("cookie", null, time()-1000, '/');
 		permanent_redirect("https://".$domain."/account/"); endif;
 
-	echo "ok"; exit;
-
 	$_POST['checkpoint_email'] = strtolower($_POST['checkpoint_email']);
 
 	$magic_code = random_code(10);
@@ -70,9 +68,13 @@ if (!(empty($_POST['checkpoint_email']))):
 		"magic_time"=>time() ];
 	$sql_temp = sql_setup($values_temp, "$database.users");
 	$update_magic = $connection_pdo->prepare($sql_temp);
+
+echo $sql_temp;
 	$update_magic->execute($values_temp);
 	$result = execute_checkup($update_magic->errorInfo(), "creating login magic");
 	if ($result == "failure"): permanent_redirect("https://".$domain."/account/"); endif;
+
+	echo "ok2"; exit;
 
 	mail(
 		$_POST['checkpoint_email'],
