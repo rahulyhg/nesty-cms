@@ -79,6 +79,8 @@ if (!(empty($_POST['checkpoint_email']))):
 		"From: no-reply@".$domain
 		);
 
+	echo "ok"; exit;
+
 	endif;
 
 $magic_code = $cookie_code = null;
