@@ -44,42 +44,90 @@ if ($page_temp == "logout"):
 	permanent_redirect("https://".$domain);
 	endif;
 
-$login_hash = $new_cookie = $login = null;
-if (!(empty($_POST['checkpoint_email'])) && !(empty($_POST['checkpoint_password']))):
+$new_cookie = $login = null;
+if (!(empty($_POST['checkpoint_email']))):
+
+	$post_temp = [ "secret" => $recaptcha_private, "response" => $_POST['g-recaptcha-response'], "remoteip"=> $_SERVER['REMOTE_ADDR']];
+	$opts = [ "http" => [ "method" => "POST", "header" => "Content-type: application/x-www-form-urlencoded", "content" => http_build_query($post_temp) ] ];
+	$recaptcha_result = file_get_contents("https://www.google.com/recaptcha/api/siteverify", false, stream_context_create($opts));
+	$recaptcha_result = json_decode($recaptcha_result, true);
+	if ((int)$recaptcha_result['success'] !== 1):
+		$login_hash = $_COOKIE['cookie'] = null;
+		setcookie("cookie", null, time()-1000, '/');
+		permanent_redirect("https://".$domain."/account/"); endif;
+
 	$_POST['checkpoint_email'] = strtolower($_POST['checkpoint_email']);
-	$login_hash = sha1($_POST['checkpoint_email'].$_POST['checkpoint_password']);
-	if (!(empty($recaptcha_site)) && !(empty($recaptcha_private))):
-		$post_temp = [ "secret" => $recaptcha_private, "response" => $_POST['g-recaptcha-response'], "remoteip"=> $_SERVER['REMOTE_ADDR']];
-		$opts = [ "http" => [ "method" => "POST", "header" => "Content-type: application/x-www-form-urlencoded", "content" => http_build_query($post_temp) ] ];
-		$recaptcha_result = file_get_contents("https://www.google.com/recaptcha/api/siteverify", false, stream_context_create($opts));
-		$recaptcha_result = json_decode($recaptcha_result, true);
-		if ((int)$recaptcha_result['success'] !== 1):
-			$login_hash = $_COOKIE['cookie'] = null;
-			setcookie("cookie", null, time()-1000, '/');
-			permanent_redirect("https://".$domain."/account/"); endif;
-		endif;
+
+	$magic_code = random_code(10);
+
+	setcookie("cookie", null, time()-8000, '/');
+
+	$values_temp = [
+		"user_id"=>$login['user_id'],
+		"magic_code"=>$magic_code
+		"magic_time"=>time() ];
+	$sql_temp = sql_setup($values_temp, "$database.users");
+	$update_magic = $connection_pdo->prepare($sql_temp);
+	$update_magic->execute($values_temp);
+	$result = execute_checkup($update_cookie->errorInfo(), "creating login magic");
+	if ($result == "failure"): permanent_redirect("https://".$domain."/account/"); endif;
+
+	mail(
+		$_POST['checkpoint_email'],
+		"Log Into ".$publisher,
+		"Your login link is valid for ten minute: \n\n https://".$domain."/open/".$magic_code,
+		"From: no-reply@".$domain
+		);
+
 	endif;
+
+$magic_code = $cookie_code = null;
+if ( ($page_temp == "open") && !(empty($slug_temp))):
+
+	if (!(empty($_COOKIE['cookie']))):
+
+		// or alternatively say it is invalid but don't force a logout
+
+		setcookie("cookie", null, time()-8000, '/');
+		permanent_redirect("https://".$domain."/account/");
+		endif;
+
+	$magic_code = $slug_temp;
+
+	endif;
+
+
 
 // if there is a cookie then double-check it
 $users_list = []; $admin_count = 0;
 foreach ($connection_pdo->query("SELECT * FROM $database.users") as $row):
-	$users_list[$row['user_id']] = ["user_id" => $row['user_id'], "email" => $row['email'], "name" => $row['name'], "status" => $row['status'] ];
+	$users_list[$row['user_id']] = [
+		"user_id" => $row['user_id'],
+		"email" => $row['email'],
+		"name" => $row['name'],
+		"status" => $row['status'] ];
 	if ($row['status'] == "admin"): $admin_count++; endif;
-	if (empty($_COOKIE['cookie']) && empty($login_hash)): continue; endif;
-	if (!(empty($login))): continue; endif;
+	if (empty($_COOKIE['cookie'])): continue; endif;
 
 	// new login
-	if (!(empty($login_hash)) && ($row['hash'] == $login_hash)):
+	if ( empty($_COOKIE['cookie']) &&  ($page_temp == "open) && ($row['magic_code'] == $magic_code) ):
+	
+		if ($row['magic_time'] < time("-5 minutes")):		
+			permanent_redirect("https://".$domain."/account/");
+			endif;
+	
 		$login = $users_list[$row['user_id']];
+		$login['cookie_time'] = "logged in";
 		$login['authenticator'] = $row['authenticator'];
-		$new_cookie = sha1($row['user_id'].time());
+		$cookie_code = sha1($row['user_id'].time());
 		endif;
 
 	// current login
-	if ($row['cookie'] == $_COOKIE['cookie']):
+	if ($row['cookie_code'] == $_COOKIE['cookie']):
 		$login = $users_list[$row['user_id']];
+		$login['cookie_time'] = $row['cookie_time'];
 		$login['authenticator'] = $row['authenticator'];
-		$new_cookie = $_COOKIE['cookie']; endif;
+		endif;
 	endforeach;
 
 if (!(empty($login_hash)) && ($google_authenticator_toggle == "on")):
@@ -90,21 +138,17 @@ if (!(empty($login_hash)) && ($google_authenticator_toggle == "on")):
 		endif;
 	endif;
 
-if (empty($new_cookie) && (!(empty($login_hash)) || !(empty($_COOKIE['cookie'])))):
-	setcookie("cookie", null, time()-8000, '/');
-	permanent_redirect("https://".$domain."/account/2/"); endif;
-
-if (!(empty($new_cookie)) && !(empty($login))):
-	if (!(empty($login_hash))):
-		$values_temp = [
-			"user_id"=>$login['user_id'],
-			"cookie"=>$new_cookie];
-		$sql_temp = sql_setup($values_temp, "$database.users");
-		$update_cookie = $connection_pdo->prepare($sql_temp);
-		$update_cookie->execute($values_temp);
-		$result = execute_checkup($update_cookie->errorInfo(), "creating login cookie");
-		if ($result == "failure"): $login = null;
-		else: setcookie("cookie", $new_cookie, time()+86400, '/'); endif; endif;
+if (!(empty($cookie_code)) && !(empty($login))):
+	$values_temp = [
+		"user_id"=>$login['user_id'],
+		"cookie_code"=>$cookie_code
+		"cookie_time"=>time() ];
+	$sql_temp = sql_setup($values_temp, "$database.users");
+	$update_cookie = $connection_pdo->prepare($sql_temp);
+	$update_cookie->execute($values_temp);
+	$result = execute_checkup($update_cookie->errorInfo(), "creating login cookie");
+	if ($result == "failure"): $login = null;
+	else: setcookie("cookie", $new_cookie, time()+86400, '/'); endif; endif;
 	endif;
 
 if (in_array($page_temp, ["account", "two-factor", "settings", "security", "supervisor", "new", "add"]) && empty($login)):
