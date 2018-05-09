@@ -68,17 +68,19 @@ if (!(empty($_POST['checkpoint_email']))):
 		"magic_time"=>time() ];
 	$sql_temp = sql_setup($values_temp, "$database.users");
 	$update_magic = $connection_pdo->prepare($sql_temp);
-
 	$update_magic->execute($values_temp);
 	$result = execute_checkup($update_magic->errorInfo(), "creating login magic");
 	if ($result == "failure"): permanent_redirect("https://".$domain."/account/"); endif;
 
 	$message_temp = "Your login link is valid for ten minutes: \n\n https://".$domain."/open/".$magic_code;
+	$message_temp = wordwrap($message_temp, 70, "rn");
 
 	$header_temp = "From: no-reply@".$domain."\r\n";
 	$header_temp .= "Reply-To: no-reply@".$domain."\r\n";
 
-	mail($_POST['checkpoint_email'], "Log Into ".$publisher, $message_temp, $header_temp);
+echo $_POST['checkpoint_email'];
+
+	mail($_POST['checkpoint_email'], "Authorize for ".$domain, $message_temp, $header_temp);
 
 	echo "ok3"; exit;
 
