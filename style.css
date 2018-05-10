@@ -23,6 +23,11 @@ header h1 {
 	height: 100px;
 	display: block; }
 
+/* NAVIGATION */
+
+navigation-carousel .amp-carousel-button {
+	display: none; }
+
 /* FORMS */
 
 .no_background {
