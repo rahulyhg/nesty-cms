@@ -31,7 +31,6 @@ header h1 {
 	display: none; }
 
 #navigation-carousel-main, #navigation-carousel-search {
-	box-shadow: 0 10px 50px -15px rgba(0,0,0,0.15);
 	font-family: Verdana, Arial;
 	position: relative; }
 
