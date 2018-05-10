@@ -133,22 +133,22 @@ function amp_header($title=null, $canonical=null) {
 	
 	echo "<div id='navigation-carousel-main' class='background_1'>";
 
-	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=1)' id='navigation-search-button'>search</div>";
+	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=1)' id='navigation-search-button'>Search</div>";
 
 	global $login;
-	if (empty($login)): echo "<div id='navigation-signin-button'><a href='/account/'>sign in</a></div>"; endif;
-	if (!(empty($login)) && ($login['cookie_time'] == "logged in")): echo "<div id='navigation-settings-button'><a href='/account/'>settings</a></div>"; endif;
-	if (!(empty($login)) && ($login['cookie_time'] !== "logged in")): echo "<div id='navigation-loggedin-time'>time...</div>"; endif;
+	if (empty($login)): echo "<div id='navigation-signin-button'><a href='/account/'><i class='material-icons'>account_box</i> Sign In</a></div>"; endif;
+	if (!(empty($login)) && ($login['cookie_time'] == "logged in")): echo "<div id='navigation-settings-button'><a href='/account/'><i class='material-icons'>settings</i> Settings</a></div>"; endif;
+	if (!(empty($login)) && ($login['cookie_time'] !== "logged in")): echo "<div id='navigation-loggedin-time'><i class='material-icons'>timelapse</i> Time...</div>"; endif;
 
 	echo "</div>";
 	
 	echo "<div id='navigation-carousel-search' class='background_2'>";
 
-	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=0)' id='navigation-back-button'>back</div>";
+	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=0)' id='navigation-back-button'><i class='material-icons'>keyboard_arrow_left</i> Back</div>";
 
-	echo "<div id='navigation-sitemap-button'><a href='/sitemap/'>open sitemap</a></div>";
+	echo "<div id='navigation-sitemap-button'><a href='/sitemap/'>Open Sitemap <i class='materal-icons'>list_alt</i></a></div>";
 
-	echo "<div id='navigation-history-button'><a href='/schedule/'>open history</a></div>";
+	echo "<div id='navigation-history-button'><a href='/schedule/'>Open History <i class='materal-icons'>calendar_view_day</i></a></div>";
 
 	echo "<hr>";
 	
