@@ -31,7 +31,10 @@ header h1 {
 #navigation-carousel-main, #navigation-carousel-search {
 	position: relative; }
 
-#navigation-carousel, #navigation-carousel a {
+#navigation-carousel-main > div, #navigation-carousel-main > button, #navigation-carousel-main a {
+	color: <? echo $color ?> }
+
+#navigation-carousel-search > div, #navigation-carousel-search > button, #navigation-carousel-search a {
 	color: rgba(255,255,255,0.95); }
 
 #navigation-carousel .material-icons, #navigation-carousel a .material-icons {
@@ -43,10 +46,10 @@ header h1 {
 #navigation-carousel-main > button, #navigation-carousel-search > button {
 	background: none;
 	position: absolute;
-	font-size: 15px;
-	line-height: 15px;
+	font-size: 14px;
+	line-height: 14px;
+	font-weight: 300;
 	text-transform: uppercase;
-	letter-spacing: 1px;
 	padding: 5px 20px; }
 
 #navigation-search-button {
@@ -73,8 +76,8 @@ header h1 {
 
 #navigation-sitemap-button {
 	text-align: right;
-	top: 20px;
-	right: 10px; }
+	top: 15px;
+	right: 20px; }
 
 #navigation-history-button {
 	text-align: right;
