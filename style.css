@@ -23,7 +23,9 @@ header h1 {
 	height: 100px;
 	display: block; }
 
-/* NAVIGATION */
+
+
+/* NAVIGATION CAROUSEL */
 
 #navigation-carousel .amp-carousel-button {
 	display: none; }
@@ -99,12 +101,20 @@ header h1 {
 	display: block;
 	left: 0;
 	top: 60px;
+	width: 80%;
+	max-width: 600px;
 	margin: 0 auto;
 	border-radius: 4px;
 	box-shadow: 5px 5px 20px -5px rgba(0,0,0,0.2);
-	background: rgba(230,230,230,0.95);
+	background: rgba(240,240,240,0.75);
 	padding: 15px 20px;
-	color: <? echo $color ?>; }
+	color: rgba(255,255,255,1); }
+
+
+
+#navigation-search-input::-webkit-input-placeholder {
+	color: rgba(255,255,255,0.7); }
+
 
 /* FORMS */
 
