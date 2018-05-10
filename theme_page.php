@@ -76,7 +76,7 @@ if (!(empty($children)) || !(empty($parents))):
 
 	if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 		echo "<details amp-fx='parallax' data-parallax-factor='1.3' class='nesting-or-popover'>";
-		echo "<summary class='summary-outline'>View nesting</summary>";
+		echo "<summary class='summary-outline'>View related</summary>";
 		endif;
 
 	$parents = array_intersect(array_keys($pages_array), $parents);
