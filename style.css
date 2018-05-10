@@ -28,7 +28,7 @@ header h1 {
 #navigation-carousel .amp-carousel-button {
 	display: none; }
 
-#navigation-carousel {
+#navigation-carousel > div {
 	position: relative; }
 
 #navigation-carousel > div > div {
@@ -38,7 +38,7 @@ header h1 {
 	padding: 5px 20px; }
 
 #navigation-search-button {
-	top: 20px;
+	top: 140px;
 	right: 30px; }
 	
 #navigation-signin-button, #navigation-settings-button {
@@ -49,7 +49,17 @@ header h1 {
 	top: 40px;
 	left: 20px; }
 
+#navigation-back-button {
+	top: 140px;
+	left: 30px; }
 
+#navigation-sitemap-button {
+	top: 20px;
+	righ: 30px; }
+
+#navigation-history-button {
+	top: 40px;
+	right: 30px; }
 
 /* FORMS */
 
