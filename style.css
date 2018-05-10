@@ -53,8 +53,8 @@ header h1 {
 
 #navigation-signin-button, #navigation-settings-button {
 	text-align: left;
-	top: 20px;
-	left: 20px; }
+	top: 15px;
+	left: 10px; }
 
 #navigation-loggedin-time {
 	text-align: left;
@@ -63,8 +63,8 @@ header h1 {
 
 #navigation-search-button {
 	text-align: right;
-	top: 20px;
-	right: 15px;
+	top: 25px;
+	right: 25px;
 	font-size: 14px;
 	line-height: 15px;
 	text-transform: uppercase;
@@ -73,7 +73,7 @@ header h1 {
 
 #navigation-back-button {
 	text-align: left;
-	top: 20px;
+	top: 15px;
 	left: 0; }
 
 #navigation-home-button {
