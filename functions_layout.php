@@ -136,8 +136,8 @@ function amp_header($title=null, $canonical=null) {
 	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=1)' id='navigation-search-button'>search</div>";
 
 	global $login;
-	if (empty($login)): echo "<a href='/account/'><div id='navigation-signin-button'>sign in</div></a>"; endif;
-	if (!(empty($login)) && ($login['cookie_time'] == "logged in")): echo "<a href='/account/'><div id='navigation-settings-button'>settings</div></a>"; endif;
+	if (empty($login)): echo "<div id='navigation-signin-button'><a href='/account/'>sign in</a></div>"; endif;
+	if (!(empty($login)) && ($login['cookie_time'] == "logged in")): echo "<div id='navigation-settings-button'><a href='/account/'>settings</a></div>"; endif;
 	if (!(empty($login)) && ($login['cookie_time'] !== "logged in")): echo "<div id='navigation-loggedin-time'>time...</div>"; endif;
 
 	echo "</div>";
@@ -146,9 +146,9 @@ function amp_header($title=null, $canonical=null) {
 
 	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=0)' id='navigation-back-button'>back</div>";
 
-	echo "<a href='/sitemap/'><div id='navigation-sitemap-button'>open sitemap</div></a>";
+	echo "<div id='navigation-sitemap-button'><a href='/sitemap/'>open sitemap</a></div>";
 
-	echo "<a href='/schedule/'><div id='navigation-history-button'>open history</div></a>";
+	echo "<div id='navigation-history-button'><a href='/schedule/'>open history</a></div>";
 
 	echo "<hr>";
 	
