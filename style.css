@@ -34,7 +34,8 @@ header h1 {
 #navigation-carousel, #navigation-carousel a {
 	color: #fff; }
 
-#navigation-carousel-main > div, #navigation-carousel-search > div {
+#navigation-carousel-main > div, #navigation-carousel-search > div,
+#navigation-carousel-main > button, #navigation-carousel-search > button {
 	background: none;
 	position: absolute;
 	padding: 5px 20px; }
@@ -60,7 +61,7 @@ header h1 {
 	right: 10px; }
 
 #navigation-history-button {
-	top: 40px;
+	top: 50px;
 	right: 10px; }
 
 /* FORMS */
