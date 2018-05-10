@@ -47,25 +47,27 @@ header h1 {
 #navigation-carousel-main > button, #navigation-carousel-search > button {
 	background: none;
 	position: absolute;
-	font-size: 14px;
-	line-height: 15px;
-	text-transform: uppercase;
+	font-size: 15px;
+	line-height: 16px;
 	padding: 7px 20px; }
 
 #navigation-signin-button, #navigation-settings-button {
 	text-align: left;
-	top: 65px;
+	top: 20px;
 	left: 20px; }
 
 #navigation-loggedin-time {
 	text-align: left;
-	top: 100px;
+	top: 50px;
 	left: 20px; }
 
 #navigation-search-button {
 	text-align: right;
 	top: 20px;
 	right: 15px;
+	font-size: 14px;
+	line-height: 15px;
+	text-transform: uppercase;
 	border: 1px solid <? echo $color ?>;
 	border-radius: 4px; }
 
