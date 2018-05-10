@@ -52,11 +52,6 @@ header h1 {
 	text-transform: uppercase;
 	padding: 7px 20px; }
 
-#navigation-home-button {
-	text-align: left;
-	top: 15px;
-	left: 10px; }
-
 #navigation-signin-button, #navigation-settings-button {
 	text-align: left;
 	top: 65px;
@@ -76,17 +71,25 @@ header h1 {
 
 #navigation-back-button {
 	text-align: left;
-	top: 60px;
+	top: 20px;
 	left: 0; }
+
+#navigation-home-button {
+	text-align: right;
+	font-size: 12px;
+	top: 15px;
+	right: 10px; }
 
 #navigation-sitemap-button {
 	text-align: right;
-	top: 15px;
-	right: 22px; }
+	font-size: 12px;
+	top: 45px;
+	right: 10px; }
 
 #navigation-history-button {
 	text-align: right;
-	top: 50px;
+	font-size: 12px;
+	top: 75px;
 	right: 10px; }
 
 /* FORMS */
