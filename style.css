@@ -31,15 +31,27 @@ header h1 {
 #navigation-carousel {
 	position: relative; }
 
+#navigation-carousel div {
+	position: absolute;
+	color: #fff;
+	background: none; }
+
 #navigation-search-button {
 	top: 50%;
+	right: 20px;
+	padding: 5px 30px;
+
+	background: none; }
+	
+	
+#navigation-signin-button, #navigation-settings-button {
+	top: 20px;
 	right: 20px;
 	position: absolute;
 	padding: 5px 30px;
 	color: #fff; }
-	
-	
-#navigation-signin-button {
+
+#navigation-loggedin-time {
 	top: 20px;
 	right: 20px;
 	position: absolute;
@@ -234,6 +246,10 @@ div.login button {
 .nesting-or-popover ul, .nesting-or-popover ol {
 	font-size: 18px;
 	line-height: 22px; }
+
+.nesting-or-popover .summary-outline {
+	padding: 3px 5px;
+	border: 1px solid rgba(100,100,100,0.5); }
 
 .nesting-or-popover ul ul,
 .nesting-or-popover ol ol,
