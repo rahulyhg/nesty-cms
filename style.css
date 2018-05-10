@@ -58,7 +58,7 @@ header h1 {
 	padding: 7px 20px; }
 
 #navigation-carousel-main {
-	background: rgba(245,245,245,1); }
+	background: linear-gradint (60deg, rgba(255,255,255,1), rgba(235,235,235,1)); }
 
 #navigation-signin-button, #navigation-settings-button {
 	text-align: left;
