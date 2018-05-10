@@ -151,13 +151,11 @@ function amp_header($title=null, $canonical=null) {
 	echo "<div id='navigation-sitemap-button'><a href='/sitemap/'>View sitemap</a></div>";
 
 	echo "<div id='navigation-history-button'><a href='/schedule/'>View archive</a></div>";
-
-	echo "<hr>";
 	
 	$search_value = null;
 	if (array_intersect([$slug_temp, $page_temp], ["search"])): $search_value = htmlspecialchars($_SESSION['term'], ENT_QUOTES); endif;
 	echo "<form method='get' action='/search/' target='_top'>";
-	echo "<input type='search' name='term' placeholder='search' value='".$search_value."' maxlength='45' autocomplete='off' required>";	
+	echo "<input id='navigation-search-input' type='search' name='term' placeholder='search' value='".$search_value."' maxlength='45' autocomplete='off' required>";	
 	echo "</form>";
 		
 	echo "</div>";
