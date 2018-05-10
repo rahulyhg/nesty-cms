@@ -133,12 +133,14 @@ function amp_header($title=null, $canonical=null) {
 	
 	echo "<div id='navigation-carousel-main'>";
 
-	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=1)' id='navigation-search-button'>Search</div>";
+	echo "<div id='navigation-home-button'><a href='/'>".$publisher."</a></div>";
 
 	global $login;
 	if (empty($login)): echo "<div id='navigation-signin-button'><a href='/account/'><i class='material-icons'>account_box</i> Sign In</a></div>"; endif;
 	if (!(empty($login)) && ($login['cookie_time'] == "logged in")): echo "<div id='navigation-settings-button'><a href='/account/'><i class='material-icons'>settings</i> Settings</a></div>"; endif;
 	if (!(empty($login)) && ($login['cookie_time'] !== "logged in")): echo "<div id='navigation-loggedin-time'><i class='material-icons'>timelapse</i> Time...</div>"; endif;
+
+	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=1)' id='navigation-search-button'>Search</div>";
 
 	echo "</div>";
 	
