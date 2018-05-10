@@ -64,7 +64,7 @@ echo $page_confirmed[$page_temp]['header']."</h1></header>";
 
 if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 	echo "<p amp-fx='parallax' data-parallax-factor='1.3' class='nesting-or-popover'>";
-	echo "by <span property='author'>Levi Clancy</span> for <span property='publisher'>$publisher</span>";
+	echo "By <span property='author'>Levi Clancy</span> for <span property='publisher'>$publisher</span>";
 	echo " on <time datetime='".$page_confirmed[$page_temp]['created_time']."' property='datePublished'>".date("l jS F, o", strtotime($page_confirmed[$page_temp]['created_time']))."</time>";
 	if ($page_confirmed[$page_temp]['created_time'] !== $page_confirmed[$page_temp]['updated_time']):
 		echo "<br><i>updated <time datetime='".$page_confirmed[$page_temp]['updated_time']."' property='dateModified'>".date("jS F, o", strtotime($page_confirmed[$page_temp]['updated_time']))."</time></i>";
@@ -76,7 +76,7 @@ if (!(empty($children)) || !(empty($parents))):
 
 	if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 		echo "<details amp-fx='parallax' data-parallax-factor='1.3' class='nesting-or-popover'>";
-		echo "<summary class='summary-outline'>view nesting</summary>";
+		echo "<summary class='summary-outline'>View nesting</summary>";
 		endif;
 
 	$parents = array_intersect(array_keys($pages_array), $parents);
@@ -134,7 +134,7 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 
 	if (!(empty($page_confirmed['popover']))):
 		echo "<details class='nesting-or-popover'>";
-		echo "<summary>view contents</summary>";
+		echo "<summary>Show table of contents</summary>";
 		echo $page_confirmed['popover'];
 		echo "</details>";
 		endif;
