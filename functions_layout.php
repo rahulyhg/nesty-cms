@@ -129,22 +129,22 @@ function amp_header($title=null, $canonical=null) {
 	// if there is no need for a search header
 //	if (array_intersect([$slug_temp, $page_temp], ["new", "edit", "account"])): return; endif;
 	
-	echo "<amp-carousel height='300' layout='fixed-height' type='slides' id='navigation-carousel' class='navigation-carousel' data-parallax-factor='1.5'>";
+	echo "<amp-carousel height='150' layout='fixed-height' type='slides' id='navigation-carousel' class='navigation-carousel' data-parallax-factor='1.5'>";
 	
-	echo "<div class='navigation-main background_1'>";
+	echo "<div class='background_1'>";
+
+	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=1)' id='navigation-search-button'>search</div>";
 
 	global $login;
-	if (empty($login)): echo "<div class='navigation-main-signin'>sign in</div>"; endif;
-	if (!(empty($login)) && ($login['cookie_time'] == "logged in")): echo "<div class='navigation-main-loggedin'>logged in</div>"; endif;
-	if (!(empty($login)) && ($login['cookie_time'] !== "logged in")): echo "<div class='navigation-main-loggedin'>logged in</div>"; endif;
+	if (empty($login)): echo "<a href='/account/'><div id='navigation-signin-button'>sign in</div></a>"; endif;
+	if (!(empty($login)) && ($login['cookie_time'] == "logged in")): echo "<a href='/account/'><div id='navigation-loggedin-button'>settings</div></a>"; endif;
+	if (!(empty($login)) && ($login['cookie_time'] !== "logged in")): echo "<div id='navigation-loggedin-time'>time...</div>"; endif;
 
-	echo "<button on='tap:navigation-carousel.goToSlide(index=1)'>search</button>";
-	
 	echo "</div>";
 	
-	echo "<div class='navigation-search background_2'>";
+	echo "<div class='background_2'>";
 
-	echo "<button on='tap:navigation-carousel.goToSlide(index=0)'>back</button>";
+	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=0)' clas='navigation-search-back-button'>back</div>";
 
 	echo "<div class='navigation-search-sitemap'>open sitemap</div>";
 
