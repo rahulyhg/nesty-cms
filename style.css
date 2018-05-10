@@ -31,10 +31,12 @@ header h1 {
 #navigation-carousel-main, #navigation-carousel-search {
 	position: relative; }
 
+#navigation-carousel, #navigation-carousel a {
+	color: #fff; }
+
 #navigation-carousel-main > div, #navigation-carousel-search > div {
 	background: none;
 	position: absolute;
-	color: #fff;
 	padding: 5px 20px; }
 
 #navigation-search-button {
