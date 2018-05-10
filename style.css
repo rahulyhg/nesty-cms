@@ -31,32 +31,25 @@ header h1 {
 #navigation-carousel {
 	position: relative; }
 
-#navigation-carousel div {
+#navigation-carousel > div > div {
+	background: none;
 	position: absolute;
 	color: #fff;
-	background: none; }
+	padding: 5px 20px; }
 
 #navigation-search-button {
-	top: 50%;
-	right: 20px;
-	padding: 5px 30px;
-
-	background: none; }
-	
+	top: 20px;
+	right: 30px; }
 	
 #navigation-signin-button, #navigation-settings-button {
 	top: 20px;
-	right: 20px;
-	position: absolute;
-	padding: 5px 30px;
-	color: #fff; }
+	left: 30px; }
 
 #navigation-loggedin-time {
-	top: 20px;
-	right: 20px;
-	position: absolute;
-	padding: 5px 30px;
-	color: #fff; }
+	top: 40px;
+	left: 20px; }
+
+
 
 /* FORMS */
 
@@ -251,7 +244,7 @@ div.login button {
 	font-family: Helvetica, Arial;
 	text-transform: uppercase;
 	font-size: 14px;
-	line-heigh: 19px;
+	line-height: 20px;
 	margin-left: 30px;
 	border-radius: 4px;
 	display: inline-block;
