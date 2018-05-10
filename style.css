@@ -43,6 +43,8 @@ header h1 {
 #navigation-carousel-main > button, #navigation-carousel-search > button {
 	background: none;
 	position: absolute;
+	font-size: 15px;
+	line-height: 15px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	padding: 5px 20px; }
