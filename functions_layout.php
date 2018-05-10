@@ -146,9 +146,9 @@ function amp_header($title=null, $canonical=null) {
 
 	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=0)' id='navigation-back-button'><i class='material-icons'>keyboard_arrow_left</i> Back</div>";
 
-	echo "<div id='navigation-sitemap-button'><a href='/sitemap/'>Open Sitemap <i class='material-icons'>list_alt</i></a></div>";
+	echo "<div id='navigation-sitemap-button'><a href='/sitemap/'><i class='material-icons'>list_alt</i> Sitemap</a></div>";
 
-	echo "<div id='navigation-history-button'><a href='/schedule/'>Open History <i class='material-icons'>calendar_view_day</i></a></div>";
+	echo "<div id='navigation-history-button'><a href='/schedule/'><i class='material-icons'>calendar_view_day</i> Calendar</a></div>";
 
 	echo "<hr>";
 	
