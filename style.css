@@ -29,6 +29,7 @@ header h1 {
 	display: none; }
 
 #navigation-carousel-main, #navigation-carousel-search {
+	font-family: Verdana, Arial;
 	position: relative; }
 
 #navigation-carousel-main > div, #navigation-carousel-main > button, #navigation-carousel-main a {
@@ -75,7 +76,7 @@ header h1 {
 #navigation-sitemap-button {
 	text-align: right;
 	top: 15px;
-	right: 20px; }
+	right: 25px; }
 
 #navigation-history-button {
 	text-align: right;
