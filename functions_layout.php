@@ -91,11 +91,8 @@ function amp_header($title=null, $canonical=null) {
 	// for amp-form
 	echo '<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>';
 
-	// for amp-sidebar
-	echo '<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>';
-
 	// mostly for show-more features
-	echo '<script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>';
+	echo '<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>';
 	
 	// for lightbox search feature
 	echo '<script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>';
