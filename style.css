@@ -25,8 +25,26 @@ header h1 {
 
 /* NAVIGATION */
 
-navigation-carousel .amp-carousel-button {
+#navigation-carousel .amp-carousel-button {
 	display: none; }
+
+#navigation-carousel {
+	position: relative; }
+
+#navigation-search-button {
+	top: 50%;
+	right: 20px;
+	position: absolute;
+	padding: 5px 30px;
+	color: #fff; }
+	
+	
+#navigation-signin-button {
+	top: 20px;
+	right: 20px;
+	position: absolute;
+	padding: 5px 30px;
+	color: #fff; }
 
 /* FORMS */
 
