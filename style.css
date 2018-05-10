@@ -38,9 +38,7 @@ header h1 {
 	color: rgba(255,255,255,0.95); }
 
 #navigation-carousel .material-icons, #navigation-carousel a .material-icons {
-	vertical-align: middle;
-	padding-bottom: 3px;
-	display: inline-block; }
+	vertical-align: middle; }
 
 #navigation-carousel-main > div, #navigation-carousel-search > div,
 #navigation-carousel-main > button, #navigation-carousel-search > button {
@@ -50,13 +48,13 @@ header h1 {
 	line-height: 14px;
 	font-weight: 300;
 	text-transform: uppercase;
-	padding: 5px 20px; }
+	padding: 7px 20px; }
 
 #navigation-search-button {
 	text-align: right;
 	top: 60px;
 	right: 15px;
-	border: 1px solid rgba(255,255,255,0.9);
+	border: 1px solid <? echo $color ?>;
 	border-radius: 4px; }
 
 #navigation-signin-button, #navigation-settings-button {
