@@ -248,6 +248,7 @@ div.login button {
 	line-height: 22px; }
 
 .nesting-or-popover .summary-outline {
+	font-family: Helvetica, Arial;
 	border-radius: 4px;
 	display: inline-block;
 	padding: 4px 8px;
