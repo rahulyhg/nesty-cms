@@ -146,11 +146,11 @@ function amp_header($title=null, $canonical=null) {
 
 	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=0)' id='navigation-back-button'><i class='material-icons'>keyboard_arrow_left</i> Back</div>";
 
-	echo "<div id='navigation-home-button'><a href='/'>Homepage</a></div>";
+	echo "<div id='navigation-home-button'><a href='/'>Home</a> &nbsp;&nbsp; | &nbsp;&nbsp; <a href='/schedule/'>Archive</a></div>";
 
-	echo "<div id='navigation-sitemap-button'><a href='/sitemap/'>View sitemap</a></div>";
+//	echo "<div id='navigation-sitemap-button'><a href='/sitemap/'>View sitemap</a></div>";
 
-	echo "<div id='navigation-history-button'><a href='/schedule/'>View archive</a></div>";
+//	echo "<div id='navigation-history-button'><a href='/schedule/'>View archive</a></div>";
 	
 	$search_value = null;
 	if (array_intersect([$slug_temp, $page_temp], ["search"])): $search_value = htmlspecialchars($_SESSION['term'], ENT_QUOTES); endif;
