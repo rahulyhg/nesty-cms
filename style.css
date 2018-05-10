@@ -27,14 +27,11 @@ header h1 {
 
 /* NAVIGATION CAROUSEL */
 
-
-#navigation-carousel {
-	box-shadow: 0 10px 50px -15px rgba(0,0,0,0.15); }
-
 #navigation-carousel .amp-carousel-button {
 	display: none; }
 
 #navigation-carousel-main, #navigation-carousel-search {
+	box-shadow: 0 10px 50px -15px rgba(0,0,0,0.15);
 	font-family: Verdana, Arial;
 	position: relative; }
 
