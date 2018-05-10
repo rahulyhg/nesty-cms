@@ -129,9 +129,9 @@ function amp_header($title=null, $canonical=null) {
 	// if there is no need for a search header
 //	if (array_intersect([$slug_temp, $page_temp], ["new", "edit", "account"])): return; endif;
 	
-	echo "<amp-carousel height='300' layout='fixed-height' type='slides' id='navigation-carousel' class='navigation' data-parallax-factor='1.5'>";
+	echo "<amp-carousel height='300' layout='fixed-height' type='slides' id='navigation-carousel' class='navigation-carousel' data-parallax-factor='1.5'>";
 	
-	echo "<div class='navigation-main'>";
+	echo "<div class='navigation-main background_1'>";
 
 	global $login;
 	if (empty($login)): echo "<div class='navigation-main-signin'>sign in</div>"; endif;
@@ -142,7 +142,7 @@ function amp_header($title=null, $canonical=null) {
 	
 	echo "</div>";
 	
-	echo "<div class='navigation-search'>";
+	echo "<div class='navigation-search background_2'>";
 
 	echo "<button on='tap:navigation-carousel.goToSlide(index=0)'>back</button>";
 
