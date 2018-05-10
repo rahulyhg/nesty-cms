@@ -54,7 +54,7 @@ header h1 {
 #navigation-signin-button, #navigation-settings-button {
 	text-align: left;
 	top: 20px;
-	left: 10px; }
+	left: 5px; }
 
 #navigation-loggedin-time {
 	text-align: left;
@@ -96,12 +96,14 @@ header h1 {
 
 #navigation-search-input {
 	position: absolute;
-	margin: 30px auto 0;
+	display: block;
+	left: 0;
+	right: 0;
+	bottom: -40px;
+	height: 40px;
+	background: rgba(230,230,230,1);
 	padding: 15px 20px;
-	border-radius: 5px;
-	color: rgba(255,255,255,1);
-	width: 80%;
-	max-width: 400px; }
+	color: <? echo $color ?>; }
 
 /* FORMS */
 
