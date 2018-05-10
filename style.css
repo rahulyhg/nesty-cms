@@ -28,10 +28,10 @@ header h1 {
 #navigation-carousel .amp-carousel-button {
 	display: none; }
 
-#navigation-carousel > div {
+#navigation-carousel-main, #navigation-carousel-search {
 	position: relative; }
 
-#navigation-carousel > div > div {
+#navigation-carousel-main > div, #navigation-carousel-search > div {
 	background: none;
 	position: absolute;
 	color: #fff;
