@@ -248,7 +248,9 @@ div.login button {
 	line-height: 22px; }
 
 .nesting-or-popover .summary-outline {
-	padding: 3px 5px;
+	border-radius: 4px;
+	display: inline-block;
+	padding: 4px 8px;
 	border: 1px solid rgba(100,100,100,0.5); }
 
 .nesting-or-popover ul ul,
