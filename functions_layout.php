@@ -137,7 +137,7 @@ function amp_header($title=null, $canonical=null) {
 
 	global $login;
 	if (empty($login)): echo "<a href='/account/'><div id='navigation-signin-button'>sign in</div></a>"; endif;
-	if (!(empty($login)) && ($login['cookie_time'] == "logged in")): echo "<a href='/account/'><div id='navigation-loggedin-button'>settings</div></a>"; endif;
+	if (!(empty($login)) && ($login['cookie_time'] == "logged in")): echo "<a href='/account/'><div id='navigation-settings-button'>settings</div></a>"; endif;
 	if (!(empty($login)) && ($login['cookie_time'] !== "logged in")): echo "<div id='navigation-loggedin-time'>time...</div>"; endif;
 
 	echo "</div>";
