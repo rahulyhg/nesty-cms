@@ -39,7 +39,9 @@ header h1 {
 	color: rgba(255,255,255,0.95); }
 
 #navigation-carousel .material-icons, #navigation-carousel a .material-icons {
-	vertical-align: middle; }
+	vertical-align: middle;
+	display: inline-block;
+	padding-bottom: 3px; }
 
 #navigation-carousel-main > div, #navigation-carousel-search > div,
 #navigation-carousel-main > button, #navigation-carousel-search > button {
