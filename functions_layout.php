@@ -132,17 +132,39 @@ function amp_header($title=null, $canonical=null) {
 	// if there is no need for a search header
 //	if (array_intersect([$slug_temp, $page_temp], ["new", "edit", "account"])): return; endif;
 	
-//	echo "<div class='navigation' data-parallax-factor='1.3'>";
-		
-	return;	
+	echo "<amp-carousel height='300' layout='fixed-height' type='slides' id='navigation-carousel' class='navigation' data-parallax-factor='1.5'>";
 	
-	// here is the search header
+	echo "<div class='navigation-main'>";
+
+	global $login;
+	if (empty($login)): echo "<div class='navigation-main-signin'>sign in</div>"; endif;
+	if (!(empty($login)) && ($login['cookie_time'] == "logged in")): echo "<div class='navigation-main-loggedin'>logged in</div>"; endif;
+	if (!(empty($login)) && ($login['cookie_time'] !== "logged in")): echo "<div class='navigation-main-loggedin'>logged in</div>"; endif;
+
+	echo "<button on='tap:navigation-carousel.goToSlide(index=1)'>search</button>";
+	
+	echo "</div>";
+	
+	echo "<div class='navigation-search'>";
+
+	echo "<button on='tap:navigation-carousel.goToSlide(index=0)'>back</button>";
+
+	echo "<div class='navigation-search-sitemap'>open sitemap</div>";
+
+	echo "<div class='navigation-search-sitemap'>open history</div>";
+
+	echo "<hr>";
+	
 	$search_value = null;
 	if (array_intersect([$slug_temp, $page_temp], ["search"])): $search_value = htmlspecialchars($_SESSION['term'], ENT_QUOTES); endif;
-	echo "<form id='search-header' method='get' action='/search/' target='_top'>";
+	echo "<form method='get' action='/search/' target='_top'>";
 	echo "<input type='search' name='term' placeholder='search' value='".$search_value."' maxlength='45' autocomplete='off' required>";	
 	echo "</form>";
-
+		
+	echo "</div>";
+	
+	echo "</amp-carousel>";
+	
 	}
 
 function admin_bar($login=null, $entry_confirmed=null) {
