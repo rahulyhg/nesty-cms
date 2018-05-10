@@ -35,8 +35,7 @@ header h1 {
 	color: rgba(255,255,255,0.95); }
 
 #navigation-carousel .material-icons, #navigation-carousel a .material-icons {
-	display: inline-block;
-	padding-top: 4px; }
+	line-height: 25px; }
 
 #navigation-carousel-main > div, #navigation-carousel-search > div,
 #navigation-carousel-main > button, #navigation-carousel-search > button {
