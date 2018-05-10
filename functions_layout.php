@@ -131,7 +131,7 @@ function amp_header($title=null, $canonical=null) {
 	
 	echo "<amp-carousel height='150' layout='fixed-height' type='slides' id='navigation-carousel' data-parallax-factor='1.5'>";
 	
-	echo "<div id='navigation-carousel-main' class='background_1'>";
+	echo "<div id='navigation-carousel-main'>";
 
 	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=1)' id='navigation-search-button'>Search</div>";
 
