@@ -144,11 +144,11 @@ function amp_header($title=null, $canonical=null) {
 	
 	echo "<div id='navigation-carousel-search' class='background_2'>";
 
-	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=0)' clas='navigation-back-button'>back</div>";
+	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=0)' id='navigation-back-button'>back</div>";
 
-	echo "<div class='navigation-sitemap-button'>open sitemap</div>";
+	echo "<div id='navigation-sitemap-button'>open sitemap</div>";
 
-	echo "<div class='navigation-history-button'>open history</div>";
+	echo "<div id='navigation-history-button'>open history</div>";
 
 	echo "<hr>";
 	
