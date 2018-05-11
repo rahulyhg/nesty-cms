@@ -138,6 +138,11 @@ function amp_header($title=null, $canonical=null) {
 		echo "<div id='navigation-settings-button'><a href='/account/'><i class='material-icons'>settings</i> Settings</a></div>";
 		$time_temp = date("Y m d h:i", $login['cookie_time']+86400);
 		echo "<div id='navigation-loggedin-time'><i class='material-icons'>timelapse</i> Time remaining: ".$time_temp."</div>";
+
+		echo "<div id='navigation-add-button'><a href='/new/'>";
+		echo "<i class='material-icons'>note_add</i> add page</a> &nbsp;&nbsp; | &nbsp;&nbsp; ";
+		echo "<a href='/add/'><i class='material-icons'>playlist_add</i> add entry</a></div>";
+
 		endif;
 
 	echo "<div id='navigation-home-button'><a href='/'>Home</a></div>";
@@ -163,24 +168,15 @@ function amp_header($title=null, $canonical=null) {
 	echo "</amp-carousel>";
 	
 	global $page_confirmed;
-	global $media_confirmed;
 	if (!(empty($login)) && !(empty($page_confirmed[$page_temp]['page_id']))):
 		echo "<div class='floating-action-button'>";
-		echo "<div class='floating-action-button-main' id='navigation-edit-button'><a href='/".$page_temp."/edit/'><i class='material-icons'>edit</i> edit</a></div>";
-		echo "<div class='floating-action-button-secondary'>";
-			echo "<div id='navigation-add-page-button'><a href='/new/'><i class='material-icons'>note_add</i> add page</a></div>";
-			echo "<div id='navigation-add-entry-button'><a href='/add/'><i class='material-icons'>playlist_add</i> add entry</a></div>";
-			echo "</div></div>";
-	elseif (!(empty($login)) && !(empty($media_confirmed[$page_temp]['media_id']))):
+		echo "<a href='/".$page_temp."/edit/'><i class='material-icons'>edit</i></a></div>";
+		endif;
+	
+	global $media_confirmed;
+	if (!(empty($login)) && !(empty($media_confirmed[$page_temp]['media_id']))):
 		echo "<div class='floating-action-button'>";
-		echo "<div class='floating-action-button-main' id='navigation-edit-button'><a href='/m/".$page_temp."/edit/'><i class='material-icons'>edit</i> edit</a></div>";
-		echo "</div>";
-	elseif (!(empty($login))):
-		echo "<div class='floating-action-button'>";
-		echo "<div class='floating-action-button-main' id='navigation-add-page-button'><a href='/new/'><i class='material-icons'>note_add</i> add page</a></div>";
-		echo "<div class='floating-action-button-secondary'>";
-			echo "<div id='navigation-add-entry-button'><a href='/add/'><i class='material-icons'>playlist_add</i> add entry</a></div>";
-			echo "</div></div>";
+		echo "<a href='/m/".$page_temp."/edit/'><i class='material-icons'>edit</i> edit</a></div>";
 		endif;
 
 	}
