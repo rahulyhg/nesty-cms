@@ -61,7 +61,8 @@ header h1 {
 #navigation-loggedin-time {
 	font-style: italic;
 	text-align: left;
-	top: 50px;
+	font-size: 12px;
+	top: 45px;
 	left: 5px; }
 
 #navigation-add-button {
