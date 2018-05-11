@@ -46,9 +46,6 @@ if ($page_temp == "logout"):
 
 $login_hash = $new_cookie = $login = null;
 if (!(empty($_POST['checkpoint_email'])) && !(empty($_POST['checkpoint_password']))):
-
-	echo "checkpoint"; exit;
-
 	$_POST['checkpoint_email'] = strtolower($_POST['checkpoint_email']);
 	$login_hash = sha1($_POST['checkpoint_email'].$_POST['checkpoint_password']);
 	if (!(empty($recaptcha_site)) && !(empty($recaptcha_private))):
@@ -72,8 +69,9 @@ foreach ($connection_pdo->query("SELECT * FROM $database.users") as $row):
 		"email" => $row['email'],
 		"name" => $row['name'],
 		"status" => $row['status'] ];
+
 	if ($row['status'] == "admin"): $admin_count++; endif;
-	if (empty($_COOKIE['cookie_code']) && empty($login_hash)): continue; endif;
+
 	if (!(empty($login))): continue; endif;
 
 	// create new login
@@ -96,11 +94,13 @@ foreach ($connection_pdo->query("SELECT * FROM $database.users") as $row):
 		$result = execute_checkup($update_cookie->errorInfo(), "creating login cookie");
 		if ($result == "failure"): 			echo "logincookie"; exit;
 permanent_redirect("https://".$domain."/account/");
-		else: setcookie("cookie_code", $new_cookie, time()+86400, '/'); $row['cookie_code'] = $new_cookie; endif; 
+		else:
+			$row['cookie_code'] = $_COOKIE['cookie_code'] = $new_cookie; 
+			setcookie("cookie_code", $new_cookie, time()+86400, '/');endif; 
 		endif;
 
 	// check login
-	if ($row['cookie_code'] == $_COOKIE['cookie_code']):
+	if (!(empty($_COOKIE['cookie_code')) && ($row['cookie_code'] == $_COOKIE['cookie_code']):
 		$login = $users_list[$row['user_id']];
 		$login['cookie_time'] = $row['cookie_time'];
 		endif;
