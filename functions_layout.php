@@ -63,7 +63,6 @@ function amp_header($title=null, $canonical=null) {
 	global $slug_temp;
 	global $command_temp;
 	global $_SESSION;
-	global $page_confirmed;
 	if (empty($title)): $title = $domain; endif;
 
 	// https://www.ampproject.org/docs/tutorials/create/basic_markup
@@ -163,17 +162,18 @@ function amp_header($title=null, $canonical=null) {
 	
 	echo "</amp-carousel>";
 	
-		
-	if (!(empty($login)) && !(empty($entry_confirmed['page_id']))):
+	global $page_confirmed;
+	global $media_confirmed;
+	if (!(empty($login)) && !(empty($page_confirmed['page_id']))):
 		echo "<div class='floating-action-button'>";
-		echo "<div class='floating-action-button-main' id='navigation-edit-button'><a href='/m/".$entry_confirmed['media_id']."/edit/'><i class='material-icons'>edit</i> edit</a></div>";
+		echo "<div class='floating-action-button-main' id='navigation-edit-button'><a href='/m/".$page_confirmed['page_id']."/edit/'><i class='material-icons'>edit</i> edit</a></div>";
 		echo "<div class='floating-action-button-secondary'>";
 			echo "<div id='navigation-add-page-button'><a href='/new/'><i class='material-icons'>note_add</i> add page</a></div>";
 			echo "<div id='navigation-add-entry-button'><a href='/add/'><i class='material-icons'>playlist_add</i> add entry</a></div>";
 			echo "</div></div>";
-	elseif (!(empty($login)) && !(empty($entry_confirmed['media_id']))):
+	elseif (!(empty($login)) && !(empty($media_confirmed['media_id']))):
 		echo "<div class='floating-action-button'>";
-		echo "<div class='floating-action-button-main' id='navigation-edit-butotn'><a href='/".$entry_confirmed['page_id']."/edit/'><i class='material-icons'>edit</i> edit</a></div>";
+		echo "<div class='floating-action-button-main' id='navigation-edit-button'><a href='/".$media_confirmed['media_id']."/edit/'><i class='material-icons'>edit</i> edit</a></div>";
 		echo "</div>";
 	elseif (!(empty($login))):
 		echo "<div class='floating-action-button'>";
