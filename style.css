@@ -35,7 +35,7 @@ header h1 {
 	position: relative; }
 
 #navigation-carousel-main div, #navigation-carousel-main button, #navigation-carousel-main a {
-	color: <? echo $color ?> }
+	color: rgba(50,50,50,0.8); }
 
 #navigation-carousel-search div, #navigation-carousel-search button, #navigation-carousel-search a {
 	color: rgba(255,255,255,0.95); }
@@ -95,6 +95,7 @@ div#navigation-search-button {
 	font-size: 14px;
 	line-height: 15px;
 	text-transform: uppercase;
+	xolor: <? echo $color ?>;
 	border: 1px solid <? echo $color ?>;
 	border-radius: 4px; }
 
