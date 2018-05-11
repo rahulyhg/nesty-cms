@@ -59,15 +59,14 @@ header h1 {
 	left: 5px; }
 
 #navigation-loggedin-time {
-	font-style: italic;
 	text-align: left;
 	font-size: 9px;
-	top: 50px;
-	left: 5px; }
+	top: 55px;
+	left: 8px; }
 
 #navigation-add-button {
 	text-align: left;
-	top: 85px;
+	top: 90px;
 	left: 5px; }	
 
 #navigation-home-button {
