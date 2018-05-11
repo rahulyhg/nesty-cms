@@ -64,6 +64,11 @@ echo $page_confirmed[$page_temp]['header']."</h1></header>";
 
 if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 	echo "<p amp-fx='parallax' data-parallax-factor='1.3' class='nesting-or-popover'>";
+
+	if (!(empty($entry_confirmed['password'])) && !(empty($_SESSION[$entry_confirmed['page_id']]))):
+		echo "<a href='/".$entry_confirmed['page_id']."/*/'><i class='material-icons button'>lock</i> Lock post</a><br><br>";
+		endif;
+
 	echo "By <span property='author'>Levi Clancy</span> for <span property='publisher'>$publisher</span>";
 	echo " on <time datetime='".$page_confirmed[$page_temp]['created_time']."' property='datePublished'>".date("l jS F, o", strtotime($page_confirmed[$page_temp]['created_time']))."</time>";
 	if ($page_confirmed[$page_temp]['created_time'] !== $page_confirmed[$page_temp]['updated_time']):
