@@ -78,17 +78,8 @@ foreach ($connection_pdo->query("SELECT * FROM $database.users") as $row):
 	if (!(empty($login_hash)) && ($row['hash'] == $login_hash)):
 
 		if ($google_authenticator_toggle == "on"):
-
-echo $row['authenticator'];
-echo "<br>";
-echo code_generator($row['authenticator']);
-echo "<br>";
-echo $_POST['checkpoint_authenticator'];
-echo "<br>";
-echo "<br>";
-
 			if (empty($_POST['checkpoint_authenticator'])): continue; endif;
-			if ($_POST['checkpoint_authenticator'] !== code_generator($row['authenticator'])): echo "badauthenticator"; exit;  continue; endif;
+			if ($_POST['checkpoint_authenticator'] !== code_generator($row['authenticator'])): continue; endif;
 			endif;
 		$new_cookie = sha1($row['user_id'].time());
 		$values_temp = [
@@ -99,8 +90,8 @@ echo "<br>";
 		$update_cookie = $connection_pdo->prepare($sql_temp);
 		$update_cookie->execute($values_temp);
 		$result = execute_checkup($update_cookie->errorInfo(), "creating login cookie");
-		if ($result == "failure"): 			echo "logincookie"; exit;
-permanent_redirect("https://".$domain."/account/");
+		if ($result == "failure"):
+			permanent_redirect("https://".$domain."/account/");
 		else:
 			$row['cookie_code'] = $_COOKIE['cookie_code'] = $new_cookie; 
 			setcookie("cookie_code", $new_cookie, time()+86400, '/');
