@@ -34,10 +34,10 @@ header h1 {
 	font-family: Verdana, Arial;
 	position: relative; }
 
-#navigation-carousel-main > div, #navigation-carousel-main > button, #navigation-carousel-main a {
+#navigation-carousel-main div, #navigation-carousel-main button, #navigation-carousel-main a {
 	color: <? echo $color ?> }
 
-#navigation-carousel-search > div, #navigation-carousel-search > button, #navigation-carousel-search a {
+#navigation-carousel-search div, #navigation-carousel-search button, #navigation-carousel-search a {
 	color: rgba(255,255,255,0.95); }
 
 #navigation-carousel .material-icons, #navigation-carousel a .material-icons {
