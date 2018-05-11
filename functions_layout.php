@@ -139,9 +139,7 @@ function amp_header($title=null, $canonical=null) {
 		$time_temp = date("Y m d h:i", $login['cookie_time']+86400);
 		echo "<div id='navigation-loggedin-time'>Logged in until ".$time_temp."</div>";
 
-		echo "<div id='navigation-add-button'><a href='/new/'>";
-		echo "<i class='material-icons'>note_add</i> add page</a> &nbsp;&nbsp; | &nbsp;&nbsp; ";
-		echo "<a href='/add/'><i class='material-icons'>playlist_add</i> add entry</a></div>";
+		echo "<div id='navigation-add-button'><a href='/create/'><i class='material-icons'>note_add</i> create</a></div>";
 
 		endif;
 
