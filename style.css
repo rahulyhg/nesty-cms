@@ -84,7 +84,7 @@ div#navigation-home-button {
 	right: 140px; }
 
 @media only screen and (max-width: 500px)  {
-	div#navigation-home-button { top: 70px; right: 5px; }
+	div#navigation-home-button { top: 70px; right: 7px; }
 	}
 	
 div#navigation-search-button {
@@ -129,6 +129,20 @@ div#navigation-sitemap-button {
 
 #navigation-search-input::-webkit-input-placeholder {
 	color: rgba(30,30,30,0.65); }
+
+.floating-action-button {
+	background: <? echo $color ?>;
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	width: 40px;
+	height: 40px;
+	display: block;
+	z-index: 1000000;
+	border-radius: 100px;
+	font-size: 30px;
+	line-height: 30px;
+	text-align: center; }
 
 
 /* FORMS */
