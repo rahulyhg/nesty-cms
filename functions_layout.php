@@ -141,18 +141,6 @@ function amp_header($title=null, $canonical=null) {
 	echo "<div id='navigation-home-button'><a href='/sitemap/'>Home</a></div>";
 
 	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=1)' id='navigation-search-button'>Search</div>";
-
-	if (!(empty($login))):
-		echo "<div id='navigation-add-page-button'><a href='/new/'><i class='material-icons'>note_add</i> add page</a></div>";
-		echo "<div id='navigation-add-entry-button'><a href='/add/'><i class='material-icons'>playlist_add</a> add entry</a></div>";
-		if (!(empty($entry_confirmed['page_id']))):
-			echo "<div id='navigation-edit-butotn'><a href='/".$entry_confirmed['page_id']."/edit/'><i class='material-icons'>edit</i> edit</a></div>";
-			endif; 
-		if (!(empty($entry_confirmed['media_id']))):
-			echo "<div id='navigation-edit-butotn'><a href='/m/".$entry_confirmed['media_id']."/edit/'><i class='material-icons'>edit</i> edit</a></div>";
-			endif;
-		endif;
-	
 	
 	echo "</div>";
 	
@@ -172,37 +160,29 @@ function amp_header($title=null, $canonical=null) {
 	
 	echo "</amp-carousel>";
 	
-	return;
-	
+		
+	if (!(empty($login)) && !(empty($entry_confirmed['page_id']))):
+		echo "<div class='floating-action-button'>";
+		echo "<div class='floating-action-button-main' id='navigation-edit-button'><a href='/m/".$entry_confirmed['media_id']."/edit/'><i class='material-icons'>edit</i> edit</a></div>";
+		echo "<div class='floating-action-button-secondary'>";
+			echo "<div id='navigation-add-page-button'><a href='/new/'><i class='material-icons'>note_add</i> add page</a></div>";
+			echo "<div id='navigation-add-entry-button'><a href='/add/'><i class='material-icons'>playlist_add</a> add entry</a></div>";
+			echo "</div></div>";
+	elseif (!(empty($login)) && !(empty($entry_confirmed['media_id']))):
+		echo "<div class='floating-action-button'>";
+		echo "<div class='floating-action-button-main' id='navigation-edit-butotn'><a href='/".$entry_confirmed['page_id']."/edit/'><i class='material-icons'>edit</i> edit</a></div>";
+		echo "</div>";
+	elseif (!(empty($login))):
+		echo "<div class='floating-action-button'>";
+		echo "<div class='floating-action-button-main' id='navigation-add-page-button'><a href='/new/'><i class='material-icons'>note_add</i> add page</a></div>";
+		echo "<div class='floating-action-button-secondary'>";
+			echo "<div id='navigation-add-entry-button'><a href='/add/'><i class='material-icons'>playlist_add</a> add entry</a></div>";
+			echo "</div></div>";
+		endif;
+
 	}
 
-function admin_bar($login=null, $entry_confirmed=null) {
-	global $publisher;
-	global $page_temp;
-	global $slug_temp;
-	global $command_temp;
-	
-	echo "<div class='bottom_bar background_2'>";
-
-	echo "<span class='button float_left'></span>";
-		
-	if ($page_temp == "search"):	
-	
-		$chosen_temp = null; if (empty($slug_temp)): $chosen_temp = "chosen"; endif;
-		echo "<a href='/search/' class='material-icons button float_left ".$chosen_temp."'>dashboard</a>";
-
-		$chosen_temp = null; if ($slug_temp == "listing"): $chosen_temp = "chosen"; endif;
-		echo "<a href='/search/listing/' class='material-icons button float_left ".$chosen_temp."'>format_list_bulleted</a>";
-	
-		endif;
-	
-	
-	global $_SESSION;
-	if (!(empty($entry_confirmed['password'])) && !(empty($_SESSION[$entry_confirmed['page_id']]))):
-		echo "<a href='/".$entry_confirmed['page_id']."/*/' class='material-icons button float_right'>lock</a>";
-		endif;
-
-	echo "</div>"; }
+function admin_bar($login=null, $entry_confirmed=null) { }
 
 
 function footer() {
