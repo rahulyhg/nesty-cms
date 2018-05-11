@@ -53,23 +53,19 @@ header h1 {
 	line-height: 16px;
 	padding: 7px 20px; }
 
-#navigation-signin-button, #navigation-settings-button {
+#navigation-signin-button, #navigation-add-button {
 	text-align: left;
 	top: 17px;
 	left: 0; }
 
-div#navigation-loggedin-time {
-	color: rgba(50,50,50,0.6);
-	text-align: left;
-	font-size: 12px;
-	top: 100px;
+#navigation-settings-button {
+	top: 80px;
 	left: 3px; }
 
-#navigation-add-button {
-	text-align: left;
-	top: 60px;
-	left: 0; }	
-
+#navigation-settings-button span {
+	color: rgba(50,50,50,0.6);
+	font-size: 12px; }
+	
 #navigation-home-button {
 	text-align: right;
 	font-size: 12px;
@@ -77,8 +73,6 @@ div#navigation-loggedin-time {
 	right: 140px; }
 
 @media only screen and (max-width: 500px)  {
-	#navigation-signin-button, #navigation-settings-button { top: 22px; }
-	#navigation-add-button { top: 68px; }
 	#navigation-home-button { top: 70px; right: 5px; }
 	}
 	
