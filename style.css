@@ -63,6 +63,12 @@ header h1 {
 	top: 50px;
 	left: 20px; }
 
+#navigation-home-button {
+	text-align: right;
+	font-size: 12px;
+	top: 20px;
+	right: 70px; }
+
 #navigation-search-button {
 	text-align: right;
 	top: 25px;
@@ -78,22 +84,10 @@ header h1 {
 	top: 10px;
 	left: 0; }
 
-#navigation-home-button {
-	text-align: right;
-	font-size: 12px;
-	top: 15px;
-	right: 10px; }
-
 #navigation-sitemap-button {
 	text-align: right;
 	font-size: 12px;
-	top: 45px;
-	right: 10px; }
-
-#navigation-history-button {
-	text-align: right;
-	font-size: 12px;
-	top: 75px;
+	top: 15px;
 	right: 10px; }
 
 #navigation-search-input {
