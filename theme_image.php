@@ -1,7 +1,5 @@
 <? amp_header($domain." media", $domain.$proper_uri);
 
-admin_bar($login, $media_confirmed[$slug_temp]);
-
 // get basic info for all pages
 $pages_array = [];
 $sql_temp = "SELECT page_id, header, slug FROM $database.pages ORDER BY header ASC, slug ASC";
