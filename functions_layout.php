@@ -136,7 +136,7 @@ function amp_header($title=null, $canonical=null) {
 	if (empty($login)): echo "<div id='navigation-signin-button'><a href='/account/'><i class='material-icons'>account_box</i> Sign In</a></div>"; endif;
 	if (!(empty($login))):
 		echo "<div id='navigation-settings-button'><a href='/account/'><i class='material-icons'>settings</i> Settings</a></div>";
-		if ( (time() - $login['cookie_time']) >= 82800 );
+		if ( (time() - $login['cookie_time']) >= 82800 ):
 			echo "<div id='navigation-loggedin-time'>Automatic logout soon</div>";
 			endif;
 	
