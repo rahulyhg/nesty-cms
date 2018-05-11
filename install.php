@@ -24,11 +24,10 @@ $table_temp = [
 	"`status` VARCHAR(100)",
 	"`email` VARCHAR(100)",
 	"`name` VARCHAR(100)",
-	"`magic_code` VARCHAR(50)",
-	"`magic_time` VARCHAR(50)",
+//	"`magic_code` VARCHAR(50)",
+//	"`magic_time` VARCHAR(50)",
 	"`cookie_code` VARCHAR(400)",
 	"`cookie_time` VARCHAR(50)",
-
 	"`hash` VARCHAR(400)",
 	"`authenticator` VARCHAR(100)",
 	"`cookie` VARCHAR(100)" ];
@@ -38,17 +37,7 @@ $run_statement = $connection_pdo->prepare($sql_temp);
 $run_statement->execute();
 $result = execute_checkup($run_statement->errorInfo(), "creating users table", "full");
 
-$sql_temp = "ALTER TABLE $database.users ADD `magic_code` VARCHAR(50) AFTER `name`;";
-$run_statement = $connection_pdo->prepare($sql_temp);
-$run_statement->execute();
-$result = execute_checkup($run_statement->errorInfo(), "creating users table", "full");
-
-$sql_temp = "ALTER TABLE $database.users ADD `magic_time` VARCHAR(50) AFTER `magic_code`;";
-$run_statement = $connection_pdo->prepare($sql_temp);
-$run_statement->execute();
-$result = execute_checkup($run_statement->errorInfo(), "creating users table", "full");
-
-$sql_temp = "ALTER TABLE $database.users ADD `cookie_code` VARCHAR(50) AFTER `magic_time`;";
+$sql_temp = "ALTER TABLE $database.users ADD `cookie_code` VARCHAR(50) AFTER `name`;";
 $run_statement = $connection_pdo->prepare($sql_temp);
 $run_statement->execute();
 $result = execute_checkup($run_statement->errorInfo(), "creating users table", "full");
