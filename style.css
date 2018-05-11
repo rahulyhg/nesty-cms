@@ -46,7 +46,6 @@ header h1 {
 	padding-bottom: 3px; }
 
 #navigation-carousel-main div, #navigation-carousel-search div {
-	background: none;
 	position: absolute;
 	font-size: 15px;
 	line-height: 16px;
@@ -100,11 +99,13 @@ div#navigation-search-button {
 	border-radius: 4px; }
 
 div#navigation-back-button {
+	background: none;
 	text-align: left;
 	top: 10px;
 	left: -3px; }
 
 div#navigation-sitemap-button {
+	background: none;
 	text-align: right;
 	font-size: 12px;
 	top: 15px;
