@@ -138,6 +138,8 @@ function amp_header($title=null, $canonical=null) {
 	if (!(empty($login)) && ($login['cookie_time'] == "logged in")): echo "<div id='navigation-settings-button'><a href='/account/'><i class='material-icons'>settings</i> Settings</a></div>"; endif;
 	if (!(empty($login)) && ($login['cookie_time'] !== "logged in")): echo "<div id='navigation-loggedin-time'><i class='material-icons'>timelapse</i> Time...</div>"; endif;
 
+	echo "<div id='navigation-home-button'><a href='/sitemap/'>Home</a></div>";
+
 	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=1)' id='navigation-search-button'>Search</div>";
 
 	echo "</div>";
@@ -146,11 +148,7 @@ function amp_header($title=null, $canonical=null) {
 
 	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=0)' id='navigation-back-button'><i class='material-icons'>keyboard_arrow_left</i> Back</div>";
 
-	echo "<div id='navigation-home-button'><a href='/'>Home</a> &nbsp;&nbsp; | &nbsp;&nbsp; <a href='/schedule/'>Archive</a></div>";
-
-//	echo "<div id='navigation-sitemap-button'><a href='/sitemap/'>View sitemap</a></div>";
-
-//	echo "<div id='navigation-history-button'><a href='/schedule/'>View archive</a></div>";
+	echo "<div id='navigation-sitemap-button'><a href='/sitemap/'>Sitemap</a> &nbsp;&nbsp; | &nbsp;&nbsp; <a href='/schedule/'>Archive</a></div>";
 	
 	$search_value = null;
 	if (array_intersect([$slug_temp, $page_temp], ["search"])): $search_value = htmlspecialchars($_SESSION['term'], ENT_QUOTES); endif;
@@ -161,6 +159,18 @@ function amp_header($title=null, $canonical=null) {
 	echo "</div>";
 	
 	echo "</amp-carousel>";
+	
+	return;
+	
+	if (!(empty($login)) && ($page_temp !== "account")):
+		echo "<a href='/new/' class='material-icons button float_right'>note_add</a>";
+		echo "<a href='/add/' class='material-icons button float_right'>playlist_add</a>";
+		if (!(empty($entry_confirmed['page_id']))):
+			echo "<a href='/".$entry_confirmed['page_id']."/edit/' class='material-icons button float_right'>edit</a>";
+			endif; 
+			if (!(empty($entry_confirmed['media_id']))):
+			echo "<a href='/m/".$entry_confirmed['media_id']."/edit/' class='material-icons button float_right'>edit</a>";
+			endif; endif;
 	
 	}
 
@@ -173,20 +183,7 @@ function admin_bar($login=null, $entry_confirmed=null) {
 	echo "<div class='bottom_bar background_2'>";
 
 	echo "<span class='button float_left'></span>";
-	
-	if (empty($page_temp) || in_array($page_temp, ["sitemap", "schedule"])):
 		
-		$chosen_temp = null; if (empty($page_temp)): $chosen_temp = "chosen"; endif;
-		echo "<a href='/' class='material-icons button float_left ".$chosen_temp."'>dashboard</a>";
-
-		$chosen_temp = null; if ($page_temp == "sitemap"): $chosen_temp = "chosen"; endif;
-		echo "<a href='/sitemap/' class='material-icons button float_left ".$chosen_temp."'>format_list_bulleted</a>";
-	
-		$chosen_temp = null; if ($page_temp == "schedule"): $chosen_temp = "chosen"; endif;
-		echo "<a href='/schedule/' class='material-icons button float_left ".$chosen_temp."'>schedule</a>";
-	
-		endif;
-	
 	if ($page_temp == "search"):	
 	
 		$chosen_temp = null; if (empty($slug_temp)): $chosen_temp = "chosen"; endif;
@@ -197,23 +194,6 @@ function admin_bar($login=null, $entry_confirmed=null) {
 	
 		endif;
 	
-
-	echo "<span class='button float_right'></span>";
-	
-	if (!(empty($page_temp))): echo "<a href='/' class='material-icons button float_right'>home</a>"; endif;
-
-	if (!(empty($login)) && ($page_temp == "account")): echo "<a href='/logout/' class='material-icons button float_right'>cancel</a>";
-	else: echo "<a href='/account/' class='material-icons button float_right'>account_circle</a>"; endif;
-
-	if (!(empty($login)) && ($page_temp !== "account")):
-		echo "<a href='/new/' class='material-icons button float_right'>note_add</a>";
-		echo "<a href='/add/' class='material-icons button float_right'>playlist_add</a>";
-		if (!(empty($entry_confirmed['page_id']))):
-			echo "<a href='/".$entry_confirmed['page_id']."/edit/' class='material-icons button float_right'>edit</a>";
-			endif; 
-			if (!(empty($entry_confirmed['media_id']))):
-			echo "<a href='/m/".$entry_confirmed['media_id']."/edit/' class='material-icons button float_right'>edit</a>";
-			endif; endif;
 	
 	global $_SESSION;
 	if (!(empty($entry_confirmed['password'])) && !(empty($_SESSION[$entry_confirmed['page_id']]))):
