@@ -101,7 +101,7 @@ permanent_redirect("https://".$domain."/account/");
 		endif;
 
 	// check login
-	if (!(empty($_COOKIE['cookie_code'])) && ($row['cookie_code'] == $_COOKIE['cookie_code']):
+	if (!(empty($_COOKIE['cookie_code'])) && ($row['cookie_code'] == $_COOKIE['cookie_code'])):
 		$login = $users_list[$row['user_id']];
 		$login['cookie_time'] = $row['cookie_time'];
 		endif;
