@@ -166,7 +166,7 @@ function amp_header($title=null, $canonical=null) {
 		echo "<div class='floating-action-button-main' id='navigation-edit-button'><a href='/m/".$entry_confirmed['media_id']."/edit/'><i class='material-icons'>edit</i> edit</a></div>";
 		echo "<div class='floating-action-button-secondary'>";
 			echo "<div id='navigation-add-page-button'><a href='/new/'><i class='material-icons'>note_add</i> add page</a></div>";
-			echo "<div id='navigation-add-entry-button'><a href='/add/'><i class='material-icons'>playlist_add</a> add entry</a></div>";
+			echo "<div id='navigation-add-entry-button'><a href='/add/'><i class='material-icons'>playlist_add</i> add entry</a></div>";
 			echo "</div></div>";
 	elseif (!(empty($login)) && !(empty($entry_confirmed['media_id']))):
 		echo "<div class='floating-action-button'>";
@@ -176,7 +176,7 @@ function amp_header($title=null, $canonical=null) {
 		echo "<div class='floating-action-button'>";
 		echo "<div class='floating-action-button-main' id='navigation-add-page-button'><a href='/new/'><i class='material-icons'>note_add</i> add page</a></div>";
 		echo "<div class='floating-action-button-secondary'>";
-			echo "<div id='navigation-add-entry-button'><a href='/add/'><i class='material-icons'>playlist_add</a> add entry</a></div>";
+			echo "<div id='navigation-add-entry-button'><a href='/add/'><i class='material-icons'>playlist_add</i> add entry</a></div>";
 			echo "</div></div>";
 		endif;
 
