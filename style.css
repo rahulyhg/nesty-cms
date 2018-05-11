@@ -45,8 +45,8 @@ header h1 {
 	display: inline-block;
 	padding-bottom: 3px; }
 
-#navigation-carousel-main > div, #navigation-carousel-search > div,
-#navigation-carousel-main > button, #navigation-carousel-search > button {
+#navigation-carousel-main div, #navigation-carousel-search div,
+#navigation-carousel-main button, #navigation-carousel-search button {
 	background: none;
 	position: absolute;
 	font-size: 15px;
@@ -64,6 +64,7 @@ div#navigation-create-button {
 	line-height: 15px;
 	text-transform: uppercase;
 	color: #fff;
+	backgound: <? echo $color ?>;
 	border-radius: 4px; 
 	top: 20px;
 	left: 0; }
@@ -79,7 +80,6 @@ div#navigation-settings-button span {
 	
 div#navigation-home-button {
 	text-align: right;
-	font-size: 12px;
 	top: 25px;
 	right: 140px; }
 
