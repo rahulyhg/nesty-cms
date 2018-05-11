@@ -209,22 +209,22 @@ function login($disclaimer=null) {
 		else:
 			echo "<input type='hidden' name='$name_temp' value='$value_temp'>"; endif; endforeach;
 	echo "<input type='email' name='checkpoint_email' placeholder='email' value='$email' autocomplete='off' required>";
-//	echo "<input type='password' name='checkpoint_password' placeholder='password' autocomplete='off' required>";
+	echo "<input type='password' name='checkpoint_password' placeholder='password' autocomplete='off' required>";
 	if ($google_authenticator_toggle == "on"):
 		echo "<input type='number' name='checkpoint_authenticator' placeholder='authenticator code' autocomplete='off' max='999999' required>";
 		endif;
 	// if captcha key exists
 	global $recaptcha_site; global $recaptcha_private; global $recaptcha_override;
-//	if (!(empty($recaptcha_site)) && !(empty($recaptcha_private)) && ($recaptcha_override !== "yes")):
+	if (!(empty($recaptcha_site)) && !(empty($recaptcha_private)) && ($recaptcha_override !== "yes")):
 		echo '<script> $(document).on("keypress", "input", function (e) { var code = e.keyCode || e.which; if (code == 13) { e.preventDefault(); return false; } }); </script>';
 		echo '<script> function recaptchaval(){ document.getElementById("submit_button").disabled = false; document.getElementById("submit_button").classList.remove("gray_background"); } </script>';
 		echo '<script> function recaptchainval(){ document.getElementById("submit_button").disabled = true; document.getElementById("submit_button").classList.add("gray_background"); } </script>';
 		echo "<style> .gray_background { background: #333 !important; } </style>";
 		echo "<div class='g-recaptcha' data-sitekey='".$recaptcha_site."' data-callback='recaptchaval' data-expired-callback='recaptchainval' style='margin: 10px auto 0; display: inline-block;'></div>";
 		echo "<button id='submit_button' type='submit' name='login' value='continue' class='gray_background' disabled>continue</button>";
-//	else:
-//		echo "<button id='submit_button' type='submit' name='login' value='login'>continue</button>";
-//		endif;
+	else:
+		echo "<button id='submit_button' type='submit' name='login' value='login'>continue</button>";
+		endif;
 	
 	echo "</form></div>";
 	echo "<a href='/' class='material-icons button'>home</a>";
