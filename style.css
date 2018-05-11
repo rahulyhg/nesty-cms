@@ -61,9 +61,10 @@ div#navigation-create-button {
 	font-size: 14px;
 	line-height: 15px;
 	text-transform: uppercase;
-	border-radius: 4px; 
+	border-radius: 4px;
+	padding: 7px 20px 5px 15px;
 	top: 20px;
-	left: 0; }
+	left: 15px; }
 
 div#navigation-create-button, div#navigation-create-button a {
 	color: #fff; }
@@ -83,13 +84,14 @@ div#navigation-home-button {
 	right: 140px; }
 
 @media only screen and (max-width: 500px)  {
-	#navigation-home-button { top: 70px; right: 5px; }
+	div#navigation-home-button { top: 70px; right: 5px; }
 	}
 	
 div#navigation-search-button {
 	text-align: right;
 	top: 25px;
 	right: 25px;
+	padding: 8px 20px 6px;
 	font-size: 14px;
 	line-height: 15px;
 	text-transform: uppercase;
