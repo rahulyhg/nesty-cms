@@ -136,7 +136,7 @@ function amp_header($title=null, $canonical=null) {
 	global $login;
 	if (empty($login)): echo "<div id='navigation-signin-button'><a href='/account/'><i class='material-icons'>account_box</i> Sign In</a></div>"; endif;
 	if (!(empty($login))):
-		echo "<div id='navigation-settings-button'><a href='/account/'><i class='material-icons'>settings</i> Settings</a></div>"; endif;
+		echo "<div id='navigation-settings-button'><a href='/account/'><i class='material-icons'>settings</i> Settings</a></div>";
 		$time_temp = date("Y m d h:i", $login['cookie_time']+86400);
 		echo "<div id='navigation-loggedin-time'><i class='material-icons'>timelapse</i> Time remaining: ".$time_temp."</div>";
 		endif;
