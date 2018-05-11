@@ -56,6 +56,7 @@ if (!(empty($_POST['checkpoint_email'])) && !(empty($_POST['checkpoint_password'
 		if ((int)$recaptcha_result['success'] !== 1):
 			$login_hash = $_COOKIE['cookie_code'] = null;
 			setcookie("cookie_code", null, time()-1000, '/');
+			echo "captcha"; exit;
 			permanent_redirect("https://".$domain."/account/"); endif;
 		endif;
 	endif;
@@ -87,7 +88,8 @@ foreach ($connection_pdo->query("SELECT * FROM $database.users") as $row):
 		$update_cookie = $connection_pdo->prepare($sql_temp);
 		$update_cookie->execute($values_temp);
 		$result = execute_checkup($update_cookie->errorInfo(), "creating login cookie");
-		if ($result == "failure"): permanent_redirect("https://".$domain."/account/");
+		if ($result == "failure"): 			echo "logincookie"; exit;
+permanent_redirect("https://".$domain."/account/");
 		else: setcookie("cookie_code", $new_cookie, time()+86400, '/'); $row['cookie_code'] = $new_cookie; endif; 
 		endif;
 
