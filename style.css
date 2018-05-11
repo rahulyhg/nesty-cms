@@ -45,9 +45,7 @@ header h1 {
 	display: inline-block;
 	padding-bottom: 3px; }
 
-#navigation-carousel-main div, #navigation-carousel-search div,
-#navigation-carousel-main button, #navigation-carousel-search button {
-	background: none;
+#navigation-carousel-main div, #navigation-carousel-search div {
 	position: absolute;
 	font-size: 15px;
 	line-height: 16px;
@@ -63,11 +61,13 @@ div#navigation-create-button {
 	font-size: 14px;
 	line-height: 15px;
 	text-transform: uppercase;
-	color: #fff;
 	backgound: <? echo $color ?>;
 	border-radius: 4px; 
 	top: 20px;
 	left: 0; }
+
+div#navigation-create-button, div#navigation-create-button a {
+	color: #fff; }
 
 div#navigation-settings-button {
 	top: 80px;
