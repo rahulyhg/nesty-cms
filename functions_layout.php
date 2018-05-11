@@ -142,6 +142,18 @@ function amp_header($title=null, $canonical=null) {
 
 	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=1)' id='navigation-search-button'>Search</div>";
 
+	if (!(empty($login))):
+		echo "<div id='navigation-add-page-button'><a href='/new/'><i class='material-icons'>note_add</i> add page</a></div>";
+		echo "<div id='navigation-add-entry-button'><a href='/add/'><i class='material-icons'>playlist_add</a> add entry</a></div>";
+		if (!(empty($entry_confirmed['page_id']))):
+			echo "<div id='navigation-edit-butotn'><a href='/".$entry_confirmed['page_id']."/edit/'><i class='material-icons'>edit</i> edit</a></div>";
+			endif; 
+		if (!(empty($entry_confirmed['media_id']))):
+			echo "<div id='navigation-edit-butotn'><a href='/m/".$entry_confirmed['media_id']."/edit/'><i class='material-icons'>edit</i> edit</a></div>";
+			endif;
+		endif;
+	
+	
 	echo "</div>";
 	
 	echo "<div id='navigation-carousel-search' class='background_2'>";
@@ -161,16 +173,6 @@ function amp_header($title=null, $canonical=null) {
 	echo "</amp-carousel>";
 	
 	return;
-	
-	if (!(empty($login)) && ($page_temp !== "account")):
-		echo "<a href='/new/' class='material-icons button float_right'>note_add</a>";
-		echo "<a href='/add/' class='material-icons button float_right'>playlist_add</a>";
-		if (!(empty($entry_confirmed['page_id']))):
-			echo "<a href='/".$entry_confirmed['page_id']."/edit/' class='material-icons button float_right'>edit</a>";
-			endif; 
-			if (!(empty($entry_confirmed['media_id']))):
-			echo "<a href='/m/".$entry_confirmed['media_id']."/edit/' class='material-icons button float_right'>edit</a>";
-			endif; endif;
 	
 	}
 
