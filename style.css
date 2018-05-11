@@ -46,6 +46,7 @@ header h1 {
 	padding-bottom: 3px; }
 
 #navigation-carousel-main div, #navigation-carousel-search div {
+	background: none;
 	position: absolute;
 	font-size: 15px;
 	line-height: 16px;
