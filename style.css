@@ -59,8 +59,10 @@ header h1 {
 	left: 5px; }
 
 #navigation-loggedin-time {
+	color: rgba(50,50,50,0.6);
+	font-style_italic;
 	text-align: left;
-	font-size: 9px;
+	font-size: 8px;
 	top: 55px;
 	left: 8px; }
 
