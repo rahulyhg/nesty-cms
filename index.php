@@ -103,7 +103,7 @@ if (!(empty($new_cookie)) && !(empty($login))):
 	if (!(empty($login_hash))):
 		$values_temp = [
 			"user_id"=>$login['user_id'],
-			"cookie_code"=>$new_cookie],
+			"cookie_code"=>$new_cookie,
 			"cookie_time"=>time();
 		$sql_temp = sql_setup($values_temp, "$database.users");
 		$update_cookie = $connection_pdo->prepare($sql_temp);
