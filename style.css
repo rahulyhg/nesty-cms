@@ -55,7 +55,7 @@ header h1 {
 
 #navigation-signin-button, #navigation-settings-button {
 	text-align: left;
-	top: 22px;
+	top: 17px;
 	left: 0; }
 
 div#navigation-loggedin-time {
@@ -77,6 +77,7 @@ div#navigation-loggedin-time {
 	right: 140px; }
 
 @media only screen and (max-width: 500px)  {
+	#navigation-signin-button, #navigation-settings-button { top: 22px; }
 	#navigation-add-button { top: 68px; }
 	#navigation-home-button { top: 70px; right: 5px; }
 	}
