@@ -96,11 +96,12 @@ foreach ($connection_pdo->query("SELECT * FROM $database.users") as $row):
 permanent_redirect("https://".$domain."/account/");
 		else:
 			$row['cookie_code'] = $_COOKIE['cookie_code'] = $new_cookie; 
-			setcookie("cookie_code", $new_cookie, time()+86400, '/');endif; 
+			setcookie("cookie_code", $new_cookie, time()+86400, '/');
+			endif; 
 		endif;
 
 	// check login
-	if (!(empty($_COOKIE['cookie_code')) && ($row['cookie_code'] == $_COOKIE['cookie_code']):
+	if (!(empty($_COOKIE['cookie_code'])) && ($row['cookie_code'] == $_COOKIE['cookie_code']):
 		$login = $users_list[$row['user_id']];
 		$login['cookie_time'] = $row['cookie_time'];
 		endif;
