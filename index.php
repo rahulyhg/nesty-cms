@@ -46,6 +46,9 @@ if ($page_temp == "logout"):
 
 $login_hash = $new_cookie = $login = null;
 if (!(empty($_POST['checkpoint_email'])) && !(empty($_POST['checkpoint_password']))):
+
+	echo "checkpoint"; exit;
+
 	$_POST['checkpoint_email'] = strtolower($_POST['checkpoint_email']);
 	$login_hash = sha1($_POST['checkpoint_email'].$_POST['checkpoint_password']);
 	if (!(empty($recaptcha_site)) && !(empty($recaptcha_private))):
