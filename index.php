@@ -55,7 +55,7 @@ if (!(empty($_POST['checkpoint_email'])) && !(empty($_POST['checkpoint_password'
 		$recaptcha_result = json_decode($recaptcha_result, true);
 		if ((int)$recaptcha_result['success'] !== 1):
 			$login_hash = $_COOKIE['cookie_code'] = null;
-			setcookie("cookie", null, time()-1000, '/');
+			setcookie("cookie_code", null, time()-1000, '/');
 			permanent_redirect("https://".$domain."/account/"); endif;
 		endif;
 	endif;
@@ -72,46 +72,33 @@ foreach ($connection_pdo->query("SELECT * FROM $database.users") as $row):
 	if (empty($_COOKIE['cookie_code']) && empty($login_hash)): continue; endif;
 	if (!(empty($login))): continue; endif;
 
-	// new login
+	// create new login
 	if (!(empty($login_hash)) && ($row['hash'] == $login_hash)):
-		$login = $users_list[$row['user_id']];
-		$login['authenticator'] = $row['authenticator'];
+		if ($google_authenticator_toggle == "on"):
+			if (empty($_POST['checkpoint_authenticator'])): continue; endif;
+			if ($_POST['checkpoint_authenticator'] !== code_generator($row['authenticator'])): continue; endif;
+			endif;
 		$new_cookie = sha1($row['user_id'].time());
-		endif;
-
-	// current login
-	if ($row['cookie_code'] == $_COOKIE['cookie_code']):
-		$login = $users_list[$row['user_id']];
-		$login['cookie_time'] = $row['cookie_time'];
-		$login['authenticator'] = $row['authenticator'];
-		$new_cookie = $_COOKIE['cookie_code']; endif;
-	endforeach;
-
-if (!(empty($login_hash)) && ($google_authenticator_toggle == "on")):
-	if (empty($_POST['checkpoint_authenticator']) || ($_POST['checkpoint_authenticator'] !== code_generator($login['authenticator']))):
-		$login_hash = $login = null;
-		setcookie("cookie", null, time()-8000, '/');
-		permanent_redirect("https://".$domain."/account/2/");
-		endif;
-	endif;
-
-if (empty($new_cookie) && (!(empty($login_hash)) || !(empty($_COOKIE['cookie_code'])))):
-	setcookie("cookie_code", null, time()-8000, '/');
-	permanent_redirect("https://".$domain."/account/2/"); endif;
-
-if (!(empty($new_cookie)) && !(empty($login))):
-	if (!(empty($login_hash))):
 		$values_temp = [
-			"user_id"=>$login['user_id'],
+			"user_id"=>$row['user_id'],
 			"cookie_code"=>$new_cookie,
 			"cookie_time"=>time() ];
 		$sql_temp = sql_setup($values_temp, "$database.users");
 		$update_cookie = $connection_pdo->prepare($sql_temp);
 		$update_cookie->execute($values_temp);
 		$result = execute_checkup($update_cookie->errorInfo(), "creating login cookie");
-		if ($result == "failure"): $login = null;
-		else: setcookie("cookie_code", $new_cookie, time()+86400, '/'); endif; endif;
-	endif;
+		if ($result == "failure"): permanent_redirect("https://".$domain."/account/");
+		else: setcookie("cookie_code", $new_cookie, time()+86400, '/'); $row['cookie_code'] = $new_cookie; endif; 
+		endif;
+
+	// check login
+	if ($row['cookie_code'] == $_COOKIE['cookie_code']):
+		$login = $users_list[$row['user_id']];
+		$login['cookie_time'] = $row['cookie_time'];
+		endif;
+
+	endforeach;
+
 
 if (in_array($page_temp, ["account", "two-factor", "settings", "security", "supervisor", "new", "add"]) && empty($login)):
 	setcookie("cookie_code", null, time()-8000, '/');
