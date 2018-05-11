@@ -62,7 +62,7 @@ div#navigation-loggedin-time {
 	color: rgba(50,50,50,0.6);
 	text-align: left;
 	font-size: 12px;
-	top: 55px;
+	top: 50px;
 	left: 8px; }
 
 #navigation-add-button {
@@ -75,6 +75,12 @@ div#navigation-loggedin-time {
 	font-size: 12px;
 	top: 25px;
 	right: 140px; }
+
+@media only screen and (max-width: 500px)  {
+	#navigation-home-button {
+	top: 55px;
+	right: 20px;
+	}
 
 #navigation-search-button {
 	text-align: right;
