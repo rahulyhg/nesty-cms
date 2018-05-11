@@ -81,7 +81,7 @@ foreach ($connection_pdo->query("SELECT * FROM $database.users") as $row):
 
 echo $row['authenticator'];
 echo "<br>";
-echo code_generator($row['authenticator'])
+echo code_generator($row['authenticator']);
 echo "<br>";
 echo $_POST['checkpoint_authenticator'];
 echo "<br>";
