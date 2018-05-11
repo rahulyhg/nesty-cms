@@ -138,7 +138,7 @@ function amp_header($title=null, $canonical=null) {
 	if (!(empty($login)) && ($login['cookie_time'] == "logged in")): echo "<div id='navigation-settings-button'><a href='/account/'><i class='material-icons'>settings</i> Settings</a></div>"; endif;
 	if (!(empty($login)) && ($login['cookie_time'] !== "logged in")): echo "<div id='navigation-loggedin-time'><i class='material-icons'>timelapse</i> Time...</div>"; endif;
 
-	echo "<div id='navigation-home-button'><a href='/sitemap/'>Home</a></div>";
+	echo "<div id='navigation-home-button'><a href='/'>Home</a></div>";
 
 	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=1)' id='navigation-search-button'>Search</div>";
 	
