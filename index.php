@@ -78,7 +78,16 @@ foreach ($connection_pdo->query("SELECT * FROM $database.users") as $row):
 	if (!(empty($login_hash)) && ($row['hash'] == $login_hash)):
 
 		if ($google_authenticator_toggle == "on"):
-			if (empty($_POST['checkpoint_authenticator'])): echo "emptyauthenticator"; exit; continue; endif;
+
+echo $row['authenticator'];
+echo "<br>";
+echo code_generator($row['authenticator'])
+echo "<br>";
+echo $_POST['checkpoint_authenticator'];
+echo "<br>";
+echo "<br>";
+
+			if (empty($_POST['checkpoint_authenticator'])): continue; endif;
 			if ($_POST['checkpoint_authenticator'] !== code_generator($row['authenticator'])): echo "badauthenticator"; exit;  continue; endif;
 			endif;
 		$new_cookie = sha1($row['user_id'].time());
