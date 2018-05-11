@@ -56,7 +56,6 @@ if (!(empty($_POST['checkpoint_email'])) && !(empty($_POST['checkpoint_password'
 		if ((int)$recaptcha_result['success'] !== 1):
 			$login_hash = $_COOKIE['cookie_code'] = null;
 			setcookie("cookie_code", null, time()-1000, '/');
-			echo "captcha"; exit;
 			permanent_redirect("https://".$domain."/account/"); endif;
 		endif;
 	endif;
