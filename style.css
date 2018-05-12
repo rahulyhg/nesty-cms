@@ -459,5 +459,5 @@ div.paginator span.bold a {
 	font-weight: 700;
 	color: rgba(150,150,150,0.9); }
 
-.home-description {
-	margin: 0; }
+.home-description p {
+	margin: 30px; }
