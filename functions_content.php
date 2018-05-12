@@ -225,8 +225,8 @@ function body_process($body_incoming) {
 		$link_string = $link_string;
 
 		if ($link_type == "tile"): $link_string = "<amp-fit-text width='240' height='200' max-font-size='23' min-font-size='18'>".$link_string."</amp-fit-text>"; endif;
-		$link_string = "<a href='".$link_info[$link_id_temp]['link']."'>".$link_string."</a>";
-		if ($link_type == "tile"): $link_string = "<div class='tile background_".rand(1,10)."'>".$link_string."</div>"; endif;
+		$link_string = "<a href='".$link_info[$link_id_temp]['link']."'>".$link_string."<br><div class='background_".rand(1,10)."'>read more</div></a>";
+		if ($link_type == "tile"): $link_string = "<div class='tile'>".$link_string."</div>"; endif;
 	
 		$body_incoming = str_replace("{{{".$match_temp."}}}", $link_string, $body_incoming);
 	
