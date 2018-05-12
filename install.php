@@ -37,18 +37,6 @@ $run_statement = $connection_pdo->prepare($sql_temp);
 $run_statement->execute();
 $result = execute_checkup($run_statement->errorInfo(), "creating users table", "full");
 
-$sql_temp = "ALTER TABLE $database.users ADD `cookie_code` VARCHAR(50) AFTER `name`;";
-$run_statement = $connection_pdo->prepare($sql_temp);
-$run_statement->execute();
-$result = execute_checkup($run_statement->errorInfo(), "creating users table", "full");
-
-$sql_temp = "ALTER TABLE $database.users ADD `cookie_time` VARCHAR(50) AFTER `cookie_code`;";
-$run_statement = $connection_pdo->prepare($sql_temp);
-$run_statement->execute();
-$result = execute_checkup($run_statement->errorInfo(), "creating users table", "full");
-
-
-
 if (!(empty($_POST['submit']))):
 	if (empty($_POST['email']) || empty($_POST['password1'])):
 		echo "<br><b>user information incomplete</b><br>";
@@ -93,10 +81,15 @@ $run_statement->execute();
 $result = execute_checkup($run_statement->errorInfo(), "creating paths table", "full");
 			
 // create site info table
-$sql_temp = "CREATE TABLE IF NOT EXISTS $database.siteinfo (`key` VARCHAR(100), `value` VARCHAR(100), timestamp TIMESTAMP, PRIMARY KEY (`key`)) DEFAULT CHARSET=utf8mb4;";
+$sql_temp = "CREATE TABLE IF NOT EXISTS $database.siteinfo (`key` VARCHAR(100), `value` VARCHAR(900), timestamp TIMESTAMP, PRIMARY KEY (`key`)) DEFAULT CHARSET=utf8mb4;";
 $run_statement = $connection_pdo->prepare($sql_temp);
 $run_statement->execute();
-$result = execute_checkup($run_statement->errorInfo(), "creating siteinfo table", "full");			
+$result = execute_checkup($run_statement->errorInfo(), "creating siteinfo table", "full");
+
+$sql_temp = "ALTER TABLE $database.siteinfo MODIFY COLUMN `value` VARCHAR(900);";
+$run_statement = $connection_pdo->prepare($sql_temp);
+$run_statement->execute();
+$result = execute_checkup($run_statement->errorInfo(), "creating users table", "full");
 				     
 // select users from table and if it is empty then create a user
 $sql_temp = "SELECT * FROM $database.users";
