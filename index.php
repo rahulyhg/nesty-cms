@@ -8,14 +8,16 @@ include_once('functions.php');
 
 $login = $page = $action = $page_confirmed = null;
 
-$publisher = $recaptcha_site = $recaptcha_private = $google_analytics_code = $google_authenticator_code = $color = null;
-foreach ($connection_pdo->query("SELECT * FROM $database.siteinfo") as $row):
+$publisher = $color = $description = null;
+$recaptcha_site = $recaptcha_private = $google_analytics_code = $google_authenticator_code = null;
+foreach ($connection_pdo->query("SELECT * FROM $database.siteinfo") as $row):	
 	if ($row['key'] == "publisher"): $publisher = $row['value']; endif;
 	if ($row['key'] == "recaptcha_site"): $recaptcha_site = $row['value']; endif;
 	if ($row['key'] == "recaptcha_private"): $recaptcha_private = $row['value']; endif;
 	if ($row['key'] == "google_analytics_code"): $google_analytics_code = $row['value']; endif;
 	if ($row['key'] == "google_authenticator_toggle"): $google_authenticator_toggle = $row['value']; endif;
 	if ($row['key'] == "color"): $color = $row['value']; endif;
+	if ($row['key'] == "description"): $description = $row['description']; endif;
 	endforeach;
 
 $page_temp = $slug_temp = $command_temp = null;
