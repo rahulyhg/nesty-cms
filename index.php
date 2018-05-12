@@ -101,6 +101,7 @@ foreach ($connection_pdo->query("SELECT * FROM $database.users") as $row):
 	if (!(empty($_COOKIE['cookie_code'])) && ($row['cookie_code'] == $_COOKIE['cookie_code'])):
 		$login = $users_list[$row['user_id']];
 		$login['cookie_time'] = $row['cookie_time'];
+		$login['authenticator'] = $row['authenticator'];
 		endif;
 
 	endforeach;
