@@ -17,7 +17,7 @@ foreach ($connection_pdo->query("SELECT * FROM $database.siteinfo") as $row):
 	if ($row['key'] == "google_analytics_code"): $google_analytics_code = $row['value']; endif;
 	if ($row['key'] == "google_authenticator_toggle"): $google_authenticator_toggle = $row['value']; endif;
 	if ($row['key'] == "color"): $color = $row['value']; endif;
-	if ($row['key'] == "description"): $description = $row['description']; endif;
+	if ($row['key'] == "description"): $description = $row['value']; endif;
 	endforeach;
 
 $page_temp = $slug_temp = $command_temp = null;
