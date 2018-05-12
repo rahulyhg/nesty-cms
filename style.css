@@ -461,3 +461,7 @@ div.paginator span.bold a {
 
 .home-description {
 	text-align: left; }
+
+
+.home-description p {
+	max-width: 600px; }
