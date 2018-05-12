@@ -456,4 +456,5 @@ div.paginator span.bold a {
 	font-style: italic; }
 
 .home-header, .home-header a {
+	font-weight: 700;
 	color: rgba(150,150,150,0.9); }
