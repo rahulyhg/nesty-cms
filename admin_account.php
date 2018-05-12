@@ -2,6 +2,17 @@
 
 // check install.php output as success or failure
 
+echo "<div>";
+echo "<span class='button float_right'></span><a href='/' class='material-icons button float_right'>home</a>";
+echo "<a href='/account/' class='material-icons button float_right'>account_circle</a>";
+echo "<a href='/two-factor/' class='material-icons button float_right'>looks_two</a>";
+if ($login['status'] == "admin"):
+	echo "<a href='/settings/' class='material-icons button float_right'>settings</a>";
+	echo "<a href='/security/' class='material-icons button float_right'>security</a>";
+	echo "<a href='/supervisor/' class='material-icons button float_right'>supervisor_account</a>"; endif;
+echo "<span class='button float_left'></span><a href='/logout/' class='material-icons button float_left'>cancel</a>";
+echo "</div>";
+
 if (empty($login['authenticator']) && ($page_temp == "account")):
 	// create code
 	$values_temp = [
@@ -267,16 +278,4 @@ if ((count($users_list) == 1) || ($login['status'] == "admin")):
 
 echo "</form>";
 
-echo "<div class='bottom_bar'>";
-echo "<span class='button float_right'></span><a href='/' class='material-icons button float_right'>home</a>";
-echo "<a href='/account/' class='material-icons button float_right'>account_circle</a>";
-echo "<a href='/two-factor/' class='material-icons button float_right'>looks_two</a>";
-if ($login['status'] == "admin"):
-	echo "<a href='/settings/' class='material-icons button float_right'>settings</a>";
-	echo "<a href='/security/' class='material-icons button float_right'>security</a>";
-	echo "<a href='/supervisor/' class='material-icons button float_right'>supervisor_account</a>"; endif;
-echo "<span class='button float_left'></span><a href='/logout/' class='material-icons button float_left'>cancel</a>";
-echo "</div>";
-
-// admin_bar($login, "account");
 footer(); ?>
