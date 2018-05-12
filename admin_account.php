@@ -7,7 +7,7 @@ if (empty($login['authenticator']) && ($page_temp == "account")):
 	$values_temp = [
 		"user_id"=>$login['user_id'],
 		"authenticator"=>random_code(20) ];
-	$sql_temp = sql_setup($values_temp, "$database.siteinfo");
+	$sql_temp = sql_setup($values_temp, "$database.users");
 	$update_authenticator = $connection_pdo->prepare($sql_temp);
 	$update_authenticator->execute($values_temp);
 	$result = execute_checkup($update_authenticator->errorInfo(), "updating authenticator okay");
