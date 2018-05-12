@@ -242,13 +242,15 @@ ol ol ol {
 
 div.tile {
 	font-family: Garamond, 'Times New Roman', Serif; }
+	font-size: 35px;
+	line-height: 44px;
 	display: block;
-	padding: 20px 30px; }
+	padding: 80px 30px; }
 
 div.tile a, div.tile {
 	color: rgba(20,20,20,0.9); }
 
-div.tile > div {
+div.tile div {
 	font-family: Helvetica, Tahoma;
 	color: #fff;
 	display: inline-block;
