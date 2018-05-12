@@ -223,7 +223,7 @@ if ((count($users_list) == 1) || ($login['status'] == "admin")):
 		echo "<input type='text' name='publisher' value='".htmlspecialchars($publisher)."' placeholder='My Website'><br>";
 		echo "<input type='text' name='google_analytics_code' value='".htmlspecialchars($google_analytics_code)."' placeholder='Google Analytics code (UA-*******-*)'><br>";
 		echo "<input type='color' name='color' value='".htmlspecialchars($color)."' placeholder='background colour'><br>";
-		echo "<textarea name='description' placeholder='description' style='width: 400px; height: 400px;'>".htmlspecialchars($description)."</textarea>";
+		echo "<textarea name='description' placeholder='description' style='width: 390px; height: 300px;'>".htmlspecialchars($description)."</textarea>";
 
 		echo "<button type='submit' name='update' value='settings' class='material-icons button_action'>save</button>";
 
