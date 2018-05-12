@@ -241,7 +241,7 @@ ol ol ol {
 /* LINK TILES */
 
 div.tile {
-	font-family: Garamond, 'Times New Roman', Serif; }
+	font-family: Garamond, 'Times New Roman', Serif;
 	font-size: 35px;
 	line-height: 44px;
 	display: block;
@@ -252,6 +252,8 @@ div.tile a, div.tile {
 
 div.tile div {
 	font-family: Helvetica, Tahoma;
+	font-size: 12px;
+	line-height: 13px;
 	color: #fff;
 	display: inline-block;
 	margin: 0 auto;
