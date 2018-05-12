@@ -1,10 +1,11 @@
 <? amp_header($domain);
-admin_bar($login,"home");
 
 echo "<h1>".$publisher."</h1>";
 
 if (!(empty($description))):
+	echo "<div class='home-description'>";
 	echo body_process($description);
+	echo "</div>";
 	endif;
 
 $count_temp = 0;
