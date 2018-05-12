@@ -9,8 +9,8 @@ if (empty($login['authenticator']) && ($page_temp == "account")):
 		"authenticator"=>random_code(20) ];
 	$sql_temp = sql_setup($values_temp, "$database.siteinfo");
 	$update_authenticator = $connection_pdo->prepare($sql_temp);
-	$update_siteinfo->execute(["key"=>"publisher", "value"=>trim($_POST['publisher'])]);
-	$result = execute_checkup($update_siteinfo->errorInfo(), "updating authenticator okay");
+	$update_authenticator->execute($values_temp);
+	$result = execute_checkup($update_authenticator->errorInfo(), "updating authenticator okay");
 	if ($result == "success"): echo '<script> window.location.replace("https://'.$domain.'/account/"); </script>'; endif;
 	endif;
 
