@@ -40,7 +40,7 @@ if ($page_temp == "sitemap.xml"):
 
 //if the page is set to log out then logout
 if ($page_temp == "logout"):
-	setcookie("cookie", null, time()-1000, '/');
+	setcookie("cookie_code", null, time()-1000, '/');
 	permanent_redirect("https://".$domain);
 	endif;
 
