@@ -447,8 +447,13 @@ div.paginator span.bold a {
 	.bottom_bar { display: none; } }
 
 .home-header {
+	font-family: 'Times New Roman';
+	font-size: 15px;
+	line-height: 16px;
 	text-align: center;
 	display: block;
 	margin: 30px;
-	font-style: italic;
+	font-style: italic; }
+
+.home-header, .home-header a {
 	color: rgba(150,150,150,0.9); }
