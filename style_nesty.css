@@ -245,7 +245,8 @@ div.tile {
 	font-size: 35px;
 	line-height: 44px;
 	display: block;
-	padding: 80px 30px;
+	padding: 0;
+	margin: 80px 30px;
 	position: relative; }
 
 div.tile a, div.tile {
