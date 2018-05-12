@@ -242,8 +242,9 @@ ol ol ol {
 
 div.tile {
 	font-family: Garamond, 'Times New Roman', Serif;
-	font-size: 35px;
-	line-height: 44px;
+	font-size: 30px;
+	line-height: 38px;
+	font-weight: 700;
 	display: block;
 	padding: 0 0 30px 0;
 	margin: 80px 30px;
@@ -256,6 +257,7 @@ div.tile div {
 	font-family: Helvetica, Tahoma;
 	font-size: 12px;
 	line-height: 13px;
+	font-weight: 400;
 	color: #fff;
 	display: inline-block;
 	border-radius: 4px;
