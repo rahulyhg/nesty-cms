@@ -380,3 +380,9 @@ amp-lightbox figcaption {
 	blockquote cite { width: 100%; }
 	th, td { display: block;}
 	th + th, td + td, th + td, td + th { border-left: none; border-top: 2px solid rgba(200,200,200,0.12); }
+
+	
+/* MATHEMATICS */
+	
+.overline {
+	text-decoration: overline; }
