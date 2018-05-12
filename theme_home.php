@@ -21,6 +21,6 @@ foreach($connection_pdo->query($sql_temp) as $row):
 	echo body_process("[[[".$row['media_id']."][large]]]");
 	endforeach;
 
-echo "<span class='home-header'><a href='/schedule/'>View more</a></span>";
+echo "<span class='home-header'><a href='/schedule/'>View archive</a></span>";
 
 footer(); ?>
