@@ -222,8 +222,8 @@ function body_process($body_incoming) {
 		if (empty($matches_temp)): $matches_temp = [ [], [] ]; endif;
 		foreach ($matches_temp[0] as $temp): $link_string = str_replace("(((".$temp.")))", null, $link_string); endforeach;
 	
-		$link_string = "<a href='".$link_info[$link_id_temp]['link']."'>".$link_string."<div class='background_".rand(1,10)."'>Read more</div></a>";
-		if ($link_type == "tile"): $link_string = "<div class='tile'>".$link_string."</div>"; endif;
+		if ($link_type == "tile"): $link_string = "<div class='tile'>".$link_string."<div class='background_".rand(1,10)."'>Read more</div></div>"; endif;
+		$link_string = "<a href='".$link_info[$link_id_temp]['link']."'>".$link_string."</a>";
 	
 		$body_incoming = str_replace("{{{".$match_temp."}}}", $link_string, $body_incoming);
 	
