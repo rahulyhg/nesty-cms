@@ -328,7 +328,7 @@ div.login button {
 	bottom: 0;
 	left: 0; }
 
-.bottom_bar button, .bottom_bar .button { font-size: 24px; color: rgba(255,255,255,0.95); }
+.bottom_bar button, .bottom_bar .button { font-size: 24px; color: rgba(30,30,30,0.95); }
 
 .float_right {
 	float: right; }
@@ -442,26 +442,13 @@ div.paginator span.bold {
 div.paginator span.bold a {
 	color: rgba(255,255,255,0.9); }
 
-#search-header input {
-	display: block;
-	width: 100%;
-	margin: 0 0 40px 0;
-	padding: 15px;
-	border: 0;
-	border-radius: 0;
-	box-shadow: 0 15px 25px -15px rgba(0,0,0,0.2);
-	background: linear-gradient(60deg, <? echo $color ?>, rgba(<? echo hexdec(substr($color,-6,2)) ?>, <? echo hexdec(substr($color,-4,2)) ?>, <? echo hexdec(substr($color,-2)) ?>, 0.5));
-	color: rgba(255,255,255,0.9);
-	text-align: center;
-	height: 50px;
-	font-size: 20px;
-	font-weight: 300;
-	-webkit-appearance: none;
-	-webkit-border-radius: 0px; }
-
-#search-header input::-webkit-input-placeholder {
-	color: rgba(255,255,255,0.8); }
-
 @media print {
 	#search-header { display: none; }
 	.bottom_bar { display: none; } }
+
+.home-header {
+	text-align: center;
+	display: block;
+	margin: 30px;
+	font-style: italic;
+	color: rgba(150,150,150,0.9); }
