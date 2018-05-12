@@ -1,15 +1,23 @@
 <? amp_header($domain);
 admin_bar($login,"home");
 
-$content_array = [];
+echo "<h1>".$publisher."</h1>";
 
-$sql_temp = "SELECT page_id, created_time, header FROM $database.pages ORDER BY created_time DESC LIMIT 2";
+if (!(empty($description))):
+	echo body_process($description);
+	endif;
+
+$count_temp = 0;
+$sql_temp = "SELECT page_id, created_time, header FROM $database.pages ORDER BY created_time DESC LIMIT 3";
 foreach($connection_pdo->query($sql_temp) as $row):
+	if ($count_temp == 0): echo "<h2>Recent posts</h2>"; $count_temp++; endif;
 	echo body_process("{{{".$row['page_id']."}{".$row['header']."}{tile}}}");
 	endforeach;
 
-$sql_temp = "SELECT media_id FROM $database.media ORDER BY datetime_original DESC LIMIT 5"; // datetime_process is alternative method of sorting
+$count_temp = 0;
+$sql_temp = "SELECT media_id FROM $database.media ORDER BY datetime_original DESC LIMIT 3"; // datetime_process is alternative method of sorting
 foreach($connection_pdo->query($sql_temp) as $row):
+	if ($count_temp == 0): echo "<h2>Latest images</h2>"; $count_temp++; endif;
 	echo body_process("[[[".$row['media_id']."][large]]]");
 	endforeach;
 
