@@ -48,7 +48,7 @@ $login_hash = $new_cookie = $login = null;
 if (!(empty($_POST['checkpoint_email'])) && !(empty($_POST['checkpoint_password']))):
 	$_POST['checkpoint_email'] = strtolower($_POST['checkpoint_email']);
 	$login_hash = sha1($_POST['checkpoint_email'].$_POST['checkpoint_password']);
-	if (!(empty($recaptcha_site)) && !(empty($recaptcha_private))):
+	if (!(empty($recaptcha_site)) && !(empty($recaptcha_private)) && ($recaptcha_override !== "yes")):
 		$post_temp = [ "secret" => $recaptcha_private, "response" => $_POST['g-recaptcha-response'], "remoteip"=> $_SERVER['REMOTE_ADDR']];
 		$opts = [ "http" => [ "method" => "POST", "header" => "Content-type: application/x-www-form-urlencoded", "content" => http_build_query($post_temp) ] ];
 		$recaptcha_result = file_get_contents("https://www.google.com/recaptcha/api/siteverify", false, stream_context_create($opts));
