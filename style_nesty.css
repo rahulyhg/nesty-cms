@@ -384,5 +384,6 @@ amp-lightbox figcaption {
 	
 /* MATHEMATICS */
 	
-.overline {
-	text-decoration: overline; }
+.overline { text-decoration: overline; }
+
+.smallcaps { font-variant: small-caps; }
