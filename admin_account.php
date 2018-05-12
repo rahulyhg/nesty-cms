@@ -44,6 +44,10 @@ if (!(empty($_POST['update'])) && ($login['status'] == "admin")):
 			$update_siteinfo->execute(["key"=>"publisher", "value"=>trim($_POST['publisher'])]);
 			$result = execute_checkup($update_siteinfo->errorInfo(), "updating publisher okay");
 			if ($result !== "success"): $result_failure = "failure"; else: $result_success = 1; endif; endif;
+		if ($_POST['description'] !== $description):
+			$update_siteinfo->execute(["key"=>"description", "value"=>trim($_POST['description'])]);
+			$result = execute_checkup($update_siteinfo->errorInfo(), "updating description okay");
+			if ($result !== "success"): $result_failure = "failure"; else: $result_success = 1; endif; endif;
 		if ($_POST['google_analytics_code'] !== $google_analytics_code):
 			$update_siteinfo->execute(["key"=>"google_analytics_code", "value"=>trim($_POST['google_analytics_code'])]);
 			$result = execute_checkup($update_siteinfo->errorInfo(), "updating google_analytics_code okay");
@@ -219,6 +223,7 @@ if ((count($users_list) == 1) || ($login['status'] == "admin")):
 		echo "<input type='text' name='publisher' value='".htmlspecialchars($publisher)."' placeholder='My Website'><br>";
 		echo "<input type='text' name='google_analytics_code' value='".htmlspecialchars($google_analytics_code)."' placeholder='Google Analytics code (UA-*******-*)'><br>";
 		echo "<input type='color' name='color' value='".htmlspecialchars($color)."' placeholder='background colour'><br>";
+		echo "<textarea name='description' placeholder='description'>".htmlspecialchars($description)."</textarea>";
 
 		echo "<button type='submit' name='update' value='settings' class='material-icons button_action'>save</button>";
 
