@@ -448,9 +448,9 @@ div.paginator span.bold a {
 
 .home-header {
 	font-family: 'Times New Roman';
-	font-size: 25px;
-	line-height: 28px;
-	text-align: center;
+	font-size: 23px;
+	line-height: 25px;
+	text-align: left;
 	display: block;
 	margin: 30px;
 	font-style: italic; }
