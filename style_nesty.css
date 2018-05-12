@@ -245,7 +245,8 @@ div.tile {
 	font-size: 35px;
 	line-height: 44px;
 	display: block;
-	padding: 80px 30px; }
+	padding: 80px 30px;
+	position: relative; }
 
 div.tile a, div.tile {
 	color: rgba(20,20,20,0.9); }
@@ -257,7 +258,9 @@ div.tile div {
 	color: #fff;
 	display: inline-block;
 	border-radius: 4px;
-	margin: 20px 0 0;
+	position: absolute;
+	left: 0;
+	bottom: 0;
 	padding: 5px 15px; }
 
 
