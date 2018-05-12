@@ -458,3 +458,8 @@ div.paginator span.bold a {
 .home-header, .home-header a {
 	font-weight: 700;
 	color: rgba(150,150,150,0.9); }
+
+.home-description {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1000px; }
