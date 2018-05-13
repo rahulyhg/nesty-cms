@@ -333,7 +333,7 @@ div.login button {
 	position: absolute;
 	top: 0;
 	right: 0;
-	color: rgba(50,50,50,0.75);
+	color: <? echo $color ?>;
 	font-size: 15px;
 	line-height: 16px;
 	border: 1px solid <? echo $color ?>;
