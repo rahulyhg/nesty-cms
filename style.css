@@ -344,7 +344,7 @@ div.login button {
 	font-size: 18px;
 	line-height: 22px; }
 
-amp-accordion > section > header {
+amp-accordion.nesting-or-popover > section > header {
 	border: 0;
 	background: none; }
 
