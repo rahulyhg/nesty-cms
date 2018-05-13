@@ -147,6 +147,16 @@ if ($page_temp == "schedule"):
 	include_once('theme_home_schedule.php');
 	endif;
 
+// options to create
+if (!(empty($login)) && ($page_temp == "new")):
+	html_header("Create");
+	echo "<div class='create-menu'>";
+	echo "<div class='button'>new page</div>";
+	echo "<div class='button'>add entry</div>";
+	echo "</div>";
+	footer();
+	endif;
+
 // add new page
 if (!(empty($login)) && ($page_temp == "new")):
 	include_once('admin_page.php');
