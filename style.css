@@ -278,6 +278,9 @@ button:hover, .button:hover {
 #schedule sup::after {
 	content: ')'; }
 
+
+/* LOGIN */
+
 div.login {
 	margin: 100px auto 20px;
 	padding: 0;
@@ -317,6 +320,32 @@ div.login button {
 	color: #fff;
 	background: <? echo $color; ?>;
 	font-size: 16px; }
+
+
+/* CREATE */
+
+#create-window {
+	display: block;
+	margin: 100px 30px; }
+
+#create-window-new-page-button, #create-window-add-entry-button {
+	padding: 5px 10px;
+	font-family: Arial, Helvetica;
+	color: rgba(255,255,255,0.95);
+	border-radius: 4px;
+	margin: 30px auto;
+	width: 200px;
+	text-align: center; }
+
+#create-window-home-button {
+	color: rgba(50,50,50,0.75);
+	font-size: 12px;
+	line-height: 14px;
+	display: block;
+	text-algn: left; }
+
+
+/* ETC */
 
 .bottom_bar {
 	padding: 0;
