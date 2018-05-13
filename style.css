@@ -329,7 +329,7 @@ div.login button {
 	margin: 100px 30px; }
 
 #create-window-new-page-button, #create-window-add-entry-button {
-	display: block;
+	display: inline-block;
 	color: rgba(255,255,255,0.95);
 	margin: 30px auto;
 	width: 200px;
@@ -341,6 +341,7 @@ div.login button {
 	padding: 7px 20px 5px 15px; }
 
 #create-window-home-button {
+	margin: 20px auto;
 	color: rgba(50,50,50,0.75);
 	font-size: 12px;
 	line-height: 14px;
