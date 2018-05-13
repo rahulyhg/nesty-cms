@@ -81,8 +81,8 @@ if (!(empty($children)) || !(empty($parents))):
 
 	if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 		echo "<amp-accordion amp-fx='parallax' data-parallax-factor='1.3' class='nesting-or-popover'>";
-		echo "<section><header><span class='header-outline show-more'>▶ &nbsp; View related</span>";
-		echo "<span class='header-outline show-less'>▼ &nbsp; Tap to hide</span></header>";
+		echo "<section><header><span class='header-outline show-more'>▶&#xFE0E; View related</span>";
+		echo "<span class='header-outline show-less'>▼&#xFE0E; Tap to hide</span></header>";
 		endif;
 
 	$parents = array_intersect(array_keys($pages_array), $parents);
@@ -140,8 +140,8 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 
 	if (!(empty($page_confirmed['popover']))):
 		echo "<amp-accordion amp-fx='parallax' data-parallax-factor='1.3' class='nesting-or-popover'>";
-		echo "<section><header><span class='header-outline show-more'>▶ &nbsp; Show table of contents</span>";
-		echo "<span class='header-outline show-less'>▼ &nbsp; Tap to hide</span></header>";
+		echo "<section><header><span class='header-outline show-more'>▶&#xFE0E; Show table of contents</span>";
+		echo "<span class='header-outline show-less'>▼&#xFE0E; Tap to hide</span></header>";
 		echo $page_confirmed['popover'];
 		echo "</section></amp-accordion>";
 		endif;
