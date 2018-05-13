@@ -151,8 +151,9 @@ if ($page_temp == "schedule"):
 if (!(empty($login)) && ($page_temp == "create")):
 	html_header("Create");
 	echo "<div class='create-menu'>";
-	echo "<div class='button'>new page</div>";
-	echo "<div class='button'>add entry</div>";
+	echo "<a href='/new/'><div class='button_color background_1' style='30px auto'>new page</div></a>";
+	echo "<a href='/create/'><div class='button_color background_2' style='30px auto'>add entry</div></a>";
+	echo "<a href='/'><div class='button_outline background_2' style='margin: 50px 30px;'>home</div></a>";
 	echo "</div>";
 	footer();
 	endif;
