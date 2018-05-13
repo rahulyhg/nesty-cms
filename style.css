@@ -336,12 +336,23 @@ div.login button {
 .float_left {
 	float: left; }
 
-.nesting-or-popover, .nesting-or-popover summary,
+.nesting-or-popover, .nesting-or-popover section,
 .nesting-or-popover ul, .nesting-or-popover ol {
 	font-size: 18px;
 	line-height: 22px; }
 
-.nesting-or-popover .summary-outline {
+.nesting-or-popover .header-borderless {
+	font-family: Helvetica, Arial;
+	text-transform: uppercase;
+	font-size: 14px;
+	line-height: 20px;
+	margin-left: 30px;
+	border-radius: 4px;
+	display: inline-block;
+	padding: 4px 10px;
+	border: 1px solid rgba(100,100,100,0.5); }
+
+.nesting-or-popover .header-outline {
 	font-family: Helvetica, Arial;
 	text-transform: uppercase;
 	font-size: 14px;
