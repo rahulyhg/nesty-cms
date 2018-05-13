@@ -345,6 +345,7 @@ div.login button {
 	line-height: 22px; }
 
 .nesting-or-popover section div:first-child {
+	border: 0;
 	background: none; }
 
 .nesting-or-popover .header-borderless {
