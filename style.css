@@ -328,6 +328,16 @@ div.login button {
 	display: block;
 	margin: 100px 30px; }
 
+#create-window span {
+	display: block;
+	margin: 10px auto 50px;
+	width: 240px;
+	padding: 0 20px;
+	font-size: 14px;
+	line-height: 15px;
+	text-align: center;
+	color: rgba(50,50,50,0.75); }
+
 #create-window-new-page-button, #create-window-add-entry-button {
 	display: block;
 	color: rgba(255,255,255,0.95);
