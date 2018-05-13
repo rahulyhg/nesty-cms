@@ -329,19 +329,23 @@ div.login button {
 	margin: 100px 30px; }
 
 #create-window-new-page-button, #create-window-add-entry-button {
-	padding: 5px 10px;
-	font-family: Arial, Helvetica;
+	display: block;
 	color: rgba(255,255,255,0.95);
-	border-radius: 4px;
 	margin: 30px auto;
 	width: 200px;
-	text-align: center; }
+	text-align: center;
+	font-size: 14px;
+	line-height: 15px;
+	text-transform: uppercase;
+	border-radius: 4px;
+	padding: 7px 20px 5px 15px; }
 
 #create-window-home-button {
 	color: rgba(50,50,50,0.75);
 	font-size: 12px;
 	line-height: 14px;
 	display: block;
+	width: 200px;
 	text-algn: left; }
 
 
