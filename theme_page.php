@@ -140,7 +140,7 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 
 	if (!(empty($page_confirmed['popover']))):
 		echo "<amp-accordion amp-fx='parallax' data-parallax-factor='1.3' class='nesting-or-popover'>";
-		echo "<section><div class='noborder nobackground'><span class='header-outline show-more'>▶ Show table of contents</span>";
+		echo "<section><div class='no-border no-background'><span class='header-outline show-more'>▶ Show table of contents</span>";
 		echo "<span class='header-outline show-less'>▼ Tap to hide</span></div>";
 		echo $page_confirmed['popover'];
 		echo "</section></amp-accordion>";
