@@ -1,7 +1,7 @@
 <? $sql_temp = "SELECT * FROM $database.pages";
-$retrieve_page = $connection_pdo->prepare($sql_temp);
-$retrieve_page->execute();
-$result = $retrieve_page->fetchAll();
+$retrieve_entries = $connection_pdo->prepare($sql_temp);
+$retrieve_entries->execute();
+$result = $retrieve_entries->fetchAll();
 foreach ($result as $row):
 
 print_r($row); exit;
