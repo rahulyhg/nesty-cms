@@ -344,6 +344,10 @@ div.login button {
 	font-size: 18px;
 	line-height: 22px; }
 
+amp-accordion header {
+	border: 0;
+	background: none; }
+
 amp-accordion section[expanded] .show-more {
 	display: none; }
 
