@@ -26,6 +26,10 @@ if (!(empty($url_temp['1']))): $page_temp = $url_temp['1']; endif;
 if (!(empty($url_temp['2']))): $slug_temp = $url_temp['2']; endif;
 if (!(empty($url_temp['3']))): $command_temp = $url_temp['3']; endif;
 
+if ($page_temp == "api"):
+	elseif ($command_temp == "entries"): include_once('api_entries.php'); endif;
+	exit; endif;
+
 if ($page_temp == "sitemap.xml"):
 	$url_temp = "/sitemap.xml";
 	if ($_SERVER['REQUEST_URI'] !== $url_temp): permanent_redirect("https://".$domain.$url_temp); endif;
