@@ -344,9 +344,18 @@ div.login button {
 	font-size: 18px;
 	line-height: 22px; }
 
-.nesting-or-popover section div:first-child {
+.nesting-or-popover .show-more, .nesting-or-popover .show-less {
 	border: 0;
 	background: none; }
+
+.nesting-or-popover .show-more::before {
+	content: '▶';
+	padding-right: 10px; }
+	
+.nesting-or-popover .show-less::before {
+	content: '▼';
+	padding-right: 10px; }
+
 
 .nesting-or-popover .header-borderless {
 	font-family: Helvetica, Arial;
