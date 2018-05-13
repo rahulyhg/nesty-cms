@@ -330,12 +330,12 @@ div.login button {
 
 #create-window > span {
 	display: block;
-	margin: 5px auto 50px;
+	margin: 10px auto 50px;
 	width: 240px;
 	padding: 0 20px;
 	font-size: 14px;
 	line-height: 15px;
-	text-align: center;
+	text-align: left;
 	color: rgba(50,50,50,0.75); }
 
 #create-window-new-page-button, #create-window-add-entry-button {
