@@ -148,7 +148,7 @@ if ($page_temp == "schedule"):
 	endif;
 
 // options to create
-if (!(empty($login)) && ($page_temp == "new")):
+if (!(empty($login)) && ($page_temp == "create")):
 	html_header("Create");
 	echo "<div class='create-menu'>";
 	echo "<div class='button'>new page</div>";
