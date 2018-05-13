@@ -153,7 +153,7 @@ if (!(empty($login)) && ($page_temp == "create")):
 	echo "<div id='create-window'>";
 	echo "<a href='/new/'><div id='create-window-new-page-button' class='background_1'>new page</div></a>";
 	echo "<a href='/create/'><div id='create-window-add-entry-button' class='background_2'>add entry</div></a>";
-	echo "<a href='/'><div id='create-window-home-button'>home</div></a>";
+	echo "<a href='/'><div id='create-window-home-button'>Home</div></a>";
 	echo "</div>";
 	footer();
 	endif;
