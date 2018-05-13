@@ -344,6 +344,9 @@ div.login button {
 	font-size: 18px;
 	line-height: 22px; }
 
+.nesting-or-popover section div:first-child {
+	background: none; }
+
 .nesting-or-popover .header-borderless {
 	font-family: Helvetica, Arial;
 	text-transform: uppercase;
