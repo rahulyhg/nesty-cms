@@ -344,7 +344,7 @@ div.login button {
 	font-size: 18px;
 	line-height: 22px; }
 
-amp-accordion header {
+amp-accordion > section > header {
 	border: 0;
 	background: none; }
 
