@@ -81,7 +81,8 @@ if (!(empty($children)) || !(empty($parents))):
 
 	if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 		echo "<amp-accordion amp-fx='parallax' data-parallax-factor='1.3' class='nesting-or-popover'>";
-		echo "<section><div><span class='header-outline'>View related</span></div>";
+		echo "<section><div class='no-border no-background'><span class='header-outline show-more'>▶View related</span>";
+		echo "<span class='header-outline show-less'>▼ Tap to hide</span></div>";
 		endif;
 
 	$parents = array_intersect(array_keys($pages_array), $parents);
@@ -139,7 +140,8 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 
 	if (!(empty($page_confirmed['popover']))):
 		echo "<amp-accordion amp-fx='parallax' data-parallax-factor='1.3' class='nesting-or-popover'>";
-		echo "<section><div><span class='header-borderless'>Show table of contents</span></div>";
+		echo "<section><div class='noborder nobackground'><span class='header-outline show-more'>▶ Show table of contents</span>";
+		echo "<span class='header-outline show-less'>▼ Tap to hide</span></div>";
 		echo $page_confirmed['popover'];
 		echo "</section></amp-accordion>";
 		endif;
