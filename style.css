@@ -336,13 +336,13 @@ div.login button {
 .float_left {
 	float: left; }
 
-.nesting-or-popover {
-	margin-left: 50px; }
-
 .nesting-or-popover, .nesting-or-popover section,
 .nesting-or-popover ul, .nesting-or-popover ol {
 	font-size: 18px;
 	line-height: 22px; }
+
+.nesting-or-popover section {
+	margin-left: 30px; }
 
 amp-accordion.nesting-or-popover > section > header {
 	border: 0;
