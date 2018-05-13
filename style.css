@@ -344,18 +344,11 @@ div.login button {
 	font-size: 18px;
 	line-height: 22px; }
 
-.nesting-or-popover .show-more, .nesting-or-popover .show-less {
-	border: 0;
-	background: none; }
+amp-accordion section[expanded] .show-more {
+	display: none; }
 
-.nesting-or-popover .show-more::before {
-	content: '▶';
-	padding-right: 10px; }
-	
-.nesting-or-popover .show-less::before {
-	content: '▼';
-	padding-right: 10px; }
-
+amp-accordion section:not([expanded]) .show-less {
+	display: none; }
 
 .nesting-or-popover .header-borderless {
 	font-family: Helvetica, Arial;
