@@ -342,6 +342,7 @@ div.login button {
 	line-height: 22px; }
 
 .nesting-or-popover section {
+	position: relative;
 	margin-left: 30px; }
 
 amp-accordion.nesting-or-popover > section > header {
