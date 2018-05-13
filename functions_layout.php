@@ -150,13 +150,13 @@ function amp_header($title=null, $canonical=null) {
 
 	if (!(empty($page_temp))): echo "<div id='navigation-home-button'><a href='/'>Home</a></div>"; endif;
 
-	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=1)' id='navigation-search-button'>Search</div>";
+	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=1)' tabindex='0' id='navigation-search-button'>Search</div>";
 	
 	echo "</div>";
 	
 	echo "<div id='navigation-carousel-search' class='background_2'>";
 
-	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=0)' id='navigation-back-button'><i class='material-icons'>keyboard_arrow_left</i> Back</div>";
+	echo "<div role='button' on='tap:navigation-carousel.goToSlide(index=0)' tabindex='0' id='navigation-back-button'><i class='material-icons'>keyboard_arrow_left</i> Back</div>";
 
 	echo "<div id='navigation-sitemap-button'><a href='/sitemap/'>Sitemap</a> &nbsp;&nbsp; | &nbsp;&nbsp; <a href='/schedule/'>Archive</a></div>";
 	
