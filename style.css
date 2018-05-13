@@ -343,9 +343,10 @@ div.login button {
 #create-window-home-button {
 	margin: 20px auto;
 	color: rgba(50,50,50,0.75);
-	font-size: 12px;
-	line-height: 14px;
+	font-size: 14px;
+	line-height: 15px;
 	display: block;
+	padding: 0 20px;
 	width: 200px;
 	text-algn: left; }
 
