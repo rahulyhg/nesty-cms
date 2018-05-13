@@ -80,8 +80,8 @@ if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 if (!(empty($children)) || !(empty($parents))):
 
 	if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
-		echo "<details amp-fx='parallax' data-parallax-factor='1.3' class='nesting-or-popover'>";
-		echo "<summary class='summary-outline'>View related</summary>";
+		echo "<amp-accordion amp-fx='parallax' data-parallax-factor='1.3' class='nesting-or-popover'>";
+		echo "<section><div class='summary-outline'>View related</div>";
 		endif;
 
 	$parents = array_intersect(array_keys($pages_array), $parents);
@@ -129,7 +129,7 @@ if (!(empty($children)) || !(empty($parents))):
 	echo "</ul>";
 
 	if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
-		echo "</details>";
+		echo "</section></amp-accordion>";
 		endif;
 
 	endif;
@@ -138,10 +138,10 @@ if (!(empty($children)) || !(empty($parents))):
 if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
 
 	if (!(empty($page_confirmed['popover']))):
-		echo "<details class='nesting-or-popover'>";
-		echo "<summary>Show table of contents</summary>";
+		echo "<amp-accordion amp-fx='parallax' data-parallax-factor='1.3' class='nesting-or-popover'>";
+		echo "<section><div class='summary-outline'>Show table of contents</div>";
 		echo $page_confirmed['popover'];
-		echo "</details>";
+		echo "</section></amp-accordion>";
 		endif;
 
 	echo "<span property='articleBody'>";
