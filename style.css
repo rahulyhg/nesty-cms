@@ -328,9 +328,9 @@ div.login button {
 	display: block;
 	margin: 100px 30px; }
 
-#create-window span {
+#create-window > span {
 	display: block;
-	margin: 10px auto 50px;
+	margin: 5px auto 50px;
 	width: 240px;
 	padding: 0 20px;
 	font-size: 14px;
