@@ -3,16 +3,15 @@ $retrieve_entries = $connection_pdo->prepare($sql_temp);
 $retrieve_entries->execute();
 $result = $retrieve_entries->fetchAll();
 foreach ($result as $row):
-
-print_r($row); exit;
+	$slug_temp = null; if (!(empty($row['slug']))): $slug_temp = $row['slug']."/"; endif;
 	$information_array[$row['page_id']] = [
-	"entry_id" => $row['entry_id'],
-	"page_id" => $row['page_id'],
-	"link" => "https://".$domain."/".$row['entry_id']."/",
-	"name" => json_decode($row['name'], true),
-	"summary" => null ];
+		"entry_id" => $row['entry_id'],
+		"page_id" => $row['page_id'],
+		"link" => "https://".$domain."/".$row['entry_id']."/".$slug_temp,
+		"slug" => $row['slug'],
+		"name" => $row['header'],
+		"header" => $row['header'],
+		"summary" => null ];
 	endforeach;
-    
- print_r(json_encode($information_array));
 
-?>
+echo json_encode($information_array); ?>
