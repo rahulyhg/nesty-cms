@@ -177,9 +177,9 @@ function amp_header($title=null, $canonical=null) {
 		endif;
 	
 	global $media_confirmed;
-	if (!(empty($login)) && !(empty($media_confirmed[$page_temp]['media_id']))):
+	if (!(empty($login)) && !(empty($media_confirmed[$slug_temp]['media_id']))):
 		echo "<div class='floating-action-button'>";
-		echo "<a href='/m/".$page_temp."/edit/'><i class='material-icons'>edit</i> edit</a></div>";
+		echo "<a href='/m/".$slug_temp."/edit/'><i class='material-icons'>edit</i> edit</a></div>";
 		endif;
 
 	}
