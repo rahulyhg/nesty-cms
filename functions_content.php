@@ -347,7 +347,7 @@ function body_process($body_incoming) {
 				$citation_string[] = "via <a href='https://".$entry_info[$citation_id_temp]['domain']."'>".$entry_info[$citation_id_temp]['publisher']."</a> @".$citation_id_temp; endif;
 			$citation_string = "<cite>".implode("<br>", $citation_string)."</cite>";
 			endif;
-		$entry_string = "<blockquote>" . $citation_string . $entry_info[$citation_id_temp]['body'] . "</blockquote>";
+		$entry_string = $delimiter."<aside>".$citation_string."</aside>".$entry_info[$citation_id_temp]['body'].$delimiter;
 
 		$body_incoming = str_replace("(((".$match_temp.")))", $entry_string, $body_incoming);
 
