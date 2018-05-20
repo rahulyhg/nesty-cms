@@ -15,11 +15,13 @@ $retrieve_entry = $connection_pdo->prepare($sql_temp);
 function nesty_page($page_id_temp) {
 	global $domain;
 	global $publisher;
-
+	global $login;
+	
 	global $connection_pdo;
 	global $retrieve_page;
 	global $retrieve_media;
 	global $retrieve_entry;
+
 
 	if (empty($page_id_temp)): return null; endif;
 	$domain_temp = $domain;
@@ -55,11 +57,13 @@ function nesty_page($page_id_temp) {
 function nesty_media($media_id_temp, $response_temp="full") {
 	global $domain;
 	global $publisher;
-
+	global $login;
+	
 	global $connection_pdo;
 	global $retrieve_page;
 	global $retrieve_media;
 	global $retrieve_entry;
+
 
 	if (empty($media_id_temp)): return null; endif;
 	$domain_temp = $domain;
@@ -117,11 +121,13 @@ function nesty_media($media_id_temp, $response_temp="full") {
 function nesty_entry($entry_id_temp) {
 	global $domain;
 	global $publisher;
-
+	global $login;
+	
 	global $connection_pdo;
 	global $retrieve_page;
 	global $retrieve_media;
 	global $retrieve_entry;
+
 
 	if (empty($entry_id_temp)): return null; endif;
 	if (strpos($entry_id_temp, "|")):
@@ -133,6 +139,17 @@ function nesty_entry($entry_id_temp) {
 		$retrieve_entry->execute(["entry_id"=>(string)$entry_id_temp]);
 		$result = $retrieve_entry->fetchAll();
 		foreach ($result as $row):
+
+			// convert all images to links
+//			preg_match_all("/(?<=\[\[\[)(.*?)(?=\]\]\])/is", $row['body'], $matches_temp);
+//			if (empty($matches_temp)): $matches_temp = [ [], [] ]; endif;
+//			foreach ($matches_temp[0] as $temp): $row['body'] = str_replace("[[[".$temp."]]]", "{{{".str_replace("][", "}{", $temp)."}}}", $row['body']); endforeach;
+
+			// convert all citations to links
+			preg_match_all("/(?<=\(\(\()(.*?)(?=\)\)\))/is", $row['body'], $matches_temp);
+			if (empty($matches_temp)): $matches_temp = [ [], [] ]; endif;
+			foreach ($matches_temp[0] as $temp): $row['body'] = str_replace("(((".$temp.")))", "{{{".str_replace(")(", "}{", $temp)."}}}", $row['body']); endforeach;
+
 			$entry_confirmed[$row['entry_id']] = [
 				"entry_id"=>$row['entry_id'],
 				"domain"=>$domain,
@@ -154,6 +171,7 @@ function nesty_entry($entry_id_temp) {
 
 function body_process($body_incoming) {
 	global $domain;
+	global $publisher;
 	global $login;
 	
 	global $connection_pdo;
