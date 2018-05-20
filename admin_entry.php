@@ -49,14 +49,16 @@ if (isset($_POST['entry_edit'])):
 	$values_temp = [
 		"path_id"=>null,
 		"parent_id"=>null,
-		"child_id"=>null ];
+		"child_id"=>null,
+		"type"=>null ];
 	$sql_temp = sql_setup($values_temp, "$database.paths");
 	$paths_insert_statement = $connection_pdo->prepare($sql_temp);
 	foreach($_POST['parents'] as $page_id_temp):
 		$values_temp = [
 			"path_id"=>random_code(7),
 			"parent_id"=>$page_id_temp,
-			"child_id"=>$_POST['entry_id'] ];
+			"child_id"=>$_POST['entry_id'],
+			"type"=>"entry" ];
 		$paths_insert_statement->execute($values_temp);
 		execute_checkup($paths_insert_statement->errorInfo(), "inserting parent paths");
 		endforeach;
@@ -76,8 +78,6 @@ $retrieve_paths = $connection_pdo->prepare($sql_temp);
 $retrieve_paths->execute(["entry_id"=>$entry_confirmed['entry_id']]);
 $result = $retrieve_paths->fetchAll();
 foreach ($result as $row):
-
-print_r($row);
 	$entry_confirmed['parents'][]= $row['parent_id']; endforeach;
 
 $entry_confirmed['citations'] = [];
