@@ -126,7 +126,7 @@ function amp_header($title=null, $canonical=null) {
 	
 	// for the adsense ads
 	if (!(empty($google_ad_client)) && !(empty($page_temp)) && !(in_array($page_temp, ["m", "search"]))):
-		echo '<amp-auto-ads type="adsense" data-ad-client="ca-pub-5439573510495356"></amp-auto-ads>';
+		echo '<amp-auto-ads type="adsense" data-ad-client="'.$google_ad_client.'"></amp-auto-ads>';
 		endif;
 	
 	if (!(empty($google_analytics_code))):
