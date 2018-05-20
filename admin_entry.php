@@ -62,14 +62,12 @@ if (isset($_POST['entry_edit'])):
 		endforeach;
 	endif;
 
-$retrieve_entry->execute(["entry_id"=>$entry_id_temp]);
+$retrieve_entry->execute(["entry_id"=>$slug_temp]);
 $result = $retrieve_entry->fetchAll();
 foreach ($result as $row): $entry_confirmed = $row; endforeach;
 
 if (empty($entry_confirmed)):
-	$entry_confirmed = ["entry_id"=>random_code(10), "name"=>null, "created_time"=>date("Y-m-d"), "body"=>null];
-else:
-	$entry_confirmed = $entry_confirmed[$slug_temp]; endif;
+	$entry_confirmed = ["entry_id"=>random_code(10), "name"=>null, "created_time"=>date("Y-m-d"), "body"=>null]; endif;
 
 
 $entry_confirmed['parents'] = [];
