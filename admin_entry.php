@@ -18,11 +18,12 @@ if (isset($_POST['entry_edit'])):
 
 	$entry_temp = $_POST['entry_id'];
 
-	$body_text = preg_replace("/[\r]/", "\n", $_POST['body']);
+	$body_text = $_POST['body'];
 	$body_text = str_replace("[[[", "\n\n[[[", $body_text);
 	$body_text = str_replace("]]]", "]]]\n\n", $body_text);
-	$body_text = preg_replace("/[\s][\s][\s]+/", "\n\n", $body_text);
-	$array_temp[$key_temp] = htmlspecialchars(trim($body_text));
+	$body_text = preg_replace("/\r\n/", "\n", $body_text);
+	$body_text = preg_replace('/(?:(?:\r\n|\r|\n)\s*){2}/s', "\n\n", $body_text);
+	$body_text = trim($body_text);
 	if (ctype_space($body_text)): $body_text = null; endif;
 
 	$values_temp = [
