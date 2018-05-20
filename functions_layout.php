@@ -58,6 +58,7 @@ function amp_header($title=null, $canonical=null) {
 	global $domain;
 	global $publisher;
 	global $google_analytics_code;
+	global $google_ad_client;
 	global $color;
 	global $page_temp;
 	global $slug_temp;
