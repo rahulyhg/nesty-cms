@@ -7,7 +7,7 @@ $sql_temp = "SELECT * FROM $database.media WHERE media_id=:media_id";
 $retrieve_media = $connection_pdo->prepare($sql_temp);
 
 // prepare for nesty_entry
-$sql_temp = "SELECT * FROM $database.entries WHERE entry_id=:entry_id ORDER BY year ASC, month ASC, day ASC";
+$sql_temp = "SELECT * FROM $database.entries WHERE entry_id=:entry_id ORDER BY name ASC, year ASC, month ASC, day ASC";
 $retrieve_entry = $connection_pdo->prepare($sql_temp);
 
 
