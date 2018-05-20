@@ -310,7 +310,7 @@ function body_process($body_incoming) {
 	
 	// process citations
 	$matches = [];
-	preg_match_all("/(?<=\(\(\()(.*?)(?=\)\)\))/is", $body_incoming, $matches);
+	preg_match_all("/(?<=((()(.*?)(?=))))/is", $body_incoming, $matches);
 	if (empty($matches)): $matches = [ [], [] ]; endif;
 	$matches = array_unique($matches[0]);
 	foreach ($matches as $match_temp):
