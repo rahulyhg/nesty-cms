@@ -318,6 +318,8 @@ function body_process($body_incoming) {
 	preg_match_all("/(?<=\(\(\()(.*?)(?=)\)\)\)/is", $body_incoming, $matches);	
 	if (empty($matches)): $matches = [ [], [] ]; endif;
 	$matches = array_unique($matches[0]);
+	
+	print_r($matches);
 	foreach ($matches as $match_temp):
 
 		$citation_strinng = null;
