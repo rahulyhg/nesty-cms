@@ -76,6 +76,8 @@ $retrieve_paths = $connection_pdo->prepare($sql_temp);
 $retrieve_paths->execute(["entry_id"=>$entry_confirmed['entry_id']]);
 $result = $retrieve_paths->fetchAll();
 foreach ($result as $row):
+
+print_r($row);
 	$entry_confirmed['parents'][]= $row['parent_id']; endforeach;
 
 $entry_confirmed['citations'] = [];
