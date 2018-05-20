@@ -27,12 +27,12 @@ if (isset($_POST['entry_edit'])):
 	if (ctype_space($body_text)): $body_text = null; endif;
 
 	// convert all images to links
-//	preg_match_all("/(?<=\[\[\[)(.*?)(?=\]\]\])/is", $description_temp, $matches_temp);
+//	preg_match_all("/(?<=\[\[\[)(.*?)(?=\]\]\])/is", $body_text, $matches_temp);
 //	if (empty($matches_temp)): $matches_temp = [ [], [] ]; endif;
 //	foreach ($matches_temp[0] as $temp): $body_text = str_replace("[[[".$temp."]]]", "{{{".str_replace("][", "}{", $temp)."}}}", $body_text); endforeach;
 
 	// convert all citations to links
-	preg_match_all("/(?<=\(\(\()(.*?)(?=\)\)\))/is", $description_temp, $matches_temp);
+	preg_match_all("/(?<=\(\(\()(.*?)(?=\)\)\))/is", $body_text, $matches_temp);
 	if (empty($matches_temp)): $matches_temp = [ [], [] ]; endif;
 	foreach ($matches_temp[0] as $temp): $body_text = str_replace("(((".$temp.")))", "{{{".str_replace(")(", "}{", $temp)."}}}", $body_text); endforeach;
 
