@@ -48,6 +48,9 @@ else: $href_temp = "https://$domain/".$page_temp."/".$page_confirmed[$page_temp]
 
 
 if (!(empty($citations))):
+
+print_r($citations);
+
 	$page_confirmed[$page_temp]['body'] .= "\n\n<hr>\n\n";
 	foreach($citations as $entry_id):
 		$page_confirmed[$page_temp]['body'] .= "\n\n(((".$entry_id.")))";
@@ -128,7 +131,7 @@ if (!(empty($children)) || !(empty($parents))):
 
 	echo "</ul>";
 
-	if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):
+	if (!(empty($page_confirmed[$page_temp]['body'])) || !(empty($gallery))):$
 		echo "</section></amp-accordion>";
 		endif;
 
