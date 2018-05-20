@@ -26,6 +26,16 @@ if (isset($_POST['entry_edit'])):
 	$body_text = trim($body_text);
 	if (ctype_space($body_text)): $body_text = null; endif;
 
+	// process citations
+	$matches = [];
+	preg_match_all("/(?<=\(\(\()(.*?)(?=\)\)\))/is", $body_text, $matches);	
+	if (empty($matches)): $matches = [ [], [] ]; endif;
+	$matches = array_unique($matches[0]);
+	foreach ($matches as $match_temp):
+		$match_new = str_replace(")(", "}{", $match_temp);
+		$body_text = str_replace("(((".$match_temp.")))", "{{{".$match_new."}}}", $body_text);
+		endforeach;
+
 	$values_temp = [
 		"entry_id"=>$_POST['entry_id'],
 		"updated_time"=>date("Y-m-d"), 
