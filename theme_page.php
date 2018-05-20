@@ -49,7 +49,7 @@ else: $href_temp = "https://$domain/".$page_temp."/".$page_confirmed[$page_temp]
 
 if (!(empty($citations))):
 
-print_r($citations);
+	echo "citations";
 
 	$page_confirmed[$page_temp]['body'] .= "\n\n<hr>\n\n";
 	foreach($citations as $entry_id):
