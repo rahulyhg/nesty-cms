@@ -25,7 +25,7 @@ if (empty($count_pages)): echo "<span>There are no pages.</span>";
 elseif ($count_pages == 1): echo "<span>There is one page.</span>";
 else: echo "<span>There are ".number_format($count_pages)." pages.<span>"; endif;
 
-echo "<a href='/create/'><div id='create-window-add-entry-button' class='background_2'>add entry</div></a>";
+echo "<a href='/add/'><div id='create-window-add-entry-button' class='background_2'>add entry</div></a>";
 if (empty($count_entries)): echo "<span>There are no entries.</span>";
 elseif ($count_entries == 1): echo "<span>There is one entry.</span>";
 else: echo "<span>There are ".number_format($count_entries)." entries.<span>"; endif;
