@@ -84,6 +84,8 @@ $result = $retrieve_page_citations->fetchAll();
 foreach ($result as $row):
 	$entry_confirmed['citations'][] = $row['page_id']; endforeach;
 
+print_r($entry_confirmed);
+
 echo "<style> td { padding: 0 10px; } .header { position: absolute !important; } </style>";
 echo "<style> optgroup { font-weight: 400; padding: 10px 10px 0 10px; font-style: italic !important; color: #bbb !important; } </style>";
 echo "<style> optgroup option { font-style: normal; color: #333; } optgroup option:first-child { margin-top: 5px; } </style>";
