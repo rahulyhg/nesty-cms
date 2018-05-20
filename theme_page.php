@@ -49,17 +49,20 @@ else: $href_temp = "https://$domain/".$page_temp."/".$page_confirmed[$page_temp]
 
 if (!(empty($citations))):
 
-	$citations_order = [];
-	$sql_temp = "SELECT * FROM $database.entries ORDER BY year ASC, month ASC, day ASC, name ASC";
-	$order_entry = $connection_pdo->prepare($sql_temp);
-	$order_entry->execute();
-	$result = $retrieve_entry->fetchAll();
-	foreach ($result as $row):
-		$citations_order[] = $row['entry_id'];
-		endforeach;
+	$citations = array_unique($citations);	
 
-	$citations = array_unique($citations);
-	$citations = array_intersect($citations_order, $citations);
+	if (count($citations) > 1):
+
+		$citations_order = [];
+		$sql_temp = "SELECT * FROM $database.entries ORDER BY year ASC, month ASC, day ASC, name ASC";
+		$order_entry = $connection_pdo->prepare($sql_temp);
+		$order_entry->execute();
+		$result = $retrieve_entry->fetchAll();
+		foreach ($result as $row): $citations_order[] = $row['entry_id']; endforeach;
+
+		$citations = array_intersect($citations_order, $citations);
+
+		endif;
 
 	$page_confirmed[$page_temp]['body'] .= "\n\n<hr>\n\n";
 	foreach($citations as $entry_id):
