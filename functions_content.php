@@ -315,11 +315,9 @@ function body_process($body_incoming) {
 	
 	// process citations
 	$matches = [];
-	preg_match_all("/(?<=\(\(\()(.*?)(?=)\)\)\)/is", $body_incoming, $matches);	
+	preg_match_all("/(?<=\(\(\()(.*?)(?=\)\)\))/is", $body_incoming, $matches);	
 	if (empty($matches)): $matches = [ [], [] ]; endif;
 	$matches = array_unique($matches[0]);
-	
-	print_r($matches);
 	foreach ($matches as $match_temp):
 
 		$citation_strinng = null;
