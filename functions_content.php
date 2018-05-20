@@ -315,7 +315,7 @@ function body_process($body_incoming) {
 	
 	// process citations
 	$matches = [];
-	preg_match_all("/(?<=((()(.*?)(?=))))/is", $body_incoming, $matches);
+	preg_match_all("/(?<=\(\(\()(.*?)(?=)\)\)\)/is", $body_incoming, $matches);
 	echo "citationsssdfgdfgdf";
 	print_r($matches);
 	
