@@ -27,13 +27,13 @@ if (!(empty($url_temp['2']))): $slug_temp = $url_temp['2']; endif;
 if (!(empty($url_temp['3']))): $command_temp = $url_temp['3']; endif;
 
 if ($page_temp == "api"):
-	if ($slug_temp == "entries"): include_once('api_entries.php'); endif;
+	if ($slug_temp == "sitemap"): include_once('api_sitemap.php'); endif;
 	exit; endif;
 
 if ($page_temp == "sitemap.xml"):
 	$url_temp = "/sitemap.xml";
 	if ($_SERVER['REQUEST_URI'] !== $url_temp): permanent_redirect("https://".$domain.$url_temp); endif;
-	$result_temp = file_get_contents("https://".$domain."/api/entries/?order=english");
+	$result_temp = file_get_contents("https://".$domain."/api/sitemap/?order=english");
 	$information_array = json_decode($result_temp, true);
 	echo "<?xml version='1.0' encoding='UTF-8'?>";
 	echo "<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>";
