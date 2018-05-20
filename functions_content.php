@@ -341,13 +341,13 @@ function body_process($body_incoming) {
 		if (!(empty($entry_info[$citation_id_temp]['name'])) || !(empty($login))):
 			if (!(empty($entry_info[$citation_id_temp]['name']))):
 				$citation_string[] = $entry_info[$citation_id_temp]['name']; endif;
-			if (!(empty(login)) && ($domain == $entry_info['domain'])):
+			if (!(empty(login)) && ($domain == $entry_info[$citation_id_temp]['domain'])):
 				$citation_string[] = "via ".$entry_info[$citation_id_temp]['publisher']." @<a href='/e/".$citation_id_temp."/edit/'>".$citation_id_temp."</a>"; endif;
 			if ($domain !== $entry_info[$citation_id_temp]['domain']):
 				$citation_string[] = "via <a href='https://".$entry_info[$citation_id_temp]['domain']."'>".$entry_info[$citation_id_temp]['publisher']."</a> @".$citation_id_temp; endif;
 			$citation_string = "<cite>".implode("<br>", $citation_string)."</cite>";
 			endif;
-		$entry_string = "<blockquote>" . $citation_string . body_process($entry_info['body']) . "</blockquote>";
+		$entry_string = "<blockquote>" . $citation_string . $entry_info[$citation_id_temp]['body'] . "</blockquote>";
 
 		$body_incoming = str_replace("(((".$match_temp.")))", $entry_string, $body_incoming);
 
