@@ -66,7 +66,10 @@ $result = $retrieve_entry->fetchAll();
 foreach ($result as $row): $entry_confirmed = $row; endforeach;
 
 if (empty($entry_confirmed)):
-	$entry_confirmed = ["entry_id"=>random_code(10), "name"=>null, "created_time"=>date("Y-m-d"), "body"=>null]; endif;
+	$entry_confirmed = ["entry_id"=>random_code(10), "name"=>null, "created_time"=>date("Y-m-d"), "body"=>null];
+else:
+	$entry_confirmed = $entry_confirmed[$slug_temp]; endif;
+
 
 $entry_confirmed['parents'] = [];
 $sql_temp = "SELECT * FROM $database.paths WHERE child_id=:entry_id";
@@ -83,8 +86,6 @@ $retrieve_page_citations->execute(["entry_id"=>"$".$entry_confirmed['entry_id'].
 $result = $retrieve_page_citations->fetchAll();
 foreach ($result as $row):
 	$entry_confirmed['citations'][] = $row['page_id']; endforeach;
-
-print_r($entry_confirmed);
 
 echo "<style> td { padding: 0 10px; } .header { position: absolute !important; } </style>";
 echo "<style> optgroup { font-weight: 400; padding: 10px 10px 0 10px; font-style: italic !important; color: #bbb !important; } </style>";
