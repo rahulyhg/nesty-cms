@@ -132,18 +132,23 @@ function nesty_entry($entry_id_temp) {
 		$entry_confirmed = [];
 		$retrieve_entry->execute(["entry_id"=>(string)$entry_id_temp]);
 		$result = $retrieve_entry->fetchAll();
-		foreach ($result as $row): $entry_confirmed = $row; endforeach;
-		if (empty($entry_confirmed)): return null; endif;
-		$entry_confirmed['body'] = body_process($entry_confirmed['body']);
-		$entry_confirmed['domain'] = $domain;
-		$entry_confirmed['publisher'] = $publisher;
-		$entry_info = [ $entry_confirmed['entry_id'] => $entry_confirmed ];
+		foreach ($result as $row):
+			$entry_confirmed[$row['entry_id']] = [
+				"entry_id"=>$row['entry_id'],
+				"domain"=>$domain,
+				"publisher"=>$publisher,
+				"name"=>$row['name'],
+				"year"=>$row['year'],
+				"month"=>$row['month'],
+				"day"=>$row['day'],
+				"body"=> body_process($row['body']) ];				
+			endforeach;
 	else:
 		$entry_info = file_get_contents("https://$domain/e/".(string)$entry_id_temp."/ping/"); // check if the media exists
-		$entry_info = json_decode($entry_info, true); // decode the json
+		$entry_confirmed = json_decode($entry_info, true); // decode the json
 		endif;
-	if (empty($entry_info[$entry_id_temp])): return null; endif;
-	return $entry_info; }
+	if (empty($entry_confirmed[$entry_id_temp])): return null; endif;
+	return $entry_confirmed; }
 
 
 
