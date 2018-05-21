@@ -301,7 +301,6 @@ div.image_large amp-img {
 div.image-div-link-button {
 	background: rgba(255,255,255,1);
 	color: <? echo $color ?>;
-	z-index: 10000;
 	font-size: 17px;
 	padding: 4px 10px;
 	border-radius: 100px;
@@ -314,7 +313,6 @@ div.image-div-open-button {
 	font-family: 'Arial';
 	background: rgba(255,255,255,1);
 	color: rgba(50,50,50,0.8);
-	z-index: 10000;
 	font-size: 13px;
 	line-height: 14px;
 	padding: 6px 10px 5px;
@@ -347,7 +345,6 @@ figcaption {
 amp-lightbox {
 	background: rgba(255,255,255,1);
 	text-align: left;
-	overflow: auto;
 	padding: 60px 0 100px;
 	overflow-x: auto;
 	overflow-y: scroll; }
