@@ -349,7 +349,9 @@ amp-lightbox {
 	text-align: left;
 	overflow: auto;
 	padding: 60px 0 100px;
-	z-index: 100000000; }
+	z-index: 100000000;
+	overflow-x: auto;
+	overflow-y: scroll; }
 
 amp-lightbox div.image_large {
 	margin: 70px 20px 20px; }
