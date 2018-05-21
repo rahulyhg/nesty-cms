@@ -332,7 +332,7 @@ amp-lightbox {
 	z-index: 100000000; }
 
 amp-lightbox div.image_large {
-	margin: 50px 20px 10px; }
+	margin: 70px 20px 20px; }
 
 amp-lightbox figcaption {
 	display: block;
@@ -351,7 +351,7 @@ div.amp-lightbox-image-link-button {
 	background: #fff;
 	border: 1px solid <? echo $color ?>;
 	border-radius: 4px;
-	margin: 0 30px 15px; }
+	margin: 10px 30px 0; }
 
 div.amp-lightbox-media-id {
 	display: inline-block;
@@ -364,7 +364,7 @@ div.amp-lightbox-media-id {
 	color: rgba(50,50,50,0.7);
 	border: 0 solid <? echo $color ?>;
 	border-radius: 4px;
-	margin: 0 30px 15px; }
+	margin: 10px 30px 0; }
 
 .lightbox-close {
 	z-index: 10000000000;
