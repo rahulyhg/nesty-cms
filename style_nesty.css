@@ -309,8 +309,8 @@ div.image_open_link {
 
 div.image_thumbnail div.image_open_link,
 div.image_large div.image_open_link {
-	top: 15px;
-	left: 17px;
+	top: 5px;
+	left: 7px;
 	display: none;
 	transition: 0.3s; }
 
