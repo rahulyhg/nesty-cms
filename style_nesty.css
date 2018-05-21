@@ -311,12 +311,13 @@ div.image-div-link-button {
 	left: 6px; }
 
 div.image-div-open-button {
+	font-family: 'Arial';
 	background: rgba(255,255,255,1);
 	color: rgba(50,50,50,0.8);
 	z-index: 10000;
 	font-size: 13px;
 	line-height: 14px;
-	padding: 6px 10px;
+	padding: 6px 10px 5px;
 	border-radius: 4px;
 	position: absolute;
 	display: none;
