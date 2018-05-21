@@ -336,7 +336,7 @@ function body_process($body_incoming) {
 		$lightbox_temp .= "<a href='".$media_info[$media_id_temp]['link']."' target='_blank'><div class='amp-lightbox-image-link-button'>new window</div></a>";
 		$lightbox_temp .= "<div class='amp-lightbox-media-id'>".$domain."|".$media_id_temp."</div>";
 		$lightbox_temp .= "<figcaption>".$file_description."</figcaption></figure>";
-		$lightbox_temp .= "<button class='lightbox-close' on='tap:lightbox".$media_id_temp.".close' tabindex='1' role='button'><i class='material-icons'>cancel</i></button>";
+		$lightbox_temp .= "<div class='amp-lightbox-close background_2' on='tap:lightbox".$media_id_temp.".close' tabindex='1' role='button'>close</div>";
 		$lightbox_temp .= "</amp-lightbox>";
 		$image_lightbox_array[] = $lightbox_temp;
 	
