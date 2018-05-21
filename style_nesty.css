@@ -332,7 +332,7 @@ amp-lightbox {
 	z-index: 100000000; }
 
 amp-lightbox div.image_large {
-	margin: 30px; }
+	margin: 35px 20px 30; }
 
 amp-lightbox figcaption {
 	display: block;
