@@ -325,10 +325,10 @@ figcaption {
 	text-align: left; }
 
 amp-lightbox {
-	background: rgba(250,250,250,1);
+	background: rgba(255,255,255,0.95);
 	text-align: left;
 	overflow: auto;
-	padding: 50px 0;
+	padding: 30px 0;
 	z-index: 100000000; }
 
 amp-lightbox div.image_large {
@@ -368,9 +368,13 @@ amp-lightbox figcaption {
 .lightbox-close {
 	z-index: 10000000000;
 	position: fixed;
-	top: 5px;
-	right: 5px;
-	color: rgba(0,0,0,0.54);
+	opacity: 0.95;
+	top: 8px;
+	right: 8px;
+	color: <? echo $color ?>;
+	padding: 4px;
+	background: #fff;
+	
 	font-size: 30px;
 	line-height: 31px; }
 
