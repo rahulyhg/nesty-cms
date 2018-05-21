@@ -303,12 +303,12 @@ div.image_open_link {
 	background: rgba(150,150,150,0.5);
 	color: <? echo $color; ?>;
 	z-index: 10000;
-	font-size: 15px;
-	padding: 3px 5px;
+	font-size: 17px;
+	padding: 4px 6px;
 	border-radius: 5px;
 	position: absolute;
-	bottom: -15px;
-	left: 5px; }
+	bottom: 10px;
+	left: 10px; }
 
 .image_description {
 	display: block;
