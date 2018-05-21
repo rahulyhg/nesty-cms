@@ -346,6 +346,7 @@ amp-lightbox {
 	background: rgba(255,255,255,1);
 	text-align: left;
 	padding: 60px 0 100px;
+	overflow: scroll;
 	overflow-x: auto;
 	overflow-y: scroll; }
 
