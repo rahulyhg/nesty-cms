@@ -343,6 +343,7 @@ figcaption {
 	text-align: left; }
 
 amp-lightbox {
+	z-index: 10;
 	background: rgba(255,255,255,1);
 	text-align: left;
 	padding: 60px 0 100px;
