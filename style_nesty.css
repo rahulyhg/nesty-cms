@@ -306,7 +306,7 @@ div.image_open_link {
 	padding: 4px 6px;
 	border-radius: 4px;
 	position: absolute;
-	bottom: 15px;
+	bottom: 25px;
 	left: 6px;
 	display: none;
 	transition: 0.3s; }
