@@ -358,13 +358,14 @@ div.amp-lightbox-media-id {
 	text-align: right;
 	font-family: Arial;
 	padding: 12px 20px 10px;
-	font-size: 14px;
-	line-height: 15px;
+	font-size: 13px;
+	line-height: 14px;
+	letter-spacing: 1px;
 	text-transform: uppercase;
 	color: rgba(50,50,50,0.7);
 	border: 0 solid <? echo $color ?>;
 	border-radius: 4px;
-	margin: 0 30px 10px; }
+	margin: 0 10px 10px; }
 
 .lightbox-close {
 	z-index: 10000000000;
