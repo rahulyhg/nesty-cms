@@ -298,7 +298,7 @@ div.image_large amp-img {
 	display: inline-block;
 	border-radius: 4px; }
 
-div.image_open_link {
+amp-img div.image_open_link {
 	background: rgba(255,255,255,1);
 	color: <? echo $color; ?>;
 	z-index: 10000;
@@ -307,7 +307,12 @@ div.image_open_link {
 	border-radius: 100px;
 	position: absolute;
 	bottom: 7px;
-	left: 6px; }
+	left: 6px;
+	display: none; }
+
+amp-img:hover div.image_open_link {
+	display: inline-block; }
+
 
 .image_description {
 	display: block;
