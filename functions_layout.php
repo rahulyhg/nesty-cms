@@ -107,9 +107,9 @@ function amp_header($title=null, $canonical=null) {
 	echo '<script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>';
 
 	// for the adsense ads
-	if (!(empty($google_ad_client)) && !(empty($page_temp)) && !(in_array($page_temp, ["m", "search"]))):
-		echo '<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>';
-		endif;
+//	if (!(empty($google_ad_client)) && !(empty($page_temp)) && !(in_array($page_temp, ["m", "search"]))):
+//		echo '<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>';
+//		endif;
 	
 	echo "<title>" . $title . "</title>";
 	echo '<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">';
@@ -125,9 +125,9 @@ function amp_header($title=null, $canonical=null) {
 	echo "</head><body>";
 	
 	// for the adsense ads
-	if (!(empty($google_ad_client)) && !(empty($page_temp)) && !(in_array($page_temp, ["m", "search"]))):
-		echo '<amp-auto-ads type="adsense" data-ad-client="'.$google_ad_client.'"></amp-auto-ads>';
-		endif;
+//	if (!(empty($google_ad_client)) && !(empty($page_temp)) && !(in_array($page_temp, ["m", "search"]))):
+//		echo '<amp-auto-ads type="adsense" data-ad-client="'.$google_ad_client.'"></amp-auto-ads>';
+//		endif;
 	
 	if (!(empty($google_analytics_code))):
 		echo '<amp-analytics type="googleanalytics">';
