@@ -306,6 +306,7 @@ div.image-div-link-button {
 	padding: 4px 10px;
 	border-radius: 100px;
 	position: absolute;
+	display: none;
 	top: 6px;
 	left: 6px; }
 
@@ -336,6 +337,7 @@ amp-lightbox figcaption {
 	padding: 0; }
 
 .amp-lightbox-image-link-button {
+	display: inline-block;
 	text-align: right;
 	font-family: Arial;
 	padding: 12px 20px 10px;
