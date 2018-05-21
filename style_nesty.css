@@ -300,7 +300,7 @@ div.image_large amp-img {
 
 div.image-div-link-button {
 	background: rgba(255,255,255,1);
-	color: rgba(50,50,50,0.8);
+	color: <? echo $color ?>;
 	z-index: 10000;
 	font-size: 17px;
 	padding: 4px 10px;
@@ -310,8 +310,23 @@ div.image-div-link-button {
 	top: 6px;
 	left: 6px; }
 
+div.image-div-open-button {
+	background: rgba(255,255,255,1);
+	color: rgba(50,50,50,0.8);
+	z-index: 10000;
+	font-size: 13px;
+	line-height: 14px;
+	padding: 6px 10px;
+	border-radius: 4px;
+	position: absolute;
+	display: none;
+	top: 6px;
+	left: 30px; }
+
 div.image_thumbnail:hover div.image-div-link-button,
-div.image_large:hover div.image-div-link-button {
+div.image_large:hover div.image-div-link-button,
+div.image_thumbnail:hover div.image-div-open-button,
+div.image_large:hover div.image-div-open-button {
 	display: inline-block;
 	transition: 0.3s; }
 
