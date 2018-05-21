@@ -311,7 +311,7 @@ div.image-div-link-button {
 	left: 6px; }
 
 div.image_thumbnail:hover div.image-div-link-button,
-div.image_large:hover div.image-div-link-button {
+div.image_large:hover div.image-div-link` {
 	display: inline-block;
 	transition: 0.3s; }
 
