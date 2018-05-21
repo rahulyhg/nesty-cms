@@ -292,23 +292,22 @@ div.image_large {
 	position: relative;
 	display: block;
 	margin: 50px 20px 60px;
-	text-align: center; }
+	text-align: left; }
 
 div.image_large amp-img {
 	display: inline-block;
 	border-radius: 4px; }
 
 div.image_open_link {
-	opacity: 1;
-	background: rgba(150,150,150,0.5);
+	background: rgba(255,255,255,0.9);
 	color: <? echo $color; ?>;
 	z-index: 10000;
 	font-size: 17px;
 	padding: 4px 6px;
 	border-radius: 5px;
 	position: absolute;
-	bottom: 10px;
-	left: 10px; }
+	bottom: 7px;
+	left: 7px; }
 
 .image_description {
 	display: block;
