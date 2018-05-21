@@ -309,8 +309,8 @@ div.image_open_link {
 
 div.image_thumbnail div.image_open_link,
 div.image_large div.image_open_link {
-	top: 5px;
-	left: 7px;
+	top: 6px;
+	left: 6px;
 	display: none;
 	transition: 0.3s; }
 
@@ -349,6 +349,17 @@ amp-lightbox figcaption {
 	display: block;
 	margin: 0 auto;
 	padding: 20px 40px; }
+
+.amp-lightbox-image-button {
+	text-align: right;
+	padding: 12px 20px 10px;
+	font-size: 14px;
+	line-height: 15px;
+	text-transform: uppercase;
+	color: <? echo $color ?>;
+	border: 1px solid <? echo $color ?>;
+	border-radius: 4px;
+	margin: 20px; }
 
 .lightbox-close {
 	z-index: 10000000000;
