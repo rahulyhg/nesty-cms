@@ -272,7 +272,7 @@ div.tile div {
 
 div.image_thumbnail {
 	text-align: left;
-	display: block;
+	display: inline-block;
 	position: relative;
 	border: 0;
 	vertical-align: top;
@@ -290,10 +290,9 @@ div.image_thumbnail amp-img {
 
 div.image_large {
 	position: relative;
-	display: table;
-	clear: both;
-	margin: 50px auto 60px;
-	text-align: left; }
+	display: block;
+	margin: 50px 0 60px;
+	text-align: center; }
 
 div.image_large amp-img {
 	display: block;
