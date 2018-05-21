@@ -311,7 +311,7 @@ div.image-div-link-button {
 	left: 6px; }
 
 div.image_thumbnail:hover div.image-div-link-button,
-div.image_large:hover div.image-div-link` {
+div.image_large:hover div.image-div-link {
 	display: inline-block;
 	transition: 0.3s; }
 
@@ -328,7 +328,7 @@ amp-lightbox {
 	background: rgba(255,255,255,1);
 	text-align: left;
 	overflow: auto;
-	padding: 30px 0;
+	padding: 30px 0 100px;
 	z-index: 100000000; }
 
 amp-lightbox div.image_large {
