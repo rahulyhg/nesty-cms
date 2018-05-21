@@ -306,12 +306,13 @@ div.image_open_link {
 	padding: 4px 6px;
 	border-radius: 4px;
 	position: absolute;
-	bottom: 25px;
+	bottom: 15px;
 	left: 6px;
 	display: none;
 	transition: 0.3s; }
 
-amp-img:hover div.image_open_link {
+div.image_large:hover div.image_open_link,
+div.image_thumbnail:hover div.image_open_link{
 	display: inline-block;
 	transition: 0.3s; }
 
