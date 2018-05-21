@@ -298,20 +298,22 @@ div.image_large amp-img {
 	display: inline-block;
 	border-radius: 4px; }
 
-amp-img div.image_open_link {
+div.image_open_link {
 	background: rgba(255,255,255,1);
 	color: <? echo $color; ?>;
 	z-index: 10000;
 	font-size: 17px;
 	padding: 4px 6px;
-	border-radius: 100px;
+	border-radius: 4px;
 	position: absolute;
-	bottom: 7px;
+	bottom: 25px;
 	left: 6px;
-	display: none; }
+	display: none;
+	transition: 0.3s; }
 
 amp-img:hover div.image_open_link {
-	display: inline-block; }
+	display: inline-block;
+	transition: 0.3s; }
 
 
 .image_description {
