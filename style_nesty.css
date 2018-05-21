@@ -311,7 +311,7 @@ div.image-div-link-button {
 	left: 6px; }
 
 div.image_thumbnail:hover div.image-div-link-button,
-div.image_large:hover div.image-div-link {
+div.image_large:hover div.image-div-link-button {
 	display: inline-block;
 	transition: 0.3s; }
 
@@ -328,7 +328,7 @@ amp-lightbox {
 	background: rgba(255,255,255,1);
 	text-align: left;
 	overflow: auto;
-	padding: 30px 0 100px;
+	padding: 60px 0 100px;
 	z-index: 100000000; }
 
 amp-lightbox div.image_large {
@@ -366,18 +366,22 @@ div.amp-lightbox-media-id {
 	border-radius: 4px;
 	margin: 10px 20px 0; }
 
-.lightbox-close {
+.amp-lightbox-close {
 	z-index: 10000000000;
 	position: fixed;
-	opacity: 0.95;
-	top: 8px;
-	right: 8px;
-	color: <? echo $color ?>;
-	padding: 4px;
-	background: #fff;
-	border-radius: 100px;
-	font-size: 30px;
-	line-height: 31px; }
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	text-align: center;
+	font-family: Arial;
+	padding: 12px 0 10px;
+	font-size: 13px;
+	line-height: 14px;
+	text-transform: uppercase;
+	color: #fff;
+	border-radius: 4px;
+	margin: 0; }
 
 /* BACKGROUNDS */
 
