@@ -305,8 +305,11 @@ div.image_open_link {
 	font-size: 17px;
 	padding: 4px 6px;
 	border-radius: 4px;
-	position: absolute;
-	bottom: 35px;
+	position: relative; }
+
+div.image_thumbnail div.image_open_link,
+div.image_thumbnail div.image_open_link {
+	top: -20px;
 	left: 6px;
 	display: none;
 	transition: 0.3s; }
@@ -315,6 +318,10 @@ div.image_large:hover div.image_open_link,
 div.image_thumbnail:hover div.image_open_link{
 	display: inline-block;
 	transition: 0.3s; }
+
+amp-lightbox div.image_open_link {
+	margin: 10px 5px;
+	}
 
 
 .image_description {
@@ -332,7 +339,7 @@ figure {
 	padding: 0; }
 
 figcaption {
-	display: inline-block;
+	display: block;
 	caption-side: bottom;
 	text-align: left; }
 
@@ -358,17 +365,10 @@ amp-lightbox figcaption {
 	z-index: 10000000000;
 	position: fixed;
 	top: 5px;
-	right: 5px; }
-
-.lightbox-link {
-	z-index: 10000000000;
-	position: fixed;
-	bottom: 5px;
-	right: 25px; }
-
-.lightbox-close .material-icons, .lightbox-link .material-icons, .lightbox-link a {
+	right: 5px;
 	color: rgba(0,0,0,0.54);
-	font-size: 30px; }
+	font-size: 30px;
+	line-height: 31px; }
 
 /* BACKGROUNDS */
 
