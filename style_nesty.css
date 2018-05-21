@@ -291,23 +291,24 @@ div.image_thumbnail amp-img {
 div.image_large {
 	position: relative;
 	display: block;
-	margin: 50px 0 60px;
+	margin: 50px 20px 60px;
 	text-align: center; }
 
 div.image_large amp-img {
-	display: block;
+	display: inline-block;
 	border-radius: 4px; }
 
 div.image_open_link {
 	opacity: 0.7;
 	color: #fff;
-	background: <? echo $color; ?>;
+	background: #fff;
+	color: <? echo $color; ?>;
 	font-size: 11px;
-	padding: 6px;
-	border-radius: 0 4px 0 6px;
+	padding: 3px 5px;
+	border-radius: 5px;
 	position: absolute;
-	top: 0;
-	right: 0; }
+	bottom: 5px;
+	left: 5px; }
 
 .image_description {
 	display: block;
