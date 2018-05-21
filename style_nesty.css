@@ -299,15 +299,15 @@ div.image_large amp-img {
 	border-radius: 4px; }
 
 div.image_open_link {
-	background: rgba(255,255,255,0.9);
+	background: rgba(255,255,255,1);
 	color: <? echo $color; ?>;
 	z-index: 10000;
 	font-size: 17px;
 	padding: 4px 6px;
-	border-radius: 5px;
+	border-radius: 100px;
 	position: absolute;
 	bottom: 7px;
-	left: 7px; }
+	left: 6px; }
 
 .image_description {
 	display: block;
