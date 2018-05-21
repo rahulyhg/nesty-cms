@@ -352,6 +352,19 @@ amp-lightbox figcaption {
 	border-radius: 4px;
 	margin: 0 30px 10px; }
 
+.amp-lightbox-media-id {
+	display: inline-block;
+	text-align: right;
+	font-family: Arial;
+	padding: 12px 20px 10px;
+	font-size: 14px;
+	line-height: 15px;
+	text-transform: uppercase;
+	color: rgba(50,50,50,0.7);
+	border: 0 solid <? echo $color ?>;
+	border-radius: 4px;
+	margin: 0 30px 10px; }
+
 .lightbox-close {
 	z-index: 10000000000;
 	position: fixed;
