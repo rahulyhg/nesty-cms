@@ -307,7 +307,7 @@ div.image-div-link-button {
 	border-radius: 100px;
 	position: absolute;
 	display: none;
-	top: 6px;
+	top: 7px;
 	left: 6px; }
 
 div.image-div-open-button {
@@ -321,8 +321,8 @@ div.image-div-open-button {
 	border-radius: 4px;
 	position: absolute;
 	display: none;
-	top: 6px;
-	left: 45px; }
+	top: 7px;
+	left: 50px; }
 
 div.image_thumbnail:hover div.image-div-link-button,
 div.image_large:hover div.image-div-link-button,
