@@ -309,14 +309,14 @@ function body_process($body_incoming) {
 			$image_string .= "<figure><amp-img on='tap:lightbox".$media_id_temp."' src='".$media_info[$media_id_temp]['link']."large/' width='".$img_width_large."px' height='".$img_height_large."px' role='button' tabindex='1' sizes='(min-width: 1100px) 1000px, (min-width: 500px) 90vw, 90vw'></amp-img>";	
 			if (!(empty($file_description))): $image_string .= "<amp-fit-text width='".($img_width_large)."px' height='30px' min-font-size='14px' max-font-size='14px'>".mb_substr(strip_tags(str_replace(["</th>", "</td>", "</div>", "</p>", "<br>", "<br />"], ' ',$file_description)),0,200)."</amp-fit-text>"; endif;
 			$image_string .= "</figure>";
-			$image_string .= "<a href='".$media_info[$media_id_temp]['link']."' target='_blank'><div class='image_open_link material-icons'>image_search</div></a>";
+			$image_string .= "<a href='".$media_info[$media_id_temp]['link']."' target='_blank'><div class='image_open_link material-icons'>link</div></a>";
 			$image_string .= "</div>";
 		else:
 			$image_string = "<div class='image_thumbnail'>";
 			$image_string .= "<figure><amp-img on='tap:lightbox".$media_id_temp."' src='".$media_info[$media_id_temp]['link']."thumb/' width='".$img_width."px' height='".$img_height."px' role='button' tabindex='1' sizes='(min-width: ".($img_width+100)."px) ".$img_width."px, 70vw'></amp-img>";
 			$image_string .= "<amp-fit-text width='".($img_width)."px' height='30px' min-font-size='14px' max-font-size='14px' sizes='(min-width: ".($img_width+100)."px) ".($img_width)."px, 70vw'>".mb_substr(strip_tags(str_replace(["</th>", "</td>", "</div>", "</p>", "<br>", "<br />"], ' ', $file_description)),0,200)."</amp-fit-text>";
 			$image_string .= "</figure>";
-			$image_string .= "<a href='".$media_info[$media_id_temp]['link']."' target='_blank'><div class='image_open_link material-icons'>open_in_new</div></a>";
+			$image_string .= "<a href='".$media_info[$media_id_temp]['link']."' target='_blank'><div class='image_open_link material-icons'>link</div></a>";
 			$image_string .= "</div>"; endif;
 	
 		$lightbox_temp = "<amp-lightbox id='lightbox".$media_id_temp."' layout='nodisplay'>";
