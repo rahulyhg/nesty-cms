@@ -332,9 +332,9 @@ function body_process($body_incoming) {
 		if (($filename_size == "large") && empty($file_description)): continue; endif;
 	
 		$lightbox_temp = "<amp-lightbox id='lightbox".$media_id_temp."' layout='nodisplay'>";
-		$lightbox_temp .= "<p><b>media id:</b> ".$domain."|".$media_id_temp."</p>";
 		$lightbox_temp .= "<figure><div class='image_large'><amp-img src='".$media_info[$media_id_temp]['link']."large/' width='".$img_width_large."px' height='".$img_height_large."px' sizes='(min-width: 1100px) 1000px, (min-width: 500px) 90vw, 90vw'></amp-img></div>";
-		$lightbox_temp .= "<a href='".$media_info[$media_id_temp]['link']."' target='_blank'><div class='amp-lightbox-image-link-button'>open in separate tab</div></a>";
+		$lightbox_temp .= "<a href='".$media_info[$media_id_temp]['link']."' target='_blank'><div class='amp-lightbox-image-link-button'>new window</div></a>";
+		$lightbox_temp .= "<div class='amp-lightbox-media-id>".$domain."|".$media_id_temp."</div>";
 		$lightbox_temp .= "<figcaption>".$file_description."</figcaption></figure>";
 		$lightbox_temp .= "<button class='lightbox-close' on='tap:lightbox".$media_id_temp.".close' tabindex='1' role='button'><i class='material-icons'>cancel</i></button>";
 		$lightbox_temp .= "</amp-lightbox>";
