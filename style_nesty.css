@@ -303,19 +303,19 @@ div.image_open_link {
 	color: <? echo $color; ?>;
 	z-index: 10000;
 	font-size: 17px;
-	padding: 4px 6px;
+	padding: 4px 10px;
 	border-radius: 100px;
 	position: absolute; }
 
 div.image_thumbnail div.image_open_link,
-div.image_thumbnail div.image_open_link {
+div.image_large div.image_open_link {
 	top: 15px;
 	left: 17px;
 	display: none;
 	transition: 0.3s; }
 
-div.image_large:hover div.image_open_link,
-div.image_thumbnail:hover div.image_open_link{
+div.image_thumbnail:hover div.image_open_link,
+div.image_large:hover div.image_open_link{
 	display: inline-block;
 	transition: 0.3s; }
 
