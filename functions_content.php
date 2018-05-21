@@ -304,22 +304,30 @@ function body_process($body_incoming) {
 
 		if ($filename_size == "full"):
 			$image_string = "<a href='".$media_info[$media_id_temp]['link']."' on='tap:lightbox".$media_id_temp."' role='button' tabindex='1'>view image</a>";
-		elseif ($filename_size == "large"):
+		elseif (($filename_size == "large") && empty($file_description)):
 			$image_string = "<div class='image_large'><figure>";
-			$image_string .= "<amp-img on='tap:lightbox".$media_id_temp."' src='".$media_info[$media_id_temp]['link']."large/' width='".$img_width_large."px' height='".$img_height_large."px' role='button' tabindex='1' sizes='(min-width: 1100px) 1000px, (min-width: 500px) 90vw, 90vw'>";	
+			$image_string .= "<amp-img src='".$media_info[$media_id_temp]['link']."large/' width='".$img_width_large."px' height='".$img_height_large."px' role='button' tabindex='1' sizes='(min-width: 1100px) 1000px, (min-width: 500px) 90vw, 90vw'></amp-img>";
 			$image_string .= "<a href='".$media_info[$media_id_temp]['link']."' target='_blank'><div class='image_open_link material-icons'>link</div></a>";
-			$image_stirng .= "</amp-img>";
-			if (!(empty($file_description))): $image_string .= "<amp-fit-text width='".($img_width_large)."px' height='30px' min-font-size='14px' max-font-size='14px'>".mb_substr(strip_tags(str_replace(["</th>", "</td>", "</div>", "</p>", "<br>", "<br />"], ' ',$file_description)),0,200)."</amp-fit-text>"; endif;
+			$image_string .= "</figure>";
+			$image_string .= "</div>";
+		elseif (($filename_size == "large") && !(empty($file_description))):
+			$image_string = "<div class='image_large'><figure>";
+			$image_string .= "<amp-img on='tap:lightbox".$media_id_temp."' src='".$media_info[$media_id_temp]['link']."large/' width='".$img_width_large."px' height='".$img_height_large."px' role='button' tabindex='1' sizes='(min-width: 1100px) 1000px, (min-width: 500px) 90vw, 90vw'></amp-img>";
+			$image_string .= "<a href='".$media_info[$media_id_temp]['link']."' target='_blank'><div class='image_open_link material-icons'>link</div></a>";
+			$image_string .= "<amp-fit-text width='".($img_width_large)."px' height='30px' min-font-size='14px' max-font-size='14px'>".mb_substr(strip_tags(str_replace(["</th>", "</td>", "</div>", "</p>", "<br>", "<br />"], ' ',$file_description)),0,200)."</amp-fit-text>";
 			$image_string .= "</figure>";
 			$image_string .= "</div>";
 		else:
 			$image_string = "<div class='image_thumbnail'><figure>";
-			$image_string .= "<amp-img on='tap:lightbox".$media_id_temp."' src='".$media_info[$media_id_temp]['link']."thumb/' width='".$img_width."px' height='".$img_height."px' role='button' tabindex='1' sizes='(min-width: ".($img_width+100)."px) ".$img_width."px, 70vw'>";
+			$image_string .= "<amp-img on='tap:lightbox".$media_id_temp."' src='".$media_info[$media_id_temp]['link']."thumb/' width='".$img_width."px' height='".$img_height."px' role='button' tabindex='1' sizes='(min-width: ".($img_width+100)."px) ".$img_width."px, 70vw'></amp-img>";
 			$image_string .= "<a href='".$media_info[$media_id_temp]['link']."' target='_blank'><div class='image_open_link material-icons'>link</div></a>";
-			$image_string .= "</amp-img>";
 			$image_string .= "<amp-fit-text width='".($img_width)."px' height='30px' min-font-size='14px' max-font-size='14px' sizes='(min-width: ".($img_width+100)."px) ".($img_width)."px, 70vw'>".mb_substr(strip_tags(str_replace(["</th>", "</td>", "</div>", "</p>", "<br>", "<br />"], ' ', $file_description)),0,200)."</amp-fit-text>";
 			$image_string .= "</figure>";
 			$image_string .= "</div>"; endif;
+
+		$body_incoming = str_replace("[[[".$match_temp."]]]", $image_string, $body_incoming);
+
+		if (($filename_size == "large") && empty($file_description)): continue; endif;
 	
 		$lightbox_temp = "<amp-lightbox id='lightbox".$media_id_temp."' layout='nodisplay'>";
 		$lightbox_temp .= "<div class='image_large'><figure><amp-img src='".$media_info[$media_id_temp]['link']."large/' width='".$img_width_large."px' height='".$img_height_large."px' sizes='(min-width: 1000px) 900px, (min-width: 500px) 90vw, 450px'></amp-img>";
@@ -329,8 +337,6 @@ function body_process($body_incoming) {
 		$lightbox_temp .= "</amp-lightbox>";
 		$image_lightbox_array[] = $lightbox_temp;
 	
-		$body_incoming = str_replace("[[[".$match_temp."]]]", $image_string, $body_incoming);
-
 		endforeach;
 	
 	// process citations
