@@ -325,7 +325,7 @@ figcaption {
 	text-align: left; }
 
 amp-lightbox {
-	background: rgba(255,255,255,0.95);
+	background: rgba(255,255,255,1);
 	text-align: left;
 	overflow: auto;
 	padding: 30px 0;
@@ -339,7 +339,7 @@ amp-lightbox figcaption {
 	margin: 0;
 	padding: 0; }
 
-.amp-lightbox-image-link-button {
+div.amp-lightbox-image-link-button {
 	display: inline-block;
 	text-align: right;
 	font-family: Arial;
@@ -348,11 +348,12 @@ amp-lightbox figcaption {
 	line-height: 15px;
 	text-transform: uppercase;
 	color: <? echo $color ?>;
+	background: #fff;
 	border: 1px solid <? echo $color ?>;
 	border-radius: 4px;
 	margin: 0 30px 10px; }
 
-.amp-lightbox-media-id {
+div.amp-lightbox-media-id {
 	display: inline-block;
 	text-align: right;
 	font-family: Arial;
