@@ -279,7 +279,7 @@ div.image_thumbnail {
 	overflow: hidden;
 	margin: 20px 20px 10px 20px;
 	padding: 0;
-	font-family: Garamond, 'Times New Roman', Serif; }
+	font-family: 'Garamond', 'Times New Roman', Serif; }
 
 div.image_thumbnail amp-img {
 	display: block;
@@ -304,12 +304,12 @@ div.image_open_link {
 	z-index: 10000;
 	font-size: 17px;
 	padding: 4px 6px;
-	border-radius: 4px;
-	position: relative; }
+	border-radius: 100px;
+	position: absolute; }
 
 div.image_thumbnail div.image_open_link,
 div.image_thumbnail div.image_open_link {
-	top: -20px;
+	top: 6px;
 	left: 6px;
 	display: none;
 	transition: 0.3s; }
