@@ -205,7 +205,11 @@ if (!(empty($page_confirmed[$page_temp]))):
 		unset($_SESSION[$page_temp]);
 		endif;
 
-	if ((($slug_temp == "edit") || ($command_temp == "edit")) && !(empty($login))):
+	if (($command_temp == "edit") && !(empty($login))):
+		permanent_redirect("https://$domain/".$page_temp."/edit/"); 
+		endif;
+
+	if (($slug_temp == "edit") && !(empty($login))):
 		include_once('admin_page.php');
 		endif;
 
