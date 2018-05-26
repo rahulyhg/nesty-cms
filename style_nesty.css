@@ -266,7 +266,10 @@ div.tile div {
 	bottom: 0;
 	padding: 5px 15px; }
 
-div.tile div + div {
+div.tile div.tile-read-more {
+	left: 0; }
+
+div.tile div.tile-edit {
 	left: 50px; }
 
 
