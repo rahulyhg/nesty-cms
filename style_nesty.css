@@ -266,7 +266,7 @@ div.tile div {
 	bottom: 0;
 	padding: 5px 15px; }
 
-div.tile div + div.tile div {
+div.tile div + div {
 	left: 50px; }
 
 
