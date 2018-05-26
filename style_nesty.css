@@ -258,7 +258,6 @@ div.tile div {
 	font-size: 12px;
 	line-height: 14px;
 	font-weight: 400;
-	color: #fff;
 	display: inline-block;
 	border-radius: 4px;
 	position: absolute;
@@ -267,10 +266,12 @@ div.tile div {
 	padding: 5px 15px; }
 
 div.tile div.tile-read-more {
+	color: #fff;
 	left: 0; }
 
 div.tile div.tile-edit {
-	left: 100px; }
+	color: rgba(50,50,50,0.8);
+	left: 90px; }
 
 
 
