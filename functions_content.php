@@ -246,7 +246,7 @@ function body_process($body_incoming) {
 		foreach ($matches_temp[0] as $temp): $link_string = str_replace("(((".$temp.")))", null, $link_string); endforeach;
 	
 		if ($link_type == "tile"):
-			$link_string = "<a href='".$link_info[$link_id_temp]['link']."'<div class='tile'>".$link_string;
+			$link_string = "<div class='tile'><a href='".$link_info[$link_id_temp]['link']."'>".$link_string;
 			$link_string .= "<div class='background_".rand(1,10)."'>Read more</div></a>";
 			if (!(empty($login)) && ($link_info[$link_id_temp]['domain'] == $domain)):
 				$link_string .= "<a href='".$link_info[$link_id_temp]['link']."edit/'><div class='background_".rand(1,10)."'>Edit</div></a>";
