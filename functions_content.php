@@ -247,9 +247,9 @@ function body_process($body_incoming) {
 	
 		if ($link_type == "tile"):
 			$link_string = "<div class='tile'><a href='".$link_info[$link_id_temp]['link']."'>".$link_string;
-			$link_string .= "<div class='background_".rand(1,10)."'>Read more</div></a>";
+			$link_string .= "<div class='tile-read-more background_".rand(1,10)."'>Read more</div></a>";
 			if (!(empty($login)) && ($link_info[$link_id_temp]['domain'] == $domain)):
-				$link_string .= "<a href='".$link_info[$link_id_temp]['link']."edit/'><div class='background_".rand(1,10)."'>Edit</div></a>";
+				$link_string .= "<a href='".$link_info[$link_id_temp]['link']."edit/'><div class='tide-edit background_".rand(1,10)."'>Edit</div></a>";
 				endif;
 			$link_string .= "</div>";
 		else:
