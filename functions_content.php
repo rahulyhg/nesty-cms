@@ -251,6 +251,7 @@ function body_process($body_incoming) {
 			if (!(empty($login)) && ($link_info[$link_id_temp]['domain'] == $domain)):
 				$link_string .= "<a href='".$link_info[$link_id_temp]['link']."edit/'><div class='background_".rand(1,10)."'>Edit</div></a>";
 				endif;
+			echo "</div>";
 		else:
 			$link_string = "<a href='".$link_info[$link_id_temp]['link']."'>".$link_string."</a>";
 			endif;
