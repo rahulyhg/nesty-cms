@@ -130,11 +130,16 @@ if (empty($page_confirmed)):
 
 echo "<style> .header { position: absolute !important; } </style>";
 
-echo "<div style='left: 0; right: 0; padding: 0; margin: 0;'>";
-
-echo "<div id='edit_window'>";
-
 echo "<form action='/".$page_confirmed['page_id']."/edit/' method='post'>";
+
+echo "<span class='button float_left'></span><button type='submit' name='page_edit' value='save' class='material-icons float_left'>save</button>";
+echo "<span class='button float_right'></span><a href='/' class='material-icons button float_right'>home</a>";
+
+if ($page_temp !== "new"):
+	echo "<a href='/create/' class=' button float_right'>create</a>";
+	echo "<a href='/".$page_confirmed['page_id']."/'>open</a>";
+	echo "<a href='/".$page_confirmed['page_id']."/delete/' class='button float_right'>delete</a>";
+	endif;
 
 echo "<input type='hidden' name='page_id' value='".$page_confirmed['page_id']."'>";
 
@@ -161,29 +166,6 @@ echo "<input type='date' name='created_time' value='".$page_confirmed['created_t
 // echo "<textarea name='menu' value='".$page_confirmed['menu']."' placeholder='menu'/></textarea>";
 
 echo "<textarea name='body' id='textarea_body' style='width: 95%; max-width: 1000px; margin: 20px auto 65px; padding: 15px; border: 2px solid rgba(255,255,255,0.3); box-shadow: 0 0 30px -2px rgba(150,150,150,0.45); background: #fff;'>".$page_confirmed['body']."</textarea>";
-
-echo "<style>" ?>
-h2 { color: #333; margin: 0 auto; }
-#path_window, #popover_window, #list_window { position: fixed; left: 0; top: 0; right: 0; bottom: 0; padding: 20px; margin: 0; background: #fff; z-index: 100000; display: none; text-align: center !important;} 
-.lightbox-close { display: none; }
-<? echo "</style>";
-echo "<div class='bottom_bar'><span class='button float_left'></span><button type='submit' name='page_edit' value='save' class='material-icons float_left'>save</button>";
-echo "<button id='path_button' type='button' class='material-icons float_left'>sort</button>";
-echo "<button id='popover_button' type='button' class='material-icons float_left'>menu</button>";
-echo "<button id='list_button' type='button' class='material-icons float_left'>list</button>";
-echo "<span class='button float_right'></span><a href='/' class='material-icons button float_right'>home</a>";
-echo "<a href='/account/' class='material-icons button float_right'>account_circle</a>";
-if ($page_temp !== "new"):
-	echo "<a href='/new/' class='material-icons button float_right'>note_add</a>";
-	echo "<a href='/add/' class='material-icons button float_right'>playlist_add</a>";
-	echo "<button onclick=\"window.location.href='/".$page_confirmed['page_id']."/".$page_confirmed['slug']."/'\" type=\"button\" class='material-icons float_right'>open_in_new</button>";
-	echo "<a href='/".$page_confirmed['page_id']."/delete/' class='material-icons button float_right'>delete</a>";
-	endif;
-echo "</div></div>";
-
-echo "</div>";
-
-echo "<div class='button lightbox-close'><i class='material-icons'>cancel</i></div>";
 
 // here you can manage parent and child hierarchy
 echo "<div id='path_window' style='overflow-y: auto !important; height: auto;'>";
@@ -218,11 +200,9 @@ foreach($pages_array as $page_id => $page_info):
 	if (in_array($page_id,$children_confirmed)): continue; endif;
 	echo "<option value='$page_id'>".$page_info['header']." (".$page_info['slug'].")</option>";
 	endforeach;
-echo "</select></div></div>";
+echo "</select></div>";
 
 // here you can manage lists of media and entries
-echo "<div id='list_window' style='overflow-y: auto !important; height: auto;'>";
-echo "<div style='display: inline-block; width: 350px; margin: 20px;'><span style='text-align: left; display: block; padding-bottom: 10px;'>Display</span>";
 // show image gallery at top, middle, or bottom
 // show list entries at top, middle, or bottom
 // show article at top, middle, or bottom
@@ -243,11 +223,9 @@ foreach($entries_array as $entry_id => $entry_info):
 	echo "<option value='$entry_id'>".$entry_info['name']." ($entry_id)</option>";
 	endforeach;
 echo "</select>";
-echo "</div></div>";
-
-echo "<div id='popover_window' style='overflow-y: auto !important; height: auto;'>";
-echo "<textarea name='popover' placeholder='popover' style='width: 400px !important; height: 600px !important;'>".$page_confirmed['popover']."</textarea>";
 echo "</div>";
+
+echo "<textarea name='popover' placeholder='popover' style='width: 400px !important; height: 600px !important;'>".$page_confirmed['popover']."</textarea>";
 
 echo "<script>"; ?>
 	$('#textarea_body').height($(window).height() - 115);
@@ -263,5 +241,5 @@ echo "<script>"; ?>
 <? echo "</script>";
 
 
-echo "</form></div>";
+echo "</form>";
 footer(); ?>
