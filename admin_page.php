@@ -128,13 +128,7 @@ foreach ($result as $row):
 if (empty($page_confirmed)):
 	$page_confirmed = ["page_id"=>random_code(5), "header"=>null, "slug"=>null,  "password"=>null, "created_time"=>date("Y-m-d"), "body"=>null, "menu"=>null]; endif;
 
-echo "<style> .header { position: absolute !important; } </style>";
-
-echo "<form action='/".$page_confirmed['page_id']."/edit/' method='post'>";
-
-echo "<button type='submit' name='page_edit' value='save' class='material-icons button'>save</button>";
-
-echo "<div id='navigation-carousel-main'>";
+echo "<div id='navigation-carousel-main' style='width: 100%; padding: 0; display: block; position: relative;'>";
 if ($page_temp !== "new"):
 	echo "<div id='navigation-create-button' class='background_1'><a href='/create/'><i class='material-icons'>note_add</i> Create</a></div>";
 	echo "<div id='navigation-settings-button'><a href='/account/'><i class='material-icons'>settings</i></a></div>";
@@ -144,6 +138,10 @@ else:
 	echo "<div id='navigation-search-input'><a href='/' target='_blank'>Home</a></div>";
 	endif;
 echo "</div>";
+
+echo "<form action='/".$page_confirmed['page_id']."/edit/' method='post'>";
+
+echo "<button type='submit' name='page_edit' value='save' class='material-icons button'>save</button>";
 
 echo "<input type='hidden' name='page_id' value='".$page_confirmed['page_id']."'>";
 
