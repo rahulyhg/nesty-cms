@@ -138,6 +138,7 @@ div#navigation-sitemap-button {
 
 div.floating-action-button, button.floating-action-button {
 	background: <? echo $color ?>;
+	font-family: 'Material Icons';
 	position: fixed;
 	right: 20px;
 	bottom: 20px;
