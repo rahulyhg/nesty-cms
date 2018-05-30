@@ -143,7 +143,7 @@ echo "</div>";
 
 echo "<form action='/".$page_confirmed['page_id']."/edit/' method='post'>";
 
-echo "<button type='submit' name='page_edit' value='save' class='floating-action-button material-icons'>save</button>";
+echo "<button type='submit' name='page_edit' value='save' class='floating-action-button'>save</button>";
 
 echo "<input type='hidden' name='page_id' value='".$page_confirmed['page_id']."'>";
 
