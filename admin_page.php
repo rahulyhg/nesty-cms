@@ -157,7 +157,7 @@ foreach ($parents_confirmed as $page_id): echo "<input type='hidden' name='paren
 foreach ($children_confirmed as $page_id): echo "<input type='hidden' name='children_confirmed[]' value='$page_id'>"; endforeach;
 foreach ($citations_confirmed as $entry_id): echo "<input type='hidden' name='citations_confirmed[]' value='$entry_id'>"; endforeach;
 
-echo "<style> #input-header { margin: 20px auto; display: block; width: 95%; max-width: 1000px; padding: 5px 15px; height: 50px; text-align: center; font-size: 23px; font-weight: 300; letter-spacing: 1px; } </style>";
+echo "<style> #input-header { margin: 0 auto 30px; display: block; width: 95%; max-width: 1000px; padding: 5px 15px; height: 50px; text-align: center; font-size: 23px; font-weight: 300; letter-spacing: 1px; } </style>";
 echo "<input type='text' name='header' id='input-header' value='".htmlspecialchars($page_confirmed['header'], ENT_QUOTES)."' placeholder='header' required>";
 
 echo "<div style='display: block; text-align: center;'>";
@@ -171,7 +171,7 @@ echo "</div>";
 
 // echo "<textarea name='menu' value='".$page_confirmed['menu']."' placeholder='menu'/></textarea>";
 
-echo "<style> #input-textarea { width: 95%; max-width: 1000px; margin: 20px auto 120px; padding: 15px; border: 2px solid rgba(255,255,255,0.3); box-shadow: 0 0 30px -2px rgba(150,150,150,0.45); background: #fff; } </style>";
+echo "<style> #input-textarea { width: 95%; max-width: 1000px; margin: 30px auto 120px; padding: 15px; border: 2px solid rgba(255,255,255,0.3); box-shadow: 0 0 30px -2px rgba(150,150,150,0.45); background: #fff; } </style>";
 echo "<textarea name='body' id='input-textarea'>".$page_confirmed['body']."</textarea>";
 
 // here you can manage parent and child hierarchy
