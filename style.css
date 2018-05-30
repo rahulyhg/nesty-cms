@@ -136,7 +136,7 @@ div#navigation-sitemap-button {
 
 /* FLOATING ACTION BUTTON */
 
-.floating-action-button {
+div.floating-action-button, button.floating-action-button {
 	background: <? echo $color ?>;
 	position: fixed;
 	right: 20px;
