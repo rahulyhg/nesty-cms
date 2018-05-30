@@ -132,14 +132,18 @@ echo "<style> .header { position: absolute !important; } </style>";
 
 echo "<form action='/".$page_confirmed['page_id']."/edit/' method='post'>";
 
-echo "<span class='button float_left'></span><button type='submit' name='page_edit' value='save' class='material-icons float_left'>save</button>";
-echo "<span class='button float_right'></span><a href='/' class='material-icons button float_right'>home</a>";
+echo "<button type='submit' name='page_edit' value='save' class='material-icons button'>save</button>";
 
+echo "<div id='navigation-carousel-main'>";
 if ($page_temp !== "new"):
-	echo "<a href='/create/' class=' button float_right'>create</a>";
-	echo "<a href='/".$page_confirmed['page_id']."/'>open</a>";
-	echo "<a href='/".$page_confirmed['page_id']."/delete/' class='button float_right'>delete</a>";
+	echo "<div id='navigation-create-button' class='background_1'><a href='/create/'><i class='material-icons'>note_add</i> Create</a></div>";
+	echo "<div id='navigation-settings-button'><a href='/account/'><i class='material-icons'>settings</i>";
+	echo "<div id='navigation-home-button'><a href='/".$page_confirmed['page_id']."/delete/'>Delete</a></div>";
+	echo "<div id='navigation-search-input'><a href='/".$page_confirmed['page_id']."/' target='_blank'>Open post</a></div>";
+else:
+	echo "<div id='navigation-search-input'><a href='/' target='_blank'>Home</a></div>";
 	endif;
+echo "</div>";
 
 echo "<input type='hidden' name='page_id' value='".$page_confirmed['page_id']."'>";
 
