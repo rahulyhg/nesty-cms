@@ -157,19 +157,21 @@ foreach ($parents_confirmed as $page_id): echo "<input type='hidden' name='paren
 foreach ($children_confirmed as $page_id): echo "<input type='hidden' name='children_confirmed[]' value='$page_id'>"; endforeach;
 foreach ($citations_confirmed as $entry_id): echo "<input type='hidden' name='citations_confirmed[]' value='$entry_id'>"; endforeach;
 
-echo "<style> #input-header { margin: 20px auto; display: block; width: 95%; max-width: 1000px; padding: 5px 15px; height: 50px; text-align: center; font-size: 23px; font-weight: 300; letter-spacing: 1px; } </style>";
+echo "<style> #input-header { margin: 0 auto 50px; display: block; width: 95%; max-width: 1000px; padding: 5px 15px; height: 50px; text-align: center; font-size: 23px; font-weight: 300; letter-spacing: 1px; } </style>";
 echo "<input type='text' name='header' id='input-header' value='".htmlspecialchars($page_confirmed['header'], ENT_QUOTES)."' placeholder='header' required>";
 
+echo "<div style='display: block; text-align: center;'>";
 echo "<input type='text' name='slug' value='".htmlspecialchars($page_confirmed['slug'], ENT_QUOTES)."' pattern='[a-zA-Z0-9-]+' placeholder='slug' style='margin: 10px 15px; text-align: center; display: inline-block; width: 50%; max-width: 500px; '>";
 echo "<input type='text' name='password' value='".$page_confirmed['password']."' placeholder='password' style='margin: 10px 15px; text-align: center; display: inline-block; width: 26%; max-width: 255px; '>";
 echo "<input type='date' name='created_time' value='".$page_confirmed['created_time']."' style='margin: 10px 15px; text-align: center; display: inline-block; width: 15%; max-width: 150px; '></div>";
+echo "</div>";
 
 // echo "<tr><td><input type='text' name='toggle_1' value='".$page_confirmed['toggle_1']."' placeholder='toggle'></td>";
 // echo "<td><input type='text' name='toggle_2' value='".$page_confirmed['toggle_2']."' placeholder='toggle'></td></tr></tbody></table>";
 
 // echo "<textarea name='menu' value='".$page_confirmed['menu']."' placeholder='menu'/></textarea>";
 
-echo "<style> #input-textarea { width: 95%; max-width: 1000px; margin: 20px auto 65px; padding: 15px; border: 2px solid rgba(255,255,255,0.3); box-shadow: 0 0 30px -2px rgba(150,150,150,0.45); background: #fff; } </style>";
+echo "<style> #input-textarea { width: 95%; max-width: 1000px; margin: 60px auto 120px; padding: 15px; border: 2px solid rgba(255,255,255,0.3); box-shadow: 0 0 30px -2px rgba(150,150,150,0.45); background: #fff; } </style>";
 echo "<textarea name='body' id='input-textarea'>".$page_confirmed['body']."</textarea>";
 
 // here you can manage parent and child hierarchy
