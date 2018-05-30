@@ -331,6 +331,25 @@ div.login button {
 	padding-top: 100px;
 	margin: 30px; }
 
+#edit-window {
+	width: 100%;
+	font-family: Verdana, Arial;
+	position: relative; }
+
+#edit-window div, #edit-window button, #edit-window a {
+	color: rgba(50,50,50,0.8); }
+
+#edit-window .material-icons, #edit-window a .material-icons {
+	vertical-align: middle;
+	display: inline-block;
+	padding-bottom: 3px; }
+
+#edit-window div {
+	position: absolute;
+	font-size: 15px;
+	line-height: 16px;
+	padding: 7px 20px; }
+
 div#edit-window-create-button {
 	text-align: left;
 	font-size: 14px;
