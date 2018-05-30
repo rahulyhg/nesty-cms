@@ -425,24 +425,6 @@ div#edit-window-open-button, div#edit-window-open-button a {
 
 /* ETC */
 
-.bottom_bar {
-	padding: 0;
-	width: 100%;
-	box-shadow: 0 -10px 20px -15px rgba(30,30,30,0.35);
-	z-index: 100000;
-	text-align: center;
-	position: fixed;
-	bottom: 0;
-	left: 0; }
-
-.bottom_bar button, .bottom_bar .button { font-size: 24px; color: rgba(30,30,30,0.95); }
-
-.float_right {
-	float: right; }
-
-.float_left {
-	float: left; }
-
 .nesting-or-popover, .nesting-or-popover section,
 .nesting-or-popover ul, .nesting-or-popover ol {
 	font-size: 18px;
