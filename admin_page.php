@@ -231,9 +231,9 @@ echo "</select>";
 echo "<textarea name='popover' placeholder='popover' style='width: 400px !important; height: 600px !important;'>".$page_confirmed['popover']."</textarea>";
 
 echo "<script>"; ?>
-	$('#input-textarea').height($(window).height() - 115);
-	window.onresize = function(event) { $('#input-textarea').height($(window).height() - 115) }
-	$('#input-textarea').click(function(){ window.scrollTo(0, 180); });
+	$('#input-textarea').height($(window).height() - 100);
+	window.onresize = function(event) { $('#input-textarea').height($(window).height() - 100) }
+	$('#input-textarea').click(function(){ window.scrollTo(0, 300); });
 <? echo "</script>";
 
 //	$('#popover_button').click(function() { $('.lightbox-close').show(); $('#path_window').hide(); $('#list_window').hide(); $('#edit_window').hide(); $('#popover_window').show(); });
