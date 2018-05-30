@@ -240,20 +240,6 @@ textarea {
 	border-radius: 2px;
 	box-shadow: none; }
 
-button, .button {
-	display: inline-block;
-	border: 0;
-	background: rgba(255,255,255,0);
-	color: rgba(0,0,0,.54);
-	height: auto;
-	width: auto;
-	padding: 8px 7px;
-	margin: 0;
-	font-size: 36px; }
-
-button:hover, .button:hover {
-	color: rgba(0,0,0,1); }
-
 #schedule {
 	display: inline-block;
 	background: rgba(255,255,255,1);
