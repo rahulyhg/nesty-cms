@@ -327,11 +327,6 @@ div.login button {
 /* EDIT */
 
 #edit-window {
-	display: block;
-	padding-top: 100px;
-	margin: 30px; }
-
-#edit-window {
 	width: 100%;
 	font-family: Verdana, Arial;
 	position: relative; }
