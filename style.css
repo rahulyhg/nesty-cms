@@ -151,6 +151,7 @@ button.floating-action-button {
 	font-size: 30px;
 	line-height: 30px;
 	padding: 10px;
+	border: 0;
 	text-align: center; }
 
 .floating-action-button,
