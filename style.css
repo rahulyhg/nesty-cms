@@ -141,14 +141,14 @@ button.floating-action-button {
 	background: <? echo $color ?>;
 	font-family: 'Material Icons';
 	position: fixed;
-	right: 23px;
+	right: 25px;
 	bottom: 20px;
 	display: inline-block;
 	z-index: 1000000;
 	border-radius: 100px;
 	font-size: 30px;
 	line-height: 30px;
-	padding: 13px;
+	padding: 11px;
 	border: 0;
 	text-align: center; }
 
