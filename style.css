@@ -324,6 +324,46 @@ div.login button {
 	background: <? echo $color; ?>;
 	font-size: 16px; }
 
+/* EDIT */
+
+#edit-window {
+	display: block;
+	padding-top: 100px;
+	margin: 30px; }
+
+div#edit-window-create-button {
+	text-align: left;
+	font-size: 14px;
+	line-height: 15px;
+	text-transform: uppercase;
+	border-radius: 4px;
+	padding: 7px 20px 5px 15px;
+	top: 20px;
+	left: 23px;
+	background: #444; }
+
+div#edit-window-create-button, div#edit-window-create-button a {
+	color: #fff; }
+
+div#edit-window-delete-button {
+	text-align: right;
+	top: 25px;
+	right: 140px; }
+
+div#edit-window-open-button {
+	text-align: right;
+	top: 20px;
+	right: 25px;
+	padding: 12px 20px 10px;
+	font-size: 14px;
+	line-height: 15px;
+	text-transform: uppercase;
+	border: 1px solid <? echo $color ?>;
+	border-radius: 4px; }
+
+div#edit-window-open-button, div#edit-window-open-button a {
+	color: <? echo $color ?>; }
+
 
 /* CREATE */
 
