@@ -159,7 +159,6 @@ foreach ($citations_confirmed as $entry_id): echo "<input type='hidden' name='ci
 
 echo "<input type='text' name='header' value='".htmlspecialchars($page_confirmed['header'], ENT_QUOTES)."' placeholder='header' style='margin: 20px auto; display: block; width: 95%; max-width: 1000px; padding: 5px 15px; height: 50px; text-align: center; font-size: 23px; font-weight: 300; letter-spacing: 1px;' required>";
 
-echo "<div style='width: 100%; display: block; text-align: center;'>";
 echo "<input type='text' name='slug' value='".htmlspecialchars($page_confirmed['slug'], ENT_QUOTES)."' pattern='[a-zA-Z0-9-]+' placeholder='slug' style='margin: 10px 15px; text-align: center; display: inline-block; width: 50%; max-width: 500px; '>";
 echo "<input type='text' name='password' value='".$page_confirmed['password']."' placeholder='password' style='margin: 10px 15px; text-align: center; display: inline-block; width: 26%; max-width: 255px; '>";
 echo "<input type='date' name='created_time' value='".$page_confirmed['created_time']."' style='margin: 10px 15px; text-align: center; display: inline-block; width: 15%; max-width: 150px; '></div>";
@@ -172,8 +171,6 @@ echo "<input type='date' name='created_time' value='".$page_confirmed['created_t
 echo "<textarea name='body' id='textarea_body' style='width: 95%; max-width: 1000px; margin: 20px auto 65px; padding: 15px; border: 2px solid rgba(255,255,255,0.3); box-shadow: 0 0 30px -2px rgba(150,150,150,0.45); background: #fff;'>".$page_confirmed['body']."</textarea>";
 
 // here you can manage parent and child hierarchy
-echo "<div id='path_window' style='overflow-y: auto !important; height: auto;'>";
-echo "<div style='display: inline-block; width: 350px; margin: 20px;'>";
 echo "<select name='parents[]' size='10' style='width: 350px; margin: 0;' multiple>";
 echo "<option disabled>parents</option>";
 if (!(empty($parents_confirmed))):
@@ -188,8 +185,8 @@ foreach($pages_array as $page_id => $page_info):
 	if (in_array($page_id,$parents_confirmed)): continue; endif;
 	echo "<option value='$page_id'>".$page_info['header']." (".$page_info['slug'].")</option>";
 	endforeach;
-echo "</select></div>";
-echo "<div style='display: inline-block; width: 350px; margin: 20px;'>";
+echo "</select>";
+
 echo "<select name='children[]' size='10' style='width: 350px; margin: 0;' multiple>";
 echo "<option disabled>children</option>";
 if (!(empty($children_confirmed))):
@@ -204,7 +201,7 @@ foreach($pages_array as $page_id => $page_info):
 	if (in_array($page_id,$children_confirmed)): continue; endif;
 	echo "<option value='$page_id'>".$page_info['header']." (".$page_info['slug'].")</option>";
 	endforeach;
-echo "</select></div>";
+echo "</select>";
 
 // here you can manage lists of media and entries
 // show image gallery at top, middle, or bottom
@@ -212,14 +209,13 @@ echo "</select></div>";
 // show article at top, middle, or bottom
 // organise list entries alphabetically or by date
 // organise list entries as table or blockquote
-echo "</div>";
 if (!(empty($citations_confirmed))):
 	echo "<div style='display: inline-block; width: 350px; margin: 20px;'><span style='text-align: left; display: block; padding-bottom: 10px;'>Citations</span>";
 	foreach($citations_confirmed as $entry_id):
 		echo "<a href='/e/$entry_id/edit/'>".$entries_array[$entry_id]['name']." ($entry_id)</a><br>";
 		endforeach;
 	echo "</div>"; endif;
-echo "<div style='display: inline-block; width: 350px; margin: 20px;'>";
+
 echo "<select name='citations[]' size='10' style='width: 350px; margin: 0;' multiple>";
 echo "<option disabled>citations (add only)</option>";
 foreach($entries_array as $entry_id => $entry_info): 
@@ -227,7 +223,6 @@ foreach($entries_array as $entry_id => $entry_info):
 	echo "<option value='$entry_id'>".$entry_info['name']." ($entry_id)</option>";
 	endforeach;
 echo "</select>";
-echo "</div>";
 
 echo "<textarea name='popover' placeholder='popover' style='width: 400px !important; height: 600px !important;'>".$page_confirmed['popover']."</textarea>";
 
