@@ -170,7 +170,7 @@ echo "<input type='date' name='created_time' value='".$page_confirmed['created_t
 // echo "<textarea name='menu' value='".$page_confirmed['menu']."' placeholder='menu'/></textarea>";
 
 echo "<style> #input-textarea { width: 95%; max-width: 1000px; margin: 20px auto 65px; padding: 15px; border: 2px solid rgba(255,255,255,0.3); box-shadow: 0 0 30px -2px rgba(150,150,150,0.45); background: #fff; } </style>";
-echo "<textarea name='body' id='textarea_body'>".$page_confirmed['body']."</textarea>";
+echo "<textarea name='body' id='input-textarea'>".$page_confirmed['body']."</textarea>";
 
 // here you can manage parent and child hierarchy
 echo "<select name='parents[]' size='10' style='width: 350px; margin: 0;' multiple>";
