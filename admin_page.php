@@ -134,7 +134,7 @@ echo "<form action='/".$page_confirmed['page_id']."/edit/' method='post'>";
 
 echo "<button type='submit' name='page_edit' value='save' class='material-icons button'>save</button>";
 
-echo "<div id='navigation-edit-header'>";
+echo "<div id='navigation-carousel-main'>";
 if ($page_temp !== "new"):
 	echo "<div id='navigation-create-button' class='background_1'><a href='/create/'><i class='material-icons'>note_add</i> Create</a></div>";
 	echo "<div id='navigation-settings-button'><a href='/account/'><i class='material-icons'>settings</i>";
