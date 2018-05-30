@@ -136,7 +136,8 @@ div#navigation-sitemap-button {
 
 /* FLOATING ACTION BUTTON */
 
-div.floating-action-button, button.floating-action-button {
+div.floating-action-button,
+button.floating-action-button {
 	background: <? echo $color ?>;
 	font-family: 'Material Icons';
 	position: fixed;
@@ -152,7 +153,10 @@ div.floating-action-button, button.floating-action-button {
 	padding: 10px;
 	text-align: center; }
 
-.floating-action-button, .floating-action-button a {
+.floating-action-button,
+.floating-action-button a,
+.floating-action-button:hover,
+.floating-action-button:hover a {
 	color: rgba(255,255,255,1); }
 
 
