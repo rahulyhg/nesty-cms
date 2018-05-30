@@ -231,8 +231,8 @@ echo "</select>";
 echo "<textarea name='popover' placeholder='popover' style='width: 400px !important; height: 600px !important;'>".$page_confirmed['popover']."</textarea>";
 
 echo "<script>"; ?>
-	$('#input-textarea').height($(window).height() - 90);
-	window.onresize = function(event) { $('#input-textarea').height($(window).height() - 90) }
+	$('#input-textarea').height($(window).height() - 80);
+	window.onresize = function(event) { $('#input-textarea').height($(window).height() - 80) }
 	$('#input-textarea').click(function(){ window.scrollTo(0, 320); });
 <? echo "</script>";
 
