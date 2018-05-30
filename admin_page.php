@@ -128,8 +128,6 @@ foreach ($result as $row):
 if (empty($page_confirmed)):
 	$page_confirmed = ["page_id"=>random_code(5), "header"=>null, "slug"=>null,  "password"=>null, "created_time"=>date("Y-m-d"), "body"=>null, "menu"=>null]; endif;
 
-echo "<form action='/".$page_confirmed['page_id']."/edit/' method='post'>";
-
 echo "<div id='edit-window'>";
 if ($page_temp !== "new"):
 	echo "<div id='edit-window-create-button' class='background_1'><a href='/create/' target='_blank'><i class='material-icons'>note_add</i> Create</a></div>";
@@ -143,7 +141,9 @@ else:
 	endif;
 echo "</div>";
 
-echo "<button type='submit' name='page_edit' value='save' class='material-icons button'>save</button>";
+echo "<form action='/".$page_confirmed['page_id']."/edit/' method='post'>";
+
+echo "<button type='submit' name='page_edit' value='save' class='floating-action-button material-icons'>save</button>";
 
 echo "<input type='hidden' name='page_id' value='".$page_confirmed['page_id']."'>";
 
@@ -169,7 +169,8 @@ echo "<input type='date' name='created_time' value='".$page_confirmed['created_t
 
 // echo "<textarea name='menu' value='".$page_confirmed['menu']."' placeholder='menu'/></textarea>";
 
-echo "<textarea name='body' id='textarea_body' style='width: 95%; max-width: 1000px; margin: 20px auto 65px; padding: 15px; border: 2px solid rgba(255,255,255,0.3); box-shadow: 0 0 30px -2px rgba(150,150,150,0.45); background: #fff;'>".$page_confirmed['body']."</textarea>";
+echo "<style> #input-textarea { width: 95%; max-width: 1000px; margin: 20px auto 65px; padding: 15px; border: 2px solid rgba(255,255,255,0.3); box-shadow: 0 0 30px -2px rgba(150,150,150,0.45); background: #fff; } </style>";
+echo "<textarea name='body' id='textarea_body'>".$page_confirmed['body']."</textarea>";
 
 // here you can manage parent and child hierarchy
 echo "<select name='parents[]' size='10' style='width: 350px; margin: 0;' multiple>";
