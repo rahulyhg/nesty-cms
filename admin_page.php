@@ -133,7 +133,7 @@ if ($page_temp !== "new"):
 	echo "<div id='navigation-create-button' class='background_1'><a href='/create/'><i class='material-icons'>note_add</i> Create</a></div>";
 	echo "<div id='navigation-settings-button'><a href='/account/'><i class='material-icons'>settings</i></a></div>";
 	echo "<div id='navigation-home-button'><a href='/".$page_confirmed['page_id']."/delete/'>Delete</a></div>";
-	echo "<div id='navigation-search-input'><a href='/".$page_confirmed['page_id']."/' target='_blank'>Open post</a></div>";
+	echo "<div id='navigation-search-button'><a href='/".$page_confirmed['page_id']."/' target='_blank'>Open post</a></div>";
 else:
 	echo "<div id='navigation-search-input'><a href='/' target='_blank'>Home</a></div>";
 	endif;
