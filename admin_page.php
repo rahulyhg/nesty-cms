@@ -218,7 +218,8 @@ if (!(empty($citations_confirmed))):
 	foreach($citations_confirmed as $entry_id):
 		echo "<a href='/e/$entry_id/edit/'>".$entries_array[$entry_id]['name']." ($entry_id)</a><br>";
 		endforeach;
-	echo "</div>"; endif;
+	echo "</div>";
+	endif;
 
 echo "<select name='citations[]' size='10' style='width: 350px; margin: 0;' multiple>";
 echo "<option disabled>citations (add only)</option>";
@@ -244,4 +245,5 @@ echo "<script>"; ?>
 //		});
 
 echo "</form>";
+
 footer(); ?>
