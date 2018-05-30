@@ -137,7 +137,7 @@ if ($page_temp !== "new"):
 	echo "<div id='edit-window-delete-button' style='right: 160px;'><a href='/".$page_confirmed['page_id']."/delete/'>Delete</a></div>";
 	echo "<div id='edit-window-open-button'><a href='/".$page_confirmed['page_id']."/' target='_blank'>Open post</a></div>";
 else:
-	echo "<div id='edit-window-create-button'><i class='material-icons'>note_add</i> Create</div>";
+	echo "<div id='edit-window-create-button' style='background: #555;'><i class='material-icons'>note_add</i> Create</div>";
 	echo "<div id='navigation-settings-button'><a href='/account/'><i class='material-icons'>settings</i></a></div>";
 	echo "<div id='edit-window-home-button'><a href='/' target='_blank'>Home</a></div>";
 	endif;
@@ -157,7 +157,8 @@ foreach ($parents_confirmed as $page_id): echo "<input type='hidden' name='paren
 foreach ($children_confirmed as $page_id): echo "<input type='hidden' name='children_confirmed[]' value='$page_id'>"; endforeach;
 foreach ($citations_confirmed as $entry_id): echo "<input type='hidden' name='citations_confirmed[]' value='$entry_id'>"; endforeach;
 
-echo "<input type='text' name='header' value='".htmlspecialchars($page_confirmed['header'], ENT_QUOTES)."' placeholder='header' style='margin: 20px auto; display: block; width: 95%; max-width: 1000px; padding: 5px 15px; height: 50px; text-align: center; font-size: 23px; font-weight: 300; letter-spacing: 1px;' required>";
+echo "<style> #input-header { margin: 20px auto; display: block; width: 95%; max-width: 1000px; padding: 5px 15px; height: 50px; text-align: center; font-size: 23px; font-weight: 300; letter-spacing: 1px; } </style>";
+echo "<input type='text' name='header' id='input-header' value='".htmlspecialchars($page_confirmed['header'], ENT_QUOTES)."' placeholder='header' required>";
 
 echo "<input type='text' name='slug' value='".htmlspecialchars($page_confirmed['slug'], ENT_QUOTES)."' pattern='[a-zA-Z0-9-]+' placeholder='slug' style='margin: 10px 15px; text-align: center; display: inline-block; width: 50%; max-width: 500px; '>";
 echo "<input type='text' name='password' value='".$page_confirmed['password']."' placeholder='password' style='margin: 10px 15px; text-align: center; display: inline-block; width: 26%; max-width: 255px; '>";
@@ -230,15 +231,14 @@ echo "<script>"; ?>
 	$('#textarea_body').height($(window).height() - 115);
 	window.onresize = function(event) { $('#textarea_body').height($(window).height() - 115) }
 	$('#textarea_body').click(function(){ window.scrollTo(0, 180); });
-	$('#path_button').click(function() { $('.lightbox-close').show(); $('#popover_window').hide(); $('#list_window').hide();  $('#edit_window').hide(); $('#path_window').show(); });
-	$('#popover_button').click(function() { $('.lightbox-close').show(); $('#path_window').hide(); $('#list_window').hide(); $('#edit_window').hide(); $('#popover_window').show(); });
-	$('#list_button').click(function() { $('.lightbox-close').show(); $('#path_window').hide(); $('#popover_window').hide(); $('#edit_window').hide(); $('#list_window').show(); });
-	$('.lightbox-close').click(function() { $('.lightbox-close').hide(); $('#path_window').hide(); $('#popover_window').hide(); $('#list_window').hide(); $('#edit_window').show(); window.scrollTo(0, 270); });
-	$(document).keyup(function(e) {
-		if (e.keyCode === 27) { $('.lightbox-close').hide(); $('#path_window').hide(); $('#popover_window').hide(); $('#list_window').hide(); $('#edit_window').show(); window.scrollTo(0, 270); }
-		});
 <? echo "</script>";
 
+//	$('#popover_button').click(function() { $('.lightbox-close').show(); $('#path_window').hide(); $('#list_window').hide(); $('#edit_window').hide(); $('#popover_window').show(); });
+//	$('#list_button').click(function() { $('.lightbox-close').show(); $('#path_window').hide(); $('#popover_window').hide(); $('#edit_window').hide(); $('#list_window').show(); });
+//	$('.lightbox-close').click(function() { $('.lightbox-close').hide(); $('#path_window').hide(); $('#popover_window').hide(); $('#list_window').hide(); $('#edit_window').show(); window.scrollTo(0, 270); });
+//	$(document).keyup(function(e) {
+//		if (e.keyCode === 27) { $('.lightbox-close').hide(); $('#path_window').hide(); $('#popover_window').hide(); $('#list_window').hide(); $('#edit_window').show(); window.scrollTo(0, 270); }
+//		});
 
 echo "</form>";
 footer(); ?>
