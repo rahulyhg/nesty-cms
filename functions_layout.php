@@ -184,13 +184,13 @@ function amp_header($title=null, $canonical=null) {
 	global $page_confirmed;
 	if (!(empty($login)) && !(empty($page_confirmed[$page_temp]['page_id']))):
 		echo "<div class='floating-action-button'>";
-		echo "<a href='/".$page_temp."/edit/'><i class='material-icons'>edit</i></a></div>";
+		echo "<a href='/".$page_temp."/edit/'>edit</a></div>";
 		endif;
 	
 	global $media_confirmed;
 	if (!(empty($login)) && !(empty($media_confirmed[$slug_temp]['media_id']))):
 		echo "<div class='floating-action-button'>";
-		echo "<a href='/m/".$slug_temp."/edit/'><i class='material-icons'>edit</i> edit</a></div>";
+		echo "<a href='/m/".$slug_temp."/edit/'>edit</a></div>";
 		endif;
 
 	}
