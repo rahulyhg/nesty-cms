@@ -52,8 +52,12 @@ h1, header h1 {
 	padding: 7px 20px; }
 
 #navigation-edit-header {
-	position: relative;
-	display: block; }
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%; }
 
 div#navigation-signin-button {
 	text-align: left;
