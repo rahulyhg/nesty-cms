@@ -25,7 +25,7 @@ h1, header h1 {
 
 
 
-/* NAVIGATION CAROUSEL */
+/* NAVIGATION CAROUSEL AND HEADER */
 
 #navigation-carousel .amp-carousel-button {
 	display: none; }
@@ -50,6 +50,10 @@ h1, header h1 {
 	font-size: 15px;
 	line-height: 16px;
 	padding: 7px 20px; }
+
+#navigation-edit-header {
+	position: relative;
+	display: block; }
 
 div#navigation-signin-button {
 	text-align: left;
