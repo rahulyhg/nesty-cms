@@ -102,10 +102,24 @@ echo "<style> td { padding: 0 10px; } .header { position: absolute !important; }
 echo "<style> optgroup { font-weight: 400; padding: 10px 10px 0 10px; font-style: italic !important; color: #bbb !important; } </style>";
 echo "<style> optgroup option { font-style: normal; color: #333; } optgroup option:first-child { margin-top: 5px; } </style>";
 
-echo "<form action='/e/".$entry_confirmed['entry_id']."/edit/' method='post'>";
-echo "<input type='hidden' name='entry_id' value='".$entry_confirmed['entry_id']."'>";
+echo "<div id='edit-window'>";
+if ($page_temp !== "new"):
+	echo "<div id='edit-window-create-button' class='background_1'><a href='/create/' target='_blank'><i class='material-icons'>note_add</i> Create</a></div>";
+	echo "<div id='navigation-settings-button'><a href='/account/'><i class='material-icons'>settings</i></a></div>";
+	echo "<div id='edit-window-delete-button' style='right: 160px;'><a href='/".$entry_confirmed['entry_id']."/delete/'>Delete</a></div>";
+	echo "<div id='edit-window-open-button'><a href='/".$page_confirmed['page_id']."/' target='_blank'>Open post</a></div>";
+else:
+	echo "<div id='edit-window-create-button' style='background: #555;'><i class='material-icons'>note_add</i> Create</div>";
+	echo "<div id='navigation-settings-button'><a href='/account/'><i class='material-icons'>settings</i></a></div>";
+	echo "<div id='edit-window-home-button'><a href='/' target='_blank'>Home</a></div>";
+	endif;
+echo "</div>";
 
-echo "<div id='content_edit' style='width: 1000px; text-align: left; vertical-align: top; padding: 15px; border: 2px solid rgba(255,255,255,0.3); box-shadow: 0 0 30px -2px rgba(150,150,150,0.45); background: #fff; display: block; margin: 20px auto 0;'>";
+echo "<form action='/e/".$entry_confirmed['entry_id']."/edit/' method='post'>";
+
+echo "<button type='submit' name='entry_edit' value='save' class='floating-action-button'>save</button>";
+
+echo "<input type='hidden' name='entry_id' value='".$entry_confirmed['entry_id']."'>";
 
 echo "<style> option { width: 360px;  } option:checked {  } </style>";
 
@@ -133,27 +147,16 @@ foreach($pages_array as $page_id => $page_info):
 	endforeach;
 echo "</select>";
 
-echo "<input type='text' name='name' value='".htmlspecialchars($entry_confirmed['name'], ENT_QUOTES)."' placeholder='name' style='margin: 0; padding: 5px 0 15px; border: 0; width: 430px; text-align: left; display: inline-block;'>";
+echo "<input type='text' name='name' value='".htmlspecialchars($entry_confirmed['name'], ENT_QUOTES)."' placeholder='name'>";
+
 echo "<input type='number' name='year' value='".$entry_confirmed['year']."' placeholder='yyyy' style='margin: 0 0 10px 10px; padding: 0 0 5px; border: 0; border-bottom: 1px solid #bbb; width: 50px; text-align: center; display: inline-block; border-radius: 0;'>";
 echo "<input type='number' name='month' value='".$entry_confirmed['month']."' min='1' max='12' placeholder='mm' style='margin: 0 0 10px 10px; padding: 0 0 5px; border: 0; border-bottom: 1px solid #bbb; width: 40px; text-align: center; display: inline-block; border-radius: 0;'>";
 echo "<input type='number' name='day' value='".$entry_confirmed['day']."' placeholder='dd' min='1' max='31' style='margin: 0 0 10px 10px; padding: 0 0 5px; border: 0; border-bottom: 1px solid #bbb; width: 35px; text-align: center; display: inline-block; border-radius: 0;'>";
-echo "<hr style='height: 2px; background: #ccc; margin: 0 !important; padding: 0; width: 585px; display: block;'>";
-echo "<textarea id='textarea_body' name='body' style='width: 570px; margin: 15px 0 0 0; padding: 0 10px 0 0; background: none; display: inline-block; border: 0; border-radius: 0; overflow-y: yes;' required>".$entry_confirmed['body']."</textarea>";
 
-echo "</div>";
+echo "<textarea id='textarea_body' name='body' required>".$entry_confirmed['body']."</textarea>";
 
 if (empty($entry_confirmed['created_time'])): $entry_confirmed['created_time'] = date("Y-m-d"); endif;
 echo "<input type='hidden' name='created_time' value='".$entry_confirmed['created_time']."'>";
-
-echo "<div class='bottom_bar'><span class='button float_left'></span><button type='submit' name='entry_edit' value='save' class='material-icons'>save</button>";
-echo "<span class='button float_right'></span><a href='/' class='material-icons button float_right'>home</a>";
-echo "<a href='/account/' class='material-icons button float_right'>account_circle</a>";
-if ($page_temp !== "add"):
-	echo "<a href='/new/' class='material-icons button float_right'>note_add</a>";
-	echo "<a href='/add/' class='material-icons button float_right'>playlist_add</a>";
-	echo "<a href='/".$entry_confirmed['entry_id']."/delete/' class='material-icons button float_right'>delete</a>";
-	endif;
-echo "</div>";
 
 echo "<script>"; ?>
 	$('#content_edit').height($(window).height() - 125);
