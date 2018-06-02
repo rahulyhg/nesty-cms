@@ -131,7 +131,7 @@ echo "<input type='hidden' name='entry_id' value='".$entry_confirmed['entry_id']
 		#input-date-month { width: 40px; }
 		#input-date-day { width: 35px; }
 		
-		.parent_select { margin: 20px auto; border: 0; width: 90%; max-width: 400px; }
+		.parent_select { margin: 20px auto; display: block; border: 0; width: 90%; max-width: 400px; }
 
 		#textarea-body { display: block; width: 90%; max-width: 900px; margin: 20px auto; }
 	</style>
