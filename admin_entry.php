@@ -106,8 +106,9 @@ echo "<div id='edit-window'>";
 if ($page_temp !== "new"):
 	echo "<div id='edit-window-create-button' class='background_1'><a href='/create/' target='_blank'><i class='material-icons'>note_add</i> Create</a></div>";
 	echo "<div id='navigation-settings-button'><a href='/account/'><i class='material-icons'>settings</i></a></div>";
-	echo "<div id='edit-window-delete-button' style='right: 160px;'><a href='/".$entry_confirmed['entry_id']."/delete/'>Delete</a></div>";
-	echo "<div id='edit-window-open-button'><a href='/".$page_confirmed['page_id']."/' target='_blank'>Open post</a></div>";
+	echo "<div id='edit-window-delete-button' style='right: 20px;'><a href='/".$entry_confirmed['entry_id']."/delete/'>Delete</a></div>";
+//	echo "<div id='edit-window-delete-button' style='right: 160px;'><a href='/".$entry_confirmed['entry_id']."/delete/'>Delete</a></div>";
+//	echo "<div id='edit-window-open-button'><a href='/".$page_confirmed['page_id']."/' target='_blank'>Open post</a></div>";
 else:
 	echo "<div id='edit-window-create-button' style='background: #555;'><i class='material-icons'>note_add</i> Create</div>";
 	echo "<div id='navigation-settings-button'><a href='/account/'><i class='material-icons'>settings</i></a></div>";
