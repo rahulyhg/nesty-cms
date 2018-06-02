@@ -120,11 +120,28 @@ echo "<form action='/e/".$entry_confirmed['entry_id']."/edit/' method='post'>";
 
 echo "<button type='submit' name='entry_edit' value='save' class='floating-action-button'>save</button>";
 
-echo "<input type='hidden' name='entry_id' value='".$entry_confirmed['entry_id']."'>";
+echo "<input type='hidden' name='entry_id' value='".$entry_confirmed['entry_id']."'>"; ?>
 
-echo "<style> option { width: 360px;  } option:checked {  } </style>";
+	<style>
+		option { width: 360px;  }
+		option:checked {  }
+		#input-name { display: block; width: 90%; max-width: 900px; margin: 20px auto; border-radius: 4px; }
+		#input-date { display: block; width: 90%; max-width: 900px; margin: 20px auto; }
+		#input-date input { margin: 10px; padding: 5px; border: 0; border-bottom: 1px solid #bbb; text-align: center; display: inline-block; border-radius: 0; }
+		#input-date-year { width: 50px; }
+		#input-date-month { width: 40px; }
+		#input-date-day { width: 35px; }
+	</style>
 
-echo "<select name='parents[]' class='parent_select' style='display: inline-block !important; width: 400px !important; margin: 0 !important; float: right; border-width: 0 0 0 2px; border-style: style; border-color: #eee; vertical-align: top;' multiple required>";
+<? echo "<input type='text' name='name' id='input-name' value='".htmlspecialchars($entry_confirmed['name'], ENT_QUOTES)."' placeholder='name'>";
+
+echo "<div id='input-date'>";
+echo "<input type='number' name='year' id='input-date-year' value='".$entry_confirmed['year']."' placeholder='yyyy'>";
+echo "<input type='number' name='month' id='input-date-month' value='".$entry_confirmed['month']."' min='1' max='12' placeholder='mm'>";
+echo "<input type='number' name='day' id='input-date-day' value='".$entry_confirmed['day']."' placeholder='dd' min='1' max='31'>";
+echo "</div>";
+
+echo "<select name='parents[]' class='parent_select' multiple required>";
 $parents_confirmed = $citations_confirmed = [];
 foreach($pages_array as $page_id => $page_info): 
 	if (in_array($page_id,$entry_confirmed['parents'])): $parents_confirmed[] = $page_id; endif;
@@ -147,12 +164,6 @@ foreach($pages_array as $page_id => $page_info):
 	echo "<option value='$page_id'>".$page_info['header']." (".$page_info['slug'].")</option>";
 	endforeach;
 echo "</select>";
-
-echo "<input type='text' name='name' value='".htmlspecialchars($entry_confirmed['name'], ENT_QUOTES)."' placeholder='name'>";
-
-echo "<input type='number' name='year' value='".$entry_confirmed['year']."' placeholder='yyyy' style='margin: 0 0 10px 10px; padding: 0 0 5px; border: 0; border-bottom: 1px solid #bbb; width: 50px; text-align: center; display: inline-block; border-radius: 0;'>";
-echo "<input type='number' name='month' value='".$entry_confirmed['month']."' min='1' max='12' placeholder='mm' style='margin: 0 0 10px 10px; padding: 0 0 5px; border: 0; border-bottom: 1px solid #bbb; width: 40px; text-align: center; display: inline-block; border-radius: 0;'>";
-echo "<input type='number' name='day' value='".$entry_confirmed['day']."' placeholder='dd' min='1' max='31' style='margin: 0 0 10px 10px; padding: 0 0 5px; border: 0; border-bottom: 1px solid #bbb; width: 35px; text-align: center; display: inline-block; border-radius: 0;'>";
 
 echo "<textarea id='textarea_body' name='body' required>".$entry_confirmed['body']."</textarea>";
 
