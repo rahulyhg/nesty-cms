@@ -98,10 +98,6 @@ $result = $retrieve_page_citations->fetchAll();
 foreach ($result as $row):
 	$entry_confirmed['citations'][] = $row['page_id']; endforeach;
 
-echo "<style> td { padding: 0 10px; } .header { position: absolute !important; } </style>";
-echo "<style> optgroup { font-weight: 400; padding: 10px 10px 0 10px; font-style: italic !important; color: #bbb !important; } </style>";
-echo "<style> optgroup option { font-style: normal; color: #333; } optgroup option:first-child { margin-top: 5px; } </style>";
-
 echo "<div id='edit-window'>";
 if ($page_temp !== "new"):
 	echo "<div id='edit-window-create-button' class='background_1'><a href='/create/' target='_blank'><i class='material-icons'>note_add</i> Create</a></div>";
@@ -125,13 +121,18 @@ echo "<input type='hidden' name='entry_id' value='".$entry_confirmed['entry_id']
 	<style>
 		option { width: 360px;  }
 		option:checked {  }
+		optgroup { font-weight: 400; padding: 10px 10px 0 10px; font-style: italic !important; color: #bbb !important; }
+		optgroup option { font-style: normal; color: #333; } optgroup option:first-child { margin-top: 5px; }
+
 		#input-name { display: block; width: 90%; max-width: 900px; margin: 20px auto; border-radius: 4px; }
 		#input-date { display: block; width: 90%; max-width: 900px; margin: 20px auto; text-align: center; }
 		#input-date input { margin: 10px; padding: 5px; border: 0; border-bottom: 1px solid #bbb; text-align: center; display: inline-block; border-radius: 0; }
 		#input-date-year { width: 50px; }
 		#input-date-month { width: 40px; }
 		#input-date-day { width: 35px; }
-		.parent_select { margin: 20px auto; border: 0; }
+		
+		.parent_select { margin: 20px auto; border: 0; width: 90%; max-width: 400px; }
+
 		#textarea-body { display: block; width: 90%; max-width: 900px; margin: 20px auto; }
 	</style>
 
