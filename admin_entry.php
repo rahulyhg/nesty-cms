@@ -126,11 +126,13 @@ echo "<input type='hidden' name='entry_id' value='".$entry_confirmed['entry_id']
 		option { width: 360px;  }
 		option:checked {  }
 		#input-name { display: block; width: 90%; max-width: 900px; margin: 20px auto; border-radius: 4px; }
-		#input-date { display: block; width: 90%; max-width: 900px; margin: 20px auto; }
+		#input-date { display: block; width: 90%; max-width: 900px; margin: 20px auto; text-align: center; }
 		#input-date input { margin: 10px; padding: 5px; border: 0; border-bottom: 1px solid #bbb; text-align: center; display: inline-block; border-radius: 0; }
 		#input-date-year { width: 50px; }
 		#input-date-month { width: 40px; }
 		#input-date-day { width: 35px; }
+		.parent_select { margin: 20px auto; border: 0; }
+		#textarea-body { display: block; width: 90%; max-width: 900px; margin: 20px auto; }
 	</style>
 
 <? echo "<input type='text' name='name' id='input-name' value='".htmlspecialchars($entry_confirmed['name'], ENT_QUOTES)."' placeholder='name'>";
@@ -165,19 +167,15 @@ foreach($pages_array as $page_id => $page_info):
 	endforeach;
 echo "</select>";
 
-echo "<textarea id='textarea_body' name='body' required>".$entry_confirmed['body']."</textarea>";
+echo "<textarea id='textarea-body' name='body' required>".$entry_confirmed['body']."</textarea>";
 
 if (empty($entry_confirmed['created_time'])): $entry_confirmed['created_time'] = date("Y-m-d"); endif;
 echo "<input type='hidden' name='created_time' value='".$entry_confirmed['created_time']."'>";
 
 echo "<script>"; ?>
-	$('#content_edit').height($(window).height() - 125);
-	$('#textarea_body').height($(window).height() - 185);
-	$('.parent_select').height($(window).height() - 122);
+	$('#textarea-body').height($(window).height() - 50);
 	window.onresize = function(event) {
-		$('#content_edit').height($(window).height() - 125);
-		$('#textarea_body').height($(window).height() - 185);
-		$('.parent_select').height($(window).height() - 122) }
+		$('#textarea-body').height($(window).height() - 50); }
 <? echo "</script>";
 
 echo "</form>";
