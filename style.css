@@ -349,10 +349,14 @@ div#edit-window-create-button {
 div#edit-window-create-button, div#edit-window-create-button a {
 	color: #fff; }
 
+div#edit-window-settings-button {
+	top: 70px;
+	left: 3px; }
+
 div#edit-window-delete-button {
 	text-align: right;
 	top: 25px;
-	right: 140px; }
+	right: 160px; }
 
 div#edit-window-open-button {
 	text-align: right;
