@@ -432,15 +432,20 @@ div#admin-window-home-button {
 	text-transform: uppercase;
 	border: 1px solid <? echo $color ?>;
 	border-radius: 4px;
+	position: absolute;
+	display: inline-block;
 	}
 
 div#admin-window-logout-button {
 	text-align: right;
 	top: 25px;
 	right: 160px;
+	position: absolute;
+	display: inline-block;
 	}
 
 div.admin-window-option-button {
+	position: relative;
 	display: inline-block;
 	margin: 30px 50px 10px;
 	text-transform: uppercase;
