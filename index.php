@@ -268,7 +268,7 @@ if ($page_temp == "e"):
 	
 	echo "this entry exists";
 
-	endif;
+	exit; endif;
 
 // if $page_temp is a real picture then show picture info
 if (!(empty($media_confirmed[$slug_temp]))):
