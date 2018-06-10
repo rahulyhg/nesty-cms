@@ -174,7 +174,7 @@ echo "</div>";
 echo "<style> #input-textarea { width: 95%; max-width: 1000px; margin: 25px auto 120px; padding: 15px; border: 2px solid rgba(255,255,255,0.3); box-shadow: 0 0 30px -2px rgba(150,150,150,0.45); background: #fff; } </style>";
 echo "<textarea name='body' id='input-textarea'>".$page_confirmed['body']."</textarea>";
 
-echo "<style> .edit-subheaders { width: 600px; margin: 20px auto; display: block; color: rgba(0,0,0,0.7); text-align: left; } </style>";
+echo "<style> .edit-subheaders { width: 600px; margin: 60px auto 20px; display: block; color: rgba(0,0,0,0.7); text-align: left; } </style>";
 
 // here you can manage parent and child hierarchy
 echo "<div class='edit-subheaders'>Parents</div>";
@@ -235,7 +235,7 @@ foreach($entries_array as $entry_id => $entry_info):
 echo "</select>";
 
 echo "<div class='edit-subheaders'>Popover</div>";
-echo "<textarea name='popover' placeholder='popover' style='width: 600px !important; height: 400px !important; margin: 10px auto 40px; display: block;'>".$page_confirmed['popover']."</textarea>";
+echo "<textarea name='popover' placeholder='popover' style='width: 570px !important; height: 400px !important; margin: 10px auto 40px; display: block;'>".$page_confirmed['popover']."</textarea>";
 
 echo "<script>"; ?>
 	$('#input-textarea').height($(window).height() - 80);
