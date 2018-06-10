@@ -375,9 +375,9 @@ function body_process($body_incoming) {
 		if (!(empty($entry_info[$citation_id_temp]['name']))):
 			$citation_string[] = "<div class='citation-name'>".$entry_info[$citation_id_temp]['name']."</div>"; endif;
 		if ($domain !== $entry_info[$citation_id_temp]['domain']):
-			$citation_string[] = "<div class='citation-credit'><a href='https://".$entry_info[$citation_id_temp]['domain']."/e/".$citation_id_temp."/'>".$entry_info[$citation_id_temp]['publisher']."/c/".$citation_id_temp."</div>"; endif;
+			$citation_string[] = "<div class='citation-credit background_".rand(1,10)."'><a href='https://".$entry_info[$citation_id_temp]['domain']."/e/".$citation_id_temp."/'>".$entry_info[$citation_id_temp]['publisher']."/c/".$citation_id_temp."</div>"; endif;
 		if (!(empty(login)) && ($domain == $entry_info[$citation_id_temp]['domain'])):
-			$citation_string[] = "<div class='citation-edit'><a href='/e/".$citation_id_temp."/edit/'>edit</a></div>"; endif;
+			$citation_string[] = "<div class='citation-edit background_".rand(1,10)."'><a href='/e/".$citation_id_temp."/edit/'>edit</a></div>"; endif;
 	
 		$entry_string = $delimiter.implode(null,$citation_string).$entry_info[$citation_id_temp]['body'].$delimiter;
 
