@@ -336,7 +336,7 @@ function body_process($body_incoming) {
 		$body_incoming = str_replace("[[[".$match_temp."]]]", $image_string, $body_incoming);
 	
 		$lightbox_temp = "<amp-lightbox scrollable id='lightbox".$media_id_temp."' layout='nodisplay'>";
-		$lightbox_temp .= "<div class='floating-action-button'><a href='/m/1528294364_BJLN25FVFL/edit/'>edit</a></div>";
+		$lightbox_temp .= "<div class='floating-action-button'><a href='/m/".$media_id_temp."/edit/'>edit</a></div>";
 		$lightbox_temp .= "<figure><div class='image_large' on='tap:lightbox".$media_id_temp.".close' tabindex='1' role='button'><amp-img src='".$media_info[$media_id_temp]['link']."large/' width='".$img_width_large."px' height='".$img_height_large."px' sizes='(min-width: 1100px) 1000px, (min-width: 500px) 90vw, 90vw'></amp-img></div>";
 		$lightbox_temp .= "<a href='".$media_info[$media_id_temp]['link']."' target='_blank'><div class='amp-lightbox-image-link-button'>new window</div></a>";
 		$lightbox_temp .= "<div class='amp-lightbox-media-id'>".$domain."|".$media_id_temp."</div>";
@@ -371,17 +371,15 @@ function body_process($body_incoming) {
 			$body_incoming = str_replace("(((".$match_temp.")))", null, $body_incoming);
 			continue; endif; // entry id does not exist so skip it
 
-		$citation_string = null;
-		if (!(empty($entry_info[$citation_id_temp]['name'])) || !(empty($login))):
-			if (!(empty($entry_info[$citation_id_temp]['name']))):
-				$citation_string[] = $entry_info[$citation_id_temp]['name']; endif;
-			if (!(empty(login)) && ($domain == $entry_info[$citation_id_temp]['domain'])):
-				$citation_string[] = "via ".$entry_info[$citation_id_temp]['publisher']." @<a href='/e/".$citation_id_temp."/edit/'>".$citation_id_temp."</a>"; endif;
-			if ($domain !== $entry_info[$citation_id_temp]['domain']):
-				$citation_string[] = "via <a href='https://".$entry_info[$citation_id_temp]['domain']."'>".$entry_info[$citation_id_temp]['publisher']."</a> @".$citation_id_temp; endif;
-			$citation_string = "<cite>".implode("<br>", $citation_string)."</cite>";
-			endif;
-		$entry_string = $delimiter."<aside>".$citation_string."</aside>".$entry_info[$citation_id_temp]['body'].$delimiter;
+		$citation_string = [];
+		if (!(empty($entry_info[$citation_id_temp]['name']))):
+			$citation_string[] = "<div class='citation-name'>".$entry_info[$citation_id_temp]['name']."</div>"; endif;
+		if ($domain !== $entry_info[$citation_id_temp]['domain']):
+			$citation_string[] = "<div class='citation-credit'><a href='https://".$entry_info[$citation_id_temp]['domain']."/e/".$citation_id_temp."/'>".$entry_info[$citation_id_temp]['publisher']."/c/".$citation_id_temp."</div>"; endif;
+		if (!(empty(login)) && ($domain == $entry_info[$citation_id_temp]['domain'])):
+			$citation_string[] = "<div class='citation-edit'><a href='/e/".$citation_id_temp."/edit/'>edit</a></div>"; endif;
+	
+		$entry_string = $delimiter.implode(null,$citation_string).$entry_info[$citation_id_temp]['body'].$delimiter;
 
 		$body_incoming = str_replace("(((".$match_temp.")))", $entry_string, $body_incoming);
 
