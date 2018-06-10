@@ -61,14 +61,27 @@ $result = $retrieve_pages->fetchAll();
 foreach ($result as $row):
 	$media_confirmed[$slug_temp]['parents'][] = $row['parent_id']; endforeach;
 
-echo "<center><b>".$slug_temp."</b><br>";
-echo $media_confirmed[$slug_temp]['filename_original']."<br><br>";
-echo "<img src='/m/".$slug_temp."/thumb/'></center>"; 
 
-echo "<br><br>";
+echo "<div id='edit-window'>";
+// echo "<div id='edit-window-create-button' class='background_1'><a href='/create/' target='_blank'><i class='material-icons'>note_add</i> Create</a></div>";
+echo "<div id='edit-window-settings-button'><a href='/account/'><i class='material-icons'>settings</i></a></div>";
+echo "<div id='edit-window-delete-button'><a href='/m/".$slug_temp."/delete/'>Delete</a></div>";
+echo "<div id='edit-window-open-button'><a href='/m/".$slug_temp."/' target='_blank'>Open image</a></div>";
+echo "</div>";
 
 echo "<form method='post'>";
 
+<button type='submit' name='media_edit' value='save' class='floating-action-button'>save</button>
+
+echo "<br><br>";
+
+echo "<center><b>media id: ".$slug_temp."</b><br>";
+echo "old file name: ".$media_confirmed[$slug_temp]['filename_original']."<br><br>";
+
+echo "<img src='/m/".$slug_temp."/thumb/'></center>"; 
+
+echo "<br><br>";
+	
 echo "<input type='hidden' name='media_id' value='".$slug_temp."'>";
 
 echo "<textarea name='description' placeholder='description' style='width: 460px; height: 200px; margin: 0 auto;'>".$media_confirmed[$slug_temp]['description']."</textarea>";
@@ -92,13 +105,6 @@ foreach($pages_array as $page_id => $page_info):
 	echo "<option value='$page_id'>".$page_info['header']." (".$page_info['slug'].")</option>";
 	endforeach;
 echo "</select>";
-
-echo "<div class='bottom_bar'><span class='button float_left'></span><button type='submit' name='media_edit' value='save' class='material-icons float_left'>save</button>";
-echo "<span class='button float_right'></span><a href='/' class='material-icons button float_right'>home</a>";
-echo "<a href='/account/' class='material-icons button float_right'>account_circle</a>";
-echo "<button onclick=\"window.location.href='/m/".$slug_temp."/'\" type=\"button\" class='material-icons float_right'>open_in_new</button>";
-echo "<a href='/m/".$slug_temp."/delete/' class='material-icons button float_right'>delete</a>";
-echo "</div>";
 
 echo "</form>";
 
