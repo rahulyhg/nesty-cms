@@ -438,7 +438,7 @@ div#admin-window-home-button {
 
 div#admin-window-logout-button {
 	text-align: right;
-	top: 40px;
+	top: 25px;
 	right: 160px;
 	position: absolute;
 	display: inline-block;	}
