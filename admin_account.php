@@ -8,7 +8,7 @@ echo "<a href='/'><div id='admin-window-home-button'>Home</div></a>";
 echo "<a href='/logout/'><div class='admin-window-logout-button'>Log out</a>";
 
 $options_array = [
-	"account" => "Me",
+	"account" => "My Profile",
 	"two-factor" => "Two-Factor",
 	"settings" => "Settings",
 	"security" => "Security",
