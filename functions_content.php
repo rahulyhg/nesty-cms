@@ -374,7 +374,7 @@ function body_process($body_incoming) {
 		$citation_string = [];
 		if (!(empty($entry_info[$citation_id_temp]['name']))):
 			$citation_string[] = "<div class='citation-name'>".$entry_info[$citation_id_temp]['name']."</div>"; endif;
-		$citation_string[] = "<a href='https://".$entry_info[$citation_id_temp]['domain']."/e/".$citation_id_temp."/'><div class='citation-credit background_".rand(1,10)."'>".$entry_info[$citation_id_temp]['publisher']." &nbsp;&nbsp; ".$citation_id_temp."</div></a>";
+		$citation_string[] = "<a href='https://".$entry_info[$citation_id_temp]['domain']."/e/".$citation_id_temp."/'><div class='citation-credit background_".rand(1,10)."'>".$entry_info[$citation_id_temp]['publisher']." &nbsp;|&nbsp; ".$citation_id_temp."</div></a>";
 		if (!(empty(login)) && ($domain == $entry_info[$citation_id_temp]['domain'])):
 			$citation_string[] = "<a href='/e/".$citation_id_temp."/edit/'><div class='citation-edit'>Edit</div></a>"; endif;
 	
