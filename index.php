@@ -258,13 +258,15 @@ if ($page_temp == "e"):
 		include_once('admin_entry.php');
 		endif;
 
+	// delete the page option
+
 	// deliver ping stuff
 	if (in_array($command_temp, ["ping"])):
 		$entry_confirmed[$slug_temp]['body'] = body_process($entry_confirmed[$slug_temp]['body']);
 		echo json_encode($entry_confirmed);
 		exit; endif;
 	
-	if (empty($login)): login("must be logged-in to view"); endif;
+	echo "this entry exists";
 
 	endif;
 
