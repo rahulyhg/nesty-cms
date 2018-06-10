@@ -235,7 +235,7 @@ foreach($entries_array as $entry_id => $entry_info):
 echo "</select>";
 
 echo "<div class='edit-subheaders'>Popover</div>";
-echo "<textarea name='popover' placeholder='popover' style='width: 570px !important; height: 400px !important; margin: 10px auto 40px; display: block;'>".$page_confirmed['popover']."</textarea>";
+echo "<textarea name='popover' placeholder='popover' style='width: 560px !important; height: 400px !important; margin: 10px auto 40px; display: block;'>".$page_confirmed['popover']."</textarea>";
 
 echo "<script>"; ?>
 	$('#input-textarea').height($(window).height() - 80);
