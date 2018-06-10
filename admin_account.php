@@ -9,7 +9,7 @@ echo "<a href='/logout/'><div class='admin-window-logout-button'>Log out</a>";
 
 $options_array = [
 	"account" => "Me",
-	"two-factor" => "looks_two",
+	"two-factor" => "Two-Factor",
 	"settings" => "Settings",
 	"security" => "Security",
 	"Supervisor" => "Accounts",
