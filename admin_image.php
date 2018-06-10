@@ -63,7 +63,7 @@ foreach ($result as $row):
 
 
 echo "<div id='edit-window'>";
-// echo "<div id='edit-window-create-button' class='background_1'><a href='/create/' target='_blank'><i class='material-icons'>note_add</i> Create</a></div>";
+echo "<div id='edit-window-create-button' class='background_1'><a href='/create/' target='_blank'><i class='material-icons'>note_add</i> Create</a></div>";
 echo "<div id='edit-window-settings-button'><a href='/account/'><i class='material-icons'>settings</i></a></div>";
 echo "<div id='edit-window-delete-button'><a href='/m/".$slug_temp."/delete/'>Delete</a></div>";
 echo "<div id='edit-window-open-button'><a href='/m/".$slug_temp."/' target='_blank'>Open image</a></div>";
