@@ -5,7 +5,7 @@
 echo "<div id='admin-window'>";
 
 echo "<a href='/'><div id='admin-window-home-button'>Home</div></a>";
-echo "<a href='/logout/'><div class='admin-window-logout-button'>Log out</a>";
+echo "<a href='/logout/'><div class='admin-window-logout-button'>Log out</div></a>";
 
 $options_array = [
 	"account" => "My Profile",
