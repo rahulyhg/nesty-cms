@@ -175,8 +175,9 @@ echo "<style> #input-textarea { width: 95%; max-width: 1000px; margin: 25px auto
 echo "<textarea name='body' id='input-textarea'>".$page_confirmed['body']."</textarea>";
 
 // here you can manage parent and child hierarchy
-echo "<select name='parents[]' size='10' style='width: 500px; margin: 10px auto 40px; display: block; border-radius: 4px;' multiple>";
-echo "<option disabled>parents</option>";
+echo "<div class='edit-subheaders'>Parents</div>";
+echo "<select name='parents[]' size='9' style='width: 600px; margin: 10px auto 40px; display: block; border-radius: 4px;' multiple>";
+// echo "<option disabled>parents</option>";
 if (!(empty($parents_confirmed))):
 	echo "<optgroup label='selected'>";
 	foreach($parents_confirmed as $page_id):
@@ -191,8 +192,9 @@ foreach($pages_array as $page_id => $page_info):
 	endforeach;
 echo "</select>";
 
-echo "<select name='children[]' size='10' style='width: 500px; margin: 10px auto 40px; display: block; border-radius: 4px;' multiple>";
-echo "<option disabled>children</option>";
+echo "<div class='edit-subheaders'>Children</div>";
+echo "<select name='children[]' size='9' style='width: 600px; margin: 10px auto 40px; display: block; border-radius: 4px;' multiple>";
+// echo "<option disabled>children</option>";
 if (!(empty($children_confirmed))):
 	echo "<optgroup label='selected'>";
 	foreach($children_confirmed as $page_id):
@@ -214,22 +216,23 @@ echo "</select>";
 // organise list entries alphabetically or by date
 // organise list entries as table or blockquote
 if (!(empty($citations_confirmed))):
-	echo "<div style='display: inline-block; width: 500px; margin: 20px;'><span style='text-align: left; display: block; padding-bottom: 10px;'>Citations</span>";
+	echo "<div style='display: inline-block; width: 600px; margin: 20px;'><span style='text-align: left; display: block; padding-bottom: 10px;'>Citations</span>";
 	foreach($citations_confirmed as $entry_id):
 		echo "<a href='/e/$entry_id/edit/'>".$entries_array[$entry_id]['name']." ($entry_id)</a><br>";
 		endforeach;
 	echo "</div>";
 	endif;
 
-echo "<select name='citations[]' size='10' style='width: 500px; margin: 10px auto 40px; display: block; border-radius: 4px;' multiple>";
-echo "<option disabled>citations (add only)</option>";
+echo "<div class='edit-subheaders'>Citations (add only)</div>";
+echo "<select name='citations[]' size='9' style='width: 600px; margin: 10px auto 40px; display: block; border-radius: 4px;' multiple>";
+// echo "<option disabled>citations (add only)</option>";
 foreach($entries_array as $entry_id => $entry_info): 
 	if (in_array($entry_id,$citations_confirmed)): continue; endif;
 	echo "<option value='$entry_id'>".$entry_info['name']." ($entry_id)</option>";
 	endforeach;
 echo "</select>";
 
-echo "<textarea name='popover' placeholder='popover' style='width: 500px !important; height: 400px !important; margin: 10px auto 40px; display: block;'>".$page_confirmed['popover']."</textarea>";
+echo "<textarea name='popover' placeholder='popover' style='width: 650px !important; height: 400px !important; margin: 10px auto 40px; display: block;'>".$page_confirmed['popover']."</textarea>";
 
 echo "<script>"; ?>
 	$('#input-textarea').height($(window).height() - 80);
