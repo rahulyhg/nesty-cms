@@ -285,12 +285,11 @@ div.citation-credit, div.citation-edit {
 	display: inline-block;
 	border-radius: 4px;
 	position: relative;
-	left: 30px;
 	padding: 5px 15px; }
 
 div.citation-credit {
 	color: #fff;
-	left: 0; }
+	left: 30px; }
 
 div.citation-edit, div.citation-edit a {
 	color: rgba(50,50,50,0.8);
