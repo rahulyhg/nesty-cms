@@ -71,7 +71,7 @@ echo "</div>";
 
 echo "<form method='post'>";
 
-<button type='submit' name='media_edit' value='save' class='floating-action-button'>save</button>
+echo "<button type='submit' name='media_edit' value='save' class='floating-action-button'>save</button>";
 
 echo "<br><br>";
 
