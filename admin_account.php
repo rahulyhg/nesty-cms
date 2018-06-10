@@ -12,7 +12,7 @@ $options_array = [
 	"two-factor" => "Two-Factor",
 	"settings" => "Settings",
 	"security" => "Security",
-	"Supervisor" => "Accounts",
+	"supervisor" => "Accounts",
 	];
 
 foreach ($options_array as $option_backend => $option_pretty):
