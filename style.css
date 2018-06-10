@@ -426,7 +426,7 @@ div#admin-window-home-button {
 	text-align: right;
 	top: 20px;
 	right: 25px;
-	padding: 12px 20px 10px;
+	padding: 12px 23px 10px 20px;
 	font-size: 14px;
 	line-height: 15px;
 	text-transform: uppercase;
@@ -438,7 +438,7 @@ div#admin-window-home-button {
 
 div#admin-window-logout-button {
 	text-align: right;
-	top: 25px;
+	top: 30px;
 	right: 160px;
 	position: absolute;
 	display: inline-block;	}
