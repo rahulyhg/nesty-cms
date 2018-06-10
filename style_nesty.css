@@ -275,6 +275,29 @@ div.tile div.tile-edit {
 
 
 
+/* CITATIONS */
+
+div.citation-credit, div.citation-edit {
+	font-family: Helvetica, Tahoma;
+	font-size: 12px;
+	line-height: 14px;
+	font-weight: 400;
+	display: inline-block;
+	border-radius: 4px;
+	position: relative;
+	left: 0;
+	padding: 5px 15px; }
+
+div.citation-credit {
+	color: #fff;
+	left: 0; }
+
+div.citation-edit {
+	color: rgba(50,50,50,0.8);
+	left: 90px; }
+
+
+
 /* IMAGES */
 
 div.image_thumbnail {
