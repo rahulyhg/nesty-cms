@@ -2,15 +2,28 @@
 
 // check install.php output as success or failure
 
-echo "<div>";
-echo "<span class='button float_right'></span><a href='/' class='material-icons button float_right'>home</a>";
-echo "<a href='/account/' class='material-icons button float_right'>account_circle</a>";
-echo "<a href='/two-factor/' class='material-icons button float_right'>looks_two</a>";
-if ($login['status'] == "admin"):
-	echo "<a href='/settings/' class='material-icons button float_right'>settings</a>";
-	echo "<a href='/security/' class='material-icons button float_right'>security</a>";
-	echo "<a href='/supervisor/' class='material-icons button float_right'>supervisor_account</a>"; endif;
-echo "<span class='button float_left'></span><a href='/logout/' class='material-icons button float_left'>cancel</a>";
+echo "<div id='admin-window'>";
+
+echo "<a href='/'><div id='admin-window-home-button'>Home</div></a>";
+echo "<a href='/logout/'><div class='admin-window-logout-button'>Log out</a>";
+
+$options_array = [
+	"account" => "Me",
+	"two-factor" = "looks_two",
+	"settings" => "Settings",
+	"security" => "Security",
+	"Supervisor" => "Accounts",
+	];
+
+foreach ($options_array as $option_backend => $option_pretty):
+
+	if (in_array($option_backend, ["settings", "security", "supervisor"]) && ($login['status'] !== "admin")): continue; endif;
+
+	$class_temp = null; if ($page_temp == $option_backend): $class_temp = "admin-window-option-button-selected"; endif;
+	echo "<a href='/".$option_backend."/'><div class='admin-window-option-button ".$class_temp."'>".$option_pretty."</div></a>";
+
+	endforeach;
+
 echo "</div>";
 
 if (empty($login['authenticator']) && ($page_temp == "account")):
@@ -169,8 +182,6 @@ echo "<form action='' method='post'>";
 
 if ($page_temp == "account"):
 
-	echo "<h2 style='margin: 100px auto 40px; text-align: center;'>My Account</h2>";
-
 	echo "<input type='email' name='".$login['user_id']."[email]' value='".htmlspecialchars($login['email'])."' placeholder='email' required><br>";
 	echo "<input type='text' name='".$login['user_id']."[name]' value='".htmlspecialchars($login['name'])."' placeholder='name' required><br>";
 	echo "<input type='password' name='".$login['user_id']."[password_one]' placeholder='enter new password' autocomplete='off'><br>";
@@ -181,15 +192,13 @@ if ($page_temp == "account"):
 	echo "<p style='margin: 0 auto 5px; text-align: center; font-style: italic;'>or</p>";
 	echo "<input type='password' name='".$login['user_id']."[password_one]' placeholder='current password' required><br>";
 
-	echo "<button type='submit' name='update' value='account' class='material-icons button_action'>save</button>";
+	echo "<button type='submit' name='update' value='account' class='floating-action-button'>save</button>";
 
 	echo "</form>";
 
 endif;
 
 if ($page_temp == "two-factor"):
-
-	echo "<h2 style='margin: 100px auto 40px; text-align: center;'>Two-Factor</h2>";
 
 	echo "<p style='margin: 0 auto 5px; text-align: center; font-style: italic;'>compatible with Google Authenticator and DUO</p>";
 	echo '<script>
@@ -218,14 +227,12 @@ if ((count($users_list) == 1) || ($login['status'] == "admin")):
 
 	if ($page_temp == "settings"):
 
-		echo "<h2 style='margin: 120px auto 40px; text-align: center;'>Site information</h2>";
-
 		echo "<input type='text' name='publisher' value='".htmlspecialchars($publisher)."' placeholder='My Website'><br>";
 		echo "<input type='text' name='google_analytics_code' value='".htmlspecialchars($google_analytics_code)."' placeholder='Google Analytics code (UA-*******-*)'><br>";
 		echo "<input type='color' name='color' value='".htmlspecialchars($color)."' placeholder='background colour'><br>";
 		echo "<textarea name='description' placeholder='description' style='width: 390px; height: 300px;'>".htmlspecialchars($description)."</textarea>";
 
-		echo "<button type='submit' name='update' value='settings' class='material-icons button_action'>save</button>";
+		echo "<button type='submit' name='update' value='settings' class='floating-action-button'>save</button>";
 
 		endif;
 
@@ -240,7 +247,7 @@ if ((count($users_list) == 1) || ($login['status'] == "admin")):
 		echo "<input type='text' name='recaptcha_site' value='".htmlspecialchars($recaptcha_site)."' placeholder='reCAPTCHA site'><br>";
 		echo "<input type='text' name='recaptcha_private' value='".htmlspecialchars($recaptcha_private)."' placeholder='reCAPTCHA private'><br>";
 
-		echo "<button type='submit' name='update' value='recaptcha' class='material-icons button_action'>save</button>";
+		echo "<button type='submit' name='update' value='recaptcha' class='floating-action-button'>save</button>";
 
 		$value_temp = "google_authenticator_off"; $phrase_temp = "active"; $icon_temp = "lock";
 		if ($google_authenticator_toggle == "off"):
@@ -260,7 +267,7 @@ if ((count($users_list) == 1) || ($login['status'] == "admin")):
 
 		echo "<form>";
 		echo "<input type='email' name='add_email' placeholder='add new user (email address)'><br>";
-		echo "<button type='submit' name='update' value='add_user' class='material-icons button_action'>add_circle</button>";
+		echo "<button type='submit' name='update' value='add_user' class=''>Create user</button>";
 		echo "</form>";
 
 		echo "<hr>";
