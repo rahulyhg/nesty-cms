@@ -277,7 +277,7 @@ div.tile div.tile-edit {
 
 /* CITATIONS */
 
-div.citation-credit, div.citation-edit {
+div.citation-credit, div.citation-date, div.citation-edit {
 	font-family: Helvetica, Tahoma;
 	font-size: 12px;
 	line-height: 14px;
@@ -289,6 +289,11 @@ div.citation-credit, div.citation-edit {
 
 div.citation-credit {
 	color: #fff;
+	left: 30px; }
+
+div.citation-date {
+	font-weight: 700;
+	color: rgba(10,10,10,0.9);
 	left: 30px; }
 
 div.citation-edit {
