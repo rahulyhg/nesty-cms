@@ -386,11 +386,12 @@ function body_process($body_incoming) {
 				$citation_date_string[] = date("jS", strtotime("2000-01-01".$entry_info[$citation_id_temp]['day']));
 				endif; endif;
 		if (!(empty($citation_date_string))):
-			$citation_string[] = "<div class='citation-credit'>".implode(" ", $citation_date_string)."</div>";
+			$citation_string[] = "<div class='citation-date'>".implode(" ", $citation_date_string)."</div>";
 			endif;
 
 		if (!(empty(login)) && ($domain == $entry_info[$citation_id_temp]['domain'])):
-			$citation_string[] = "<a href='/e/".$citation_id_temp."/edit/'><div class='citation-edit'>Edit</div></a>"; endif;
+			$citation_string[] = "<a href='/e/".$citation_id_temp."/edit/'><div class='citation-edit'>Edit</div></a>";
+			endif;
 	
 		$entry_string = $delimiter.implode(null,$citation_string).$entry_info[$citation_id_temp]['body'].$delimiter;
 
