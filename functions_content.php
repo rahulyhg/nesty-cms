@@ -383,7 +383,7 @@ function body_process($body_incoming) {
 		if (!(empty($entry_info[$citation_id_temp]['month']))):
 			$citation_date_string[] = date("F", strtotime("2000-".$entry_info[$citation_id_temp]['month']."-01"));
 			if (!(empty($entry_info[$citation_id_temp]['day']))):
-				$citation_date_string[] = date("jS", strtotime("2000-01-01".$entry_info[$citation_id_temp]['day']));
+				$citation_date_string[] = date("jS", strtotime("2000-01-".$entry_info[$citation_id_temp]['day']));
 				endif; endif;
 		if (!(empty($citation_date_string))):
 			$citation_string[] = "<div class='citation-date'>".implode(" ", $citation_date_string)."</div>";
