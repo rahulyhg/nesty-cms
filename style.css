@@ -417,6 +417,12 @@ div#edit-window-open-button, div#edit-window-open-button a {
 
 /* DELETE */
 
+img#delete-window-thumbnail {
+	text-align: center;
+	margin: 150px auto 20px;
+	display: inline-block;
+	}
+
 div#delete-window-content-id {
 	display: block;
 	text-align: center;
@@ -433,18 +439,22 @@ div#delete-window-content-id {
 div#delete-window-back-button {
 	display: inline-block;
 	margin: 20px auto;
-	text-align: left;
+	text-align: center;
 	font-size: 14px;
 	line-height: 15px;
 	text-transform: uppercase;
 	border-radius: 4px;
-	padding: 7px 20px 5px 15px; }
+	padding: 10px 20px 8px 15px; }
 
 div#delete-window-back-button, div#delete-window-back-button a {
 	color: #fff; }
 
 #delete-window-delete-button {
-	}
+	display: block;
+	text-align: center;
+	margin: 20px 0;
+	font-family: Verdana, Arial;
+	color: rgba(50,50,50,0.8); }
 	
 	
 /* ADMIN */
