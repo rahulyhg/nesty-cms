@@ -240,7 +240,7 @@ function login($disclaimer=null) {
 		endif;
 	
 	echo "</form></div>";
-	echo "<a href='/' class='material-icons button'>home</a>";
+	echo "<a href='/'><div id='login-window-home-button'>Home</div></a>";
 	echo "</body></html>";
 	footer(); }
 
