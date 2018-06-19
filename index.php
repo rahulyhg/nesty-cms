@@ -279,10 +279,11 @@ if (!(empty($media_confirmed[$slug_temp]))):
 
 	if (!(empty($login)) && ($command_temp == "delete") && ( empty($_POST['delete_image']) || ($_POST['delete_image'] !== $slug_temp)) ):
 		html_header($slug_temp, $domain."/delete/");
-		echo "<h6 style='margin: 150px auto 70px; text-align: center;'>".$slug_temp."</h6>";
-		echo body_process("[[[".$slug_temp."]]]");
+		echo "<img src='https://".$domain."/m/".$slug_temp."/thumb/' style='margin: 20px auto;'>";
 		echo "<form action='' method='post'>";
-		echo "<button type='submit' name='delete_image' value='".$slug_temp."' style='margin: 0 auto; display: table;' class='material-icons'>delete</button>";
+		echo "<div class='delete-window-content-id'>".$slug_temp."</div>";
+		echo "<a href='https://".$domain."/m/".$slug_temp."/edit/'><div id='delete-window-back-button'>Go back</div></a>";
+		echo "<button type='submit' name='delete_image' value='".$slug_temp."' id='delete-window-delete-button' class='background_2'>Delete image</button>";
 		echo "</form>";
 		footer(); endif;
 
