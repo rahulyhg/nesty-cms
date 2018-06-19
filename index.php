@@ -217,7 +217,7 @@ if (!(empty($page_confirmed[$page_temp]))):
 		html_header($page_confirmed[$page_temp]['header'], $domain."/delete/");
 		echo "<form action='' method='post'>";
 		echo "<div id='delete-window-header'>".$page_confirmed[$page_temp]['header']."</div>";
-		echo "<div id='delete-window-content-id'>".$slug_temp."</div>";
+		echo "<div id='delete-window-content-id'>".$page_temp."</div>";
 		echo "<a href='https://".$domain."/".$page_temp."/edit/'><div id='delete-window-back-button' class='background_2'>Go back</div></a>";
 		echo "<button type='submit' name='delete_page' value='".$page_temp."' id='delete-window-delete-button'>Delete page</button>";
 		echo "</form>";
