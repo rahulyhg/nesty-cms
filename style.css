@@ -434,11 +434,11 @@ div#delete-window-content-id {
 	color: rgba(50,50,50,0.7);
 	border: 0 solid <? echo $color ?>;
 	border-radius: 4px;
-	margin: 20px 0 150px; }
+	margin: 20px 0 80px; }
 
 div#delete-window-back-button {
 	display: table;
-	margin: 20px auto;
+	margin: 60px auto;
 	text-align: center;
 	font-size: 14px;
 	line-height: 15px;
@@ -452,8 +452,11 @@ div#delete-window-back-button, div#delete-window-back-button a {
 #delete-window-delete-button {
 	display: block;
 	text-align: center;
-	margin: 20px auto;
+	margin: 30px auto;
 	font-family: Verdana, Arial;
+	font-size: 14px;
+	border: 0;
+	background: 0;
 	color: rgba(50,50,50,0.8); }
 	
 	
