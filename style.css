@@ -287,7 +287,9 @@ div.login {
 
 div.login span {
 	display: block;
-	color: <? echo $color; ?>;
+	font-size: 15px;
+	font-weight: 700;
+	color: rgba(50,50,50,0.9);
 	text-align: center;
 	margin: 40px auto 30px; }
 
