@@ -423,6 +423,13 @@ img#delete-window-thumbnail {
 	display: block;
 	}
 
+div#delete-window-header {
+	font-family: Verdana, Arial;
+	font-size: 20px;
+	display: block;
+	margin: 150px auto 20px;
+	text-align: center; }
+
 div#delete-window-content-id {
 	display: block;
 	text-align: center;
