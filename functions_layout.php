@@ -234,9 +234,9 @@ function login($disclaimer=null) {
 		echo '<script> function recaptchainval(){ document.getElementById("submit_button").disabled = true; document.getElementById("submit_button").classList.add("gray_background"); } </script>';
 		echo "<style> .gray_background { background: #333 !important; } </style>";
 		echo "<div class='g-recaptcha' data-sitekey='".$recaptcha_site."' data-callback='recaptchaval' data-expired-callback='recaptchainval' style='margin: 10px auto 0; display: inline-block;'></div>";
-		echo "<button id='submit_button' type='submit' name='login' value='continue' class='gray_background' disabled>continue</button>";
+		echo "<button id='submit_button' type='submit' name='login' value='continue' class='background_2' disabled>Continue</button>";
 	else:
-		echo "<button id='submit_button' type='submit' name='login' value='login'>continue</button>";
+		echo "<button id='submit_button' type='submit' name='login' value='login' class='background_2'>Continue</button>";
 		endif;
 	
 	echo "</form></div>";
