@@ -279,11 +279,11 @@ if (!(empty($media_confirmed[$slug_temp]))):
 
 	if (!(empty($login)) && ($command_temp == "delete") && ( empty($_POST['delete_image']) || ($_POST['delete_image'] !== $slug_temp)) ):
 		html_header($slug_temp, $domain."/delete/");
-		echo "<img src='https://".$domain."/m/".$slug_temp."/thumb/' style='margin: 20px auto;'>";
+		echo "<img src='https://".$domain."/m/".$slug_temp."/thumb/' style='margin: 150px auto 20px; display: inline-block;'>";
 		echo "<form action='' method='post'>";
-		echo "<div class='delete-window-content-id'>".$slug_temp."</div>";
-		echo "<a href='https://".$domain."/m/".$slug_temp."/edit/'><div id='delete-window-back-button'>Go back</div></a>";
-		echo "<button type='submit' name='delete_image' value='".$slug_temp."' id='delete-window-delete-button' class='background_2'>Delete image</button>";
+		echo "<div id='delete-window-content-id'>".$slug_temp."</div>";
+		echo "<a href='https://".$domain."/m/".$slug_temp."/edit/'><div id='delete-window-back-button' class='background_2'>Go back</div></a>";
+		echo "<button type='submit' name='delete_image' value='".$slug_temp."' id='delete-window-delete-button'>Delete image</button>";
 		echo "</form>";
 		footer(); endif;
 
