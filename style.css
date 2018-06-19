@@ -275,7 +275,7 @@ textarea {
 /* LOGIN */
 
 div.login {
-	margin: 100px auto 20px;
+	margin: 150px auto 20px;
 	padding: 0;
 	background: #fff;
 	border-radius: 6px;
@@ -309,7 +309,6 @@ div.login button {
 	width: 100%;
 	margin: 30px auto 0;
 	padding: 14px 0;
-	text-transform: uppercase;
 	color: #fff;
 	background: <? echo $color; ?>;
 	font-size: 16px; }
@@ -321,7 +320,6 @@ div#login-window-home-button {
 	font-size: 14px;
 	border: 0;
 	background: 0;
-	font-weight: 700;
 	color: rgba(50,50,50,0.8);
 	position: absolute;
 	top: 30px;
