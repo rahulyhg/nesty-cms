@@ -417,7 +417,7 @@ div#edit-window-open-button, div#edit-window-open-button a {
 
 /* DELETE */
 
-#delete-window-content-id {
+div#delete-window-content-id {
 	display: block;
 	text-align: center;
 	font-family: Arial;
@@ -428,7 +428,7 @@ div#edit-window-open-button, div#edit-window-open-button a {
 	color: rgba(50,50,50,0.7);
 	border: 0 solid <? echo $color ?>;
 	border-radius: 4px;
-	margin: 20px auto 150px; }
+	margin: 20px 0 150px; }
 
 div#delete-window-back-button {
 	display: inline-block;
