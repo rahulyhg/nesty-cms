@@ -279,7 +279,7 @@ if (!(empty($media_confirmed[$slug_temp]))):
 
 	if (!(empty($login)) && ($command_temp == "delete") && ( empty($_POST['delete_image']) || ($_POST['delete_image'] !== $slug_temp)) ):
 		html_header($slug_temp, $domain."/delete/");
-		echo "<img src='https://".$domain."/m/".$slug_temp."/thumb/' style='margin: 150px auto 20px; display: inline-block;'>";
+		echo "<img src='https://".$domain."/m/".$slug_temp."/thumb/' id='delete-window-thumbnail'>";
 		echo "<form action='' method='post'>";
 		echo "<div id='delete-window-content-id'>".$slug_temp."</div>";
 		echo "<a href='https://".$domain."/m/".$slug_temp."/edit/'><div id='delete-window-back-button' class='background_2'>Go back</div></a>";
