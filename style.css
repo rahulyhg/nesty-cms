@@ -314,6 +314,19 @@ div.login button {
 	background: <? echo $color; ?>;
 	font-size: 16px; }
 
+div#login-window-home-button {
+	display: inline-block;
+	text-align: left;
+	font-family: Verdana, Arial;
+	font-size: 14px;
+	border: 0;
+	background: 0;
+	font-weight: 700;
+	color: rgba(50,50,50,0.8);
+	position: absolute;
+	top: 30px;
+	left: 30px; }
+
 /* EDIT */
 
 #edit-window {
