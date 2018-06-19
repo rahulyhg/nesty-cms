@@ -215,9 +215,11 @@ if (!(empty($page_confirmed[$page_temp]))):
 
 	if (in_array("delete", [$slug_temp, $command_temp]) && !(empty($login))):
 		html_header($page_confirmed[$page_temp]['header'], $domain."/delete/");
-		echo "<h6 style='margin: 150px auto 70px; text-align: center;'>".$page_confirmed[$page_temp]['header']."</h6>";
 		echo "<form action='' method='post'>";
-		echo "<button type='submit' name='delete_page' value='".$page_temp."' style='margin: 0 auto; display: table;' class='material-icons'>delete</button>";
+		echo "<div id='delete-window-header'>".$page_confirmed[$page_temp]['header']."</div>";
+		echo "<div id='delete-window-content-id'>".$slug_temp."</div>";
+		echo "<a href='https://".$domain."/".$page_temp."/edit/'><div id='delete-window-back-button' class='background_2'>Go back</div></a>";
+		echo "<button type='submit' name='delete_page' value='".$page_temp."' id='delete-window-delete-button'>Delete page</button>";
 		echo "</form>";
 		footer(); endif;
 
