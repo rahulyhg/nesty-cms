@@ -310,7 +310,6 @@ div.login button {
 	margin: 30px auto 0;
 	padding: 14px 0;
 	color: #fff;
-	background: <? echo $color; ?>;
 	font-size: 16px; }
 
 div#login-window-home-button {
