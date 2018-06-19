@@ -420,7 +420,7 @@ div#edit-window-open-button, div#edit-window-open-button a {
 img#delete-window-thumbnail {
 	text-align: center;
 	margin: 150px auto 20px;
-	display: inline-block;
+	display: block;
 	}
 
 div#delete-window-content-id {
@@ -457,7 +457,8 @@ div#delete-window-back-button, div#delete-window-back-button a {
 	font-size: 14px;
 	border: 0;
 	background: 0;
-	color: rgba(50,50,50,0.8); }
+	font-weight: 700;
+	color: red; }
 	
 	
 /* ADMIN */
