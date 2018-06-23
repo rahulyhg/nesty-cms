@@ -433,6 +433,29 @@ div.amp-lightbox-media-id {
 	border-radius: 0;
 	margin: 0; }
 
+/* FLOATING ACTION BUTTON */
+
+div.floating-action-button, 
+button.floating-action-button {
+	background: <? echo $color ?>;
+	font-family: 'Material Icons';
+	position: fixed;
+	right: 25px;
+	bottom: 20px;
+	display: inline-block;
+	border-radius: 100px;
+	font-size: 30px;
+	line-height: 30px;
+	padding: 11px;
+	border: 0;
+	text-align: center; }
+
+.floating-action-button,
+.floating-action-button a,
+.floating-action-button:hover,
+.floating-action-button:hover a {
+	color: rgba(255,255,255,1); }
+
 /* BACKGROUNDS */
 
 <? $angle_array = [ "15deg", "30deg", "45deg", "60deg", "75deg", "-15deg", "-30deg", "-45deg", "-60deg", "-75deg" ]; shuffle ($angle_array); ?>
