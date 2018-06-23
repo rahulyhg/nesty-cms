@@ -134,31 +134,6 @@ div#navigation-sitemap-button {
 	color: rgba(30,30,30,0.65); }
 
 
-/* FLOATING ACTION BUTTON */
-
-div.floating-action-button, 
-button.floating-action-button {
-	background: <? echo $color ?>;
-	font-family: 'Material Icons';
-	position: fixed;
-	right: 25px;
-	bottom: 20px;
-	display: inline-block;
-	z-index: 1000000;
-	border-radius: 100px;
-	font-size: 30px;
-	line-height: 30px;
-	padding: 11px;
-	border: 0;
-	text-align: center; }
-
-.floating-action-button,
-.floating-action-button a,
-.floating-action-button:hover,
-.floating-action-button:hover a {
-	color: rgba(255,255,255,1); }
-
-
 /* FORMS */
 
 .no_background {
