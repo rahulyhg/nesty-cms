@@ -379,6 +379,7 @@ figcaption {
 amp-lightbox {
 	background: rgba(255,255,255,1);
 	text-align: left;
+	z-index: 10000;
 	padding: 60px 0 100px; }
 
 amp-lightbox div.image_large {
@@ -444,6 +445,7 @@ button.floating-action-button {
 	bottom: 20px;
 	display: inline-block;
 	border-radius: 100px;
+	z-index: 1000;
 	font-size: 30px;
 	line-height: 30px;
 	padding: 11px;
@@ -455,6 +457,9 @@ button.floating-action-button {
 .floating-action-button:hover,
 .floating-action-button:hover a {
 	color: rgba(255,255,255,1); }
+
+amp-lightbox .floating-action-button {
+	z-index: 100000; }
 
 /* BACKGROUNDS */
 
