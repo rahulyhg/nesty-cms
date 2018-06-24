@@ -332,6 +332,9 @@ div.image_large amp-img {
 	display: inline-block;
 	border-radius: 4px; }
 
+div.image_large amp-fit-text {
+	display: block; }
+
 div.image-div-link-button {
 	background: rgba(255,255,255,1);
 	color: <? echo $color ?>;
